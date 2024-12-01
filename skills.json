@@ -1,7 +1,27 @@
 [
     {
-        "name": "ReactJS",
-        "icon": "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+        "name": "C",
+        "icon": "https://img.icons8.com/?size=100&id=shQTXiDQiQVR&format=png&color=000000"
+    },
+    {
+        "name": "C++",
+        "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
+    },
+    {
+        "name": "Python",
+        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+    },
+    {
+        "name": "Java",
+        "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
+    },
+    {
+        "name": "PHP",
+        "icon": "https://img.icons8.com/offices/48/000000/php-logo.png"
+    },
+    {
+        "name": "JavaScript",
+        "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
     },
     {
         "name": "ExpressJS",
@@ -12,68 +32,24 @@
         "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
     },
     {
-        "name": "Redux",
-        "icon": "https://img.icons8.com/color/48/000000/redux.png"
+      "name": "Typescript",
+      "icon": "https://img.icons8.com/?size=100&id=wpZmKzk11AzJ&format=png&color=000000"
     },
     {
-        "name": "Firebase",
-        "icon": "https://img.icons8.com/color/48/000000/firebase.png"
-    },
-    {
-        "name": "Android",
-        "icon": "https://img.icons8.com/fluency/48/000000/android-os.png"
-    },
-    {
-        "name": "MaterialUI",
-        "icon": "https://img.icons8.com/color/48/000000/material-ui.png"
-    },
-    {
-        "name": "ChakraUI",
-        "icon": "https://img.icons8.com/color/48/000000/chakra-ui.png"
-    },
-    {
-        "name": "TailwindCSS",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
+      "name": "D3 JS",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Logo_D3.svg/800px-Logo_D3.svg.png"
     },
     {
         "name": "Bootstrap",
         "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
     },
     {
-        "name": "Sass",
-        "icon": "https://img.icons8.com/color/48/000000/sass.png"
+        "name": "CSS",
+        "icon": "https://img.icons8.com/?size=100&id=11935&format=png&color=000000"
     },
     {
         "name": "HTML5",
         "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
-    },
-    {
-        "name": "CSS3",
-        "icon": "https://img.icons8.com/color/48/000000/css3.png"
-    },
-    {
-        "name": "JavaScript",
-        "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
-    },
-    {
-        "name": "Java",
-        "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
-    },
-    {
-        "name": "Kotlin",
-        "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
-    },
-    {
-        "name": "PHP",
-        "icon": "https://img.icons8.com/offices/48/000000/php-logo.png"
-    },
-    {
-        "name": "Python",
-        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
-    },
-    {
-        "name": "C++",
-        "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
     },
     {
         "name": "MongoDB",
@@ -92,20 +68,36 @@
         "icon": "https://img.icons8.com/color/48/000000/amazon-web-services.png"
     },
     {
-        "name": "Heroku",
-        "icon": "https://img.icons8.com/color/48/000000/heroku.png"
+        "name": "GCP",
+        "icon": "https://img.icons8.com/?size=100&id=fpGM2cINbbu4&format=png&color=000000"
     },
     {
-        "name": "Netlify",
-        "icon": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites-logo-shadow-tal-revivo.png"
+      "name": "Docker",
+      "icon": "https://img.icons8.com/?size=100&id=qGZRK3KTK57F&format=png&color=000000"
     },
     {
-        "name": "DigitalOcean",
-        "icon": "https://img.icons8.com/ios-filled/48/0080FF/digitalocean.png"
+      "name": "Django",
+      "icon": "https://img.icons8.com/?size=100&id=qc3TyHJPxEoH&format=png&color=000000"
     },
     {
-        "name": "jQuery",
-        "icon": "https://img.icons8.com/ios-filled/48/1169ae/jquery.png"
+      "name": "Flask",
+      "icon": "https://img.icons8.com/?size=100&id=31085&format=png&color=000000"
+    },
+    {
+      "name": "FastAPI",
+      "icon": "https://ih1.redbubble.net/image.5432135973.6302/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+      "name": "Heroku",
+      "icon": "https://img.icons8.com/?size=100&id=31085&format=png&color=000000"
+    },
+    {
+      "name": "Vercel",
+      "icon": "https://images.ctfassets.net/crb83veve8xb/2VaNf5PhpBlvKAUKYfmefe/5fdaf99f05704485b02e14e8d4addefb/vercel.webp"
+    },
+    {
+      "name": "Postman",
+      "icon": "https://cdn.icon-icons.com/icons2/3053/PNG/512/postman_macos_bigsur_icon_189815.png"
     },
     {
         "name": "Git VCS",
@@ -116,7 +108,43 @@
         "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
     },
     {
-        "name": "WordPress",
-        "icon": "https://img.icons8.com/color/48/000000/wordpress.png"
-    }    
-]
+      "name": "Pytorch",
+      "icon": "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000"
+    },
+    {
+      "name": "Tensorflow",
+      "icon": "https://img.icons8.com/?size=100&id=n3QRpDA7KZ7P&format=png&color=000000"
+    },
+    {
+      "name": "Keras",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMm3a9krUhkFr9ok_Ios7qoh8Q7318Nrf6MA&s"
+    },
+    {
+      "name": "Scikit-learn",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png"
+    },
+    {
+      "name": "OpenCV",
+      "icon": "https://img.icons8.com/?size=100&id=apebs8fnmi4m&format=png&color=000000"
+    },
+    {
+      "name": "Pandas",
+      "icon": "https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000"
+    },
+    {
+      "name": "Numpy",
+      "icon": "https://img.icons8.com/?size=100&id=aR9CXyMagKIS&format=png&color=000000"
+    },
+    {
+        "name": "Sympy",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtf21jrcCTqI-kjcj9dby41qdb7q7nHYpgRg&s"
+    },
+    {
+        "name": "Optuna",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDC8FJzjXfOevnZgr28qDlbMnuXEPvSsX8tw&s"
+    },
+    {
+        "name": "Hyper Opt",
+        "icon": "https://miro.medium.com/max/166/1*ef6Le4SDD-aRNtVrjaYH9A.png"
+    }
+  ]

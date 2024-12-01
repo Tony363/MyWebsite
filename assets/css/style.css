@@ -56,6 +56,17 @@ html::-webkit-scrollbar-thumb {
 .loader-container.fade-out {
   top: -120%;
 }
+.fixed-size {
+  width: 150px; /* Set your desired width */
+  height: 150px; /* Set your desired height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+/* Add this CSS rule to set a fixed size for the icons in the skills section */
+.skills .bar .info img {
+  width: 48px; /* Set the desired width */
+  height: 48px; /* Set the desired height */
+  object-fit: cover; /* Ensure the image fits within the specified dimensions */
+}
 /* pre loader end */
 
 /* navbar starts */
