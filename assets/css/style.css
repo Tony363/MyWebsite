@@ -847,7 +847,7 @@ header .navbar ul li a:hover {
   left: -16px;
 }
 .experience .content {
-  background-color: #f68c09;
+  background-color: #b8b0a6;
   position: relative;
   border-radius: 6px;
 }
@@ -1232,5 +1232,21 @@ form .button-area {
 }
 #scroll-top.active {
   top: calc(100% - 12rem);
+}
+/* scroll top ends */
+
+.company-icon {
+  width: 75px;  /* Adjust size as needed */
+  height: 75px;
+  object-fit: contain;  /* Maintains aspect ratio */
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;  /* Optional: makes icons circular */
+}
+
+/* Optional: Add hover effect */
+.company-icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 /* scroll top ends */
