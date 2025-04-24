@@ -1,3 +1,41 @@
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/partials/header.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('header-placeholder').innerHTML = html);
+    fetch('/partials/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+
+    // Dynamic experience timeline
+    fetch('/assets/data/experience.json')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('experience-timeline');
+            let html = '';
+            data.forEach(item => {
+                html += `
+                <div class="container ${item.side}">
+                  <div class="content">
+                    <div class="tag">
+                      <h2>
+                        <img src="${item.companyIcon}" alt="${item.alt}" class="company-icon">
+                        ${item.company}
+                      </h2>
+                    </div>
+                    <div class="desc">
+                      <h3>${item.title}</h3>
+                      <p>${item.period}</p>
+                    </div>
+                  </div>
+                </div>`;
+            });
+            container.innerHTML = html;
+        });
+
+    // Initialize VanillaTilt for static elements
+    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+});
+
 $(document).ready(function () {
 
     $('#menu').click(function () {
@@ -127,23 +165,17 @@ function showProjects(projects) {
     });
     projectsContainer.innerHTML = projectHTML;
 
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
+    // Initialize VanillaTilt for dynamic projects
+    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
 
-    /* ===== SCROLL REVEAL ANIMATION ===== */
+    // Reveal dynamic project boxes using ScrollReveal
     const srtop = ScrollReveal({
         origin: 'top',
         distance: '80px',
         duration: 1000,
         reset: true
     });
-
-    /* SCROLL PROJECTS */
     srtop.reveal('.work .box', { interval: 200 });
-
 }
 
 fetchData().then(data => {
@@ -153,42 +185,6 @@ fetchData().then(data => {
 fetchData("projects").then(data => {
     showProjects(data);
 });
-
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
-// <!-- tilt js effect ends -->
-
-
-// pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
-// pre loader end
-
-// disable developer mode
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
 
 // Start of Tawk.to Live Chat
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -231,16 +227,12 @@ srtop.reveal('.about .content p', { delay: 200 });
 srtop.reveal('.about .content .box-container', { delay: 200 });
 srtop.reveal('.about .content .resumebtn', { delay: 200 });
 
-
 /* SCROLL SKILLS */
 srtop.reveal('.skills .container', { interval: 200 });
 srtop.reveal('.skills .container .bar', { delay: 400 });
 
 /* SCROLL EDUCATION */
 srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline', { delay: 400 });
