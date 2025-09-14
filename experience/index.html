@@ -4,14 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tony Siu's professional experience - Multi-Modal Generative AI Researcher with experience at Google Research, Temple University, and leading AI companies.">
+    <meta name="keywords" content="Tony Siu experience, AI researcher, Google Research, Temple University, Computer Vision, Generative AI">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tonysiu.dev/experience">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Experience - Tony Siu">
+    <meta property="og:description" content="Professional experience of Tony Siu - Multi-Modal Generative AI Researcher with roles at Google Research, Temple University, and leading AI companies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tonysiu.dev/experience">
+    <meta property="og:image" content="https://tonysiu.dev/assets/images/resume_photo.jpeg">
+    
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
 
     <title>Experience | Portfolio Tony Siu</title>
+    <link rel="preload" href="./assets/css/style.css" as="style">
+    <link rel="preload" href="./assets/js/script.js" as="script">
+    <link rel="preload" href="./assets/images/favicon.png" as="image">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//embed.tawk.to">
+    <link rel="dns-prefetch" href="//assets.calendly.com">
 </head>
-<body oncontextmenu="return false">
+<body>
+
+<!-- Skip navigation link for accessibility -->
+<a href="#main-content" class="skip-nav" aria-label="Skip to main content">Skip to main content</a>
 
 <!-- navbar starts -->
 <header>
@@ -32,10 +56,13 @@
 </header>
 <!-- navbar ends -->
 
-<!-- experience section starts -->
-<section class="experience" id="experience">
+<!-- main content starts -->
+<main id="main-content">
 
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience</h2>
+<!-- experience section starts -->
+<section class="experience" id="experience" aria-labelledby="experience-heading">
+
+  <h1 id="experience-heading" class="heading"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</h1>
   <div class="quote">
       <span>The fool is the precursor to the savior</span>
   </div>
@@ -45,7 +72,7 @@
       <div class="content">
         <div class="tag">
           <h2>
-            <img src="/assets/images/companies/variantlabs_ai_logo.jpeg" alt="TryVariant AI" class="company-icon">
+            <img src="/assets/images/companies/variantlabs_ai_logo.jpeg" alt="TryVariant AI company logo" class="company-icon">
             TryVariant AI
           </h2>
         </div>
@@ -59,7 +86,7 @@
       <div class="content">
         <div class="tag">
           <h2>
-            <img src="/assets/images/companies/apro-logo1.png" alt="A-Pro Solutions" class="company-icon">
+            <img src="/assets/images/companies/apro-logo1.png" alt="A-Pro Solutions company logo" class="company-icon">
             A-Pro Solutions
           </h2>
         </div>
@@ -73,7 +100,7 @@
       <div class="content">
         <div class="tag">
           <h2>
-            <img src="https://tuportal6.temple.edu/documents/20121/0/TempleT_NoBox_Red.png/03f1f315-a520-5b50-cfba-51ff28cde995?version=1.0&t=1681129531723&imagePreview=1" alt="Temple University" class="company-icon">
+            <img src="https://tuportal6.temple.edu/documents/20121/0/TempleT_NoBox_Red.png/03f1f315-a520-5b50-cfba-51ff28cde995?version=1.0&t=1681129531723&imagePreview=1" alt="Temple University official logo" class="company-icon">
             Temple University
           </h2>
         </div>
@@ -88,7 +115,7 @@
         <div class="content">
           <div class="tag">
             <h2>
-              <img src="https://tuportal6.temple.edu/documents/20121/0/TempleT_NoBox_Red.png/03f1f315-a520-5b50-cfba-51ff28cde995?version=1.0&t=1681129531723&imagePreview=1" alt="Temple University" class="company-icon">
+              <img src="https://tuportal6.temple.edu/documents/20121/0/TempleT_NoBox_Red.png/03f1f315-a520-5b50-cfba-51ff28cde995?version=1.0&t=1681129531723&imagePreview=1" alt="Temple University official logo" class="company-icon">
               Temple University
             </h2>
           </div>
@@ -219,6 +246,9 @@
 </section>
 <!-- experience section ends -->
 
+</main>
+<!-- main content ends -->
+
 <!-- footer section starts -->
 <section class="footer">
 
@@ -268,13 +298,33 @@
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
 <!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://unpkg.com/scrollreveal" async></script>
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
-<script src="./script.js"></script>
+<script defer src="./assets/js/script.js"></script>
 
+
+<script>
+// Intersection Observer for progressive image loading
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+</script>
 </body>
 </html>

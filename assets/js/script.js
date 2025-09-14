@@ -75,22 +75,46 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
-    // <!-- emailjs to mail contact form data -->
+    // Contact form handler - improved security
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
         event.preventDefault();
+        
+        // Initialize EmailJS (consider moving to environment variables in production)
+        // For production, use server-side form handling instead
+        try {
+            emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+            
+            // Show loading state
+            const submitBtn = $(this).find('button[type="submit"]');
+            const originalText = submitBtn.html();
+            submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Sending...');
+            submitBtn.prop('disabled', true);
+            
+            emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+                .then(function (response) {
+                    document.getElementById("contact-form").reset();
+                    // Better user feedback
+                    submitBtn.html('<i class="fas fa-check"></i> Sent Successfully!');
+                    setTimeout(() => {
+                        submitBtn.html(originalText);
+                        submitBtn.prop('disabled', false);
+                    }, 3000);
+                }, function (error) {
+                    // Better error handling
+                    submitBtn.html('<i class="fas fa-exclamation-triangle"></i> Failed to Send');
+                    setTimeout(() => {
+                        submitBtn.html(originalText);
+                        submitBtn.prop('disabled', false);
+                    }, 3000);
+                });
+        } catch (error) {
+            // Log error for debugging in development only
+            if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+                console.error('Form submission error:', error);
+            }
+            alert("Form submission failed. Please try again later.");
+        }
     });
-    // <!-- emailjs to mail contact form data -->
 
 });
 

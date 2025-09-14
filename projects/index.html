@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tony Siu's AI and Computer Vision projects - Multi-Modal Audio, Computer Vision applications, and Web Applications showcasing expertise in Generative AI.">
+    <meta name="keywords" content="Tony Siu projects, AI projects, Computer Vision, Multi-Modal Audio, Generative AI applications, Web Apps">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tonysiu.dev/projects">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Projects - Tony Siu">
+    <meta property="og:description" content="AI and Computer Vision projects by Tony Siu - Multi-Modal Audio, Computer Vision applications, and innovative Web Applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tonysiu.dev/projects">
+    <meta property="og:image" content="https://tonysiu.dev/assets/images/resume_photo.jpeg">
+    
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
     <title>Projects | Portfolio Tony Siu</title>
+    <link rel="preload" href="./assets/css/style.css" as="style">
+    <link rel="preload" href="./assets/js/script.js" as="script">
+    <link rel="preload" href="./assets/images/favicon.png" as="image">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//embed.tawk.to">
+    <link rel="dns-prefetch" href="//assets.calendly.com">
 </head>
-<body oncontextmenu="return false">
+<body>
+
+<!-- Skip navigation link for accessibility -->
+<a href="#main-content" class="skip-nav" aria-label="Skip to main content">Skip to main content</a>
 
 <!-- navbar starts -->
 <header>
@@ -32,10 +56,13 @@
 </header>
 <!-- navbar ends -->
 
-<!-- work project section starts -->
-<section class="work" id="work">
+<!-- main content starts -->
+<main id="main-content">
 
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+<!-- work project section starts -->
+<section class="work" id="work" aria-labelledby="projects-heading">
+
+  <h1 id="projects-heading" class="heading"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects <span>Made</span></h1>
   
   <div id="filters" class="button-group">
     <button class="btn is-checked" data-filter="*">All Projects</button>
@@ -48,7 +75,7 @@
   <div class="box-container">
 
     <!-- <div class="box tilt">
-      <img src="/assets/images/projects/agecalc.PNG" alt="" />
+      <img src="/assets/images/projects/agecalc.PNG" loading="lazy" alt="" />
       <div class="content">
         <div class="tag">
         <h3>Portfolio Website</h3>
@@ -75,6 +102,9 @@
 </section>
 <!-- work project section ends -->
 
+</main>
+<!-- main content ends -->
+
 <!-- scroll top btn -->
 <a href="#work" class="fas fa-angle-up" id="scroll-top"></a>
 <!-- scroll back to top -->
@@ -82,20 +112,40 @@
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
 <!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
 
 <!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://unpkg.com/scrollreveal" async></script>
 
 <!-- isotope filter plugin cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
-<script src="./script.js"></script>
+<script defer src="./assets/js/script.js"></script>
 
+
+<script>
+// Intersection Observer for progressive image loading
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+</script>
 </body>
 </html>
