@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-website-tests",
+  "version": "1.0.0",
+  "description": "E2E tests for Tony Siu's portfolio website",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:contact": "playwright test tests/contact-form-e2e.test.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
