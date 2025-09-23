@@ -1,0 +1,444 @@
+/* Apple-Style Form Enhancements */
+
+/* Contact Form Container */
+.contact form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Enhanced Floating Label Input Fields */
+.form-field {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 20px 20px 8px 50px;
+  border: 2px solid #e8e8ed;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  color: #1d1d1f;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #0071e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+}
+
+/* Enhanced Floating Label Effect */
+.form-field label {
+  position: absolute;
+  left: 50px;
+  top: 18px;
+  font-size: 16px;
+  color: #86868b;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  background: #ffffff;
+  padding: 0 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+.form-field input:focus + label,
+.form-field textarea:focus + label,
+.form-field input:not(:placeholder-shown) + label,
+.form-field textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 45px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0071e3;
+  background: #ffffff;
+}
+
+/* Enhanced Icon positioning */
+.form-field i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #86868b;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.form-field input:focus ~ i,
+.form-field textarea:focus ~ i {
+  color: #0071e3;
+}
+
+/* Valid and Invalid States */
+.form-field input:valid:not(:placeholder-shown),
+.form-field textarea:valid:not(:placeholder-shown) {
+  border-color: #30d158;
+}
+
+.form-field input:valid:not(:placeholder-shown) + label,
+.form-field textarea:valid:not(:placeholder-shown) + label {
+  color: #30d158;
+}
+
+.form-field input:valid:not(:placeholder-shown) ~ i,
+.form-field textarea:valid:not(:placeholder-shown) ~ i {
+  color: #30d158;
+}
+
+.form-field input:invalid:not(:placeholder-shown),
+.form-field textarea:invalid:not(:placeholder-shown) {
+  border-color: #ff3b30;
+}
+
+.form-field input:invalid:not(:placeholder-shown) + label,
+.form-field textarea:invalid:not(:placeholder-shown) + label {
+  color: #ff3b30;
+}
+
+.form-field input:invalid:not(:placeholder-shown) ~ i,
+.form-field textarea:invalid:not(:placeholder-shown) ~ i {
+  color: #ff3b30;
+}
+
+/* Message textarea specific */
+.message-field textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding-top: 20px;
+}
+
+.message-field i {
+  top: 28px;
+  transform: none;
+}
+
+/* Success and Error Animations */
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(48, 209, 88, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0);
+  }
+}
+
+.form-field.success input,
+.form-field.success textarea {
+  border-color: #30d158;
+  animation: successPulse 0.5s;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.form-field.error input,
+.form-field.error textarea {
+  animation: errorShake 0.5s;
+  border-color: #ff3b30;
+}
+
+/* Submit Button - Apple Style */
+.contact .button-area {
+  margin-top: var(--space-xl);
+  display: flex;
+  justify-content: center;
+}
+
+.contact .button-area button {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  border-radius: 980px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.contact .button-area button:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 12px 32px rgba(0, 113, 227, 0.25);
+}
+
+.contact .button-area button:active {
+  transform: scale(0.98);
+}
+
+.contact .button-area button i {
+  transition: transform var(--transition-fast);
+}
+
+.contact .button-area button:hover i {
+  transform: translateX(4px);
+}
+
+/* Image styling */
+.contact .image-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .image-box img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: saturate(0.8);
+  transition: filter var(--transition-base);
+}
+
+.contact .image-box img:hover {
+  filter: saturate(1);
+}
+
+/* Work Section Improvements */
+.work {
+  background: var(--color-white);
+  padding: var(--space-4xl) 5%;
+}
+
+.work .box-container .box {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.work .box-container .box:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.work .box-container .box .content {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: var(--space-md);
+}
+
+.work .box-container .box .content .tag {
+  background: var(--color-accent);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+}
+
+.work .box-container .box .content .tag h3 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Education Section Improvements */
+.education {
+  background: var(--color-gray-100);
+  padding: var(--space-4xl) 5%;
+}
+
+.education .box-container .box {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: none;
+  overflow: hidden;
+}
+
+.education .box-container .box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.education .box-container .box .content h3 {
+  color: var(--color-black);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.education .box-container .box .content p {
+  color: var(--color-gray-500);
+  font-size: 1.6rem;
+}
+
+.education h4 {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* About Section Enhancements */
+.about {
+  background: var(--color-white);
+  padding: var(--space-4xl) 5%;
+}
+
+.about .row .image img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  filter: grayscale(30%);
+  transition: all var(--transition-slow);
+}
+
+.about .row .image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.about .row .content h3 {
+  font-size: 4rem;
+  letter-spacing: -0.03em;
+}
+
+.about .row .content .tag {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+}
+
+.about .row .content p {
+  color: var(--color-gray-500);
+  line-height: 1.8;
+  font-size: 1.8rem;
+}
+
+/* Experience Timeline Refinements */
+.experience {
+  background: var(--color-white);
+  padding: var(--space-4xl) 5%;
+}
+
+.experience .timeline::after {
+  background: var(--color-gray-300);
+  width: 2px;
+}
+
+.experience .container::after {
+  background: var(--color-white);
+  border: 2px solid var(--color-accent);
+  width: 16px;
+  height: 16px;
+}
+
+.experience .content {
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: none;
+  transition: all var(--transition-base);
+}
+
+.experience .content:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.experience .content .tag h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.experience .content .desc h3 {
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.experience .content .desc p {
+  color: var(--color-gray-500);
+  font-size: 1.4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact .container {
+    padding: var(--space-lg);
+  }
+  
+  .contact .container .content {
+    flex-direction: column;
+  }
+  
+  .contact .image-box {
+    display: none;
+  }
+  
+  .contact form {
+    width: 100%;
+  }
+}
+
+/* Performance optimizations */
+.will-transform {
+  will-change: transform;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Remove focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}

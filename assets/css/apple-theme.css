@@ -1,0 +1,416 @@
+/* Apple-Inspired Design System - Enhanced */
+:root {
+  /* Typography - Premium system fonts */
+  --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Menlo, monospace;
+  
+  /* Enhanced Color System */
+  --color-black: #1d1d1f;
+  --color-white: #ffffff;
+  --color-gray-100: #f5f5f7;
+  --color-gray-200: #e8e8ed;
+  --color-gray-300: #d2d2d7;
+  --color-gray-400: #86868b;
+  --color-gray-500: #515154;
+  --color-gray-600: #2c2c2e;
+  --color-gray-700: #1c1c1e;
+  
+  /* Premium Accent Palette */
+  --color-accent: #0071e3;
+  --color-accent-hover: #0077ed;
+  --color-accent-light: rgba(0, 113, 227, 0.1);
+  --color-accent-glow: rgba(0, 113, 227, 0.4);
+  --color-secondary: #5e5ce6;
+  --color-secondary-light: rgba(94, 92, 230, 0.1);
+  --color-tertiary: #32ade6;
+  --color-success: #30d158;
+  --color-warning: #ff9f0a;
+  --color-error: #ff3b30;
+  
+  /* Premium Gradients */
+  --gradient-hero: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff, #f5f5f7);
+  --gradient-dark: linear-gradient(180deg, #1d1d1f 0%, #2c2c2e 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+  --gradient-mesh: radial-gradient(at 30% 30%, var(--color-accent-light) 0%, transparent 50%),
+                   radial-gradient(at 70% 70%, var(--color-secondary-light) 0%, transparent 50%),
+                   radial-gradient(at 50% 50%, var(--color-tertiary) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(circle at center, var(--color-accent-glow) 0%, transparent 70%);
+  
+  /* Spacing - More generous for Apple aesthetic */
+  --space-xs: 0.8rem;
+  --space-sm: 1.6rem;
+  --space-md: 3.2rem;
+  --space-lg: 4.8rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+  --space-3xl: 16rem;
+  --space-4xl: 24rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-pill: 50rem;
+  
+  /* Shadows - Simplified to 3 levels */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.12);
+  --shadow-card: var(--shadow-sm);
+  --shadow-hover: var(--shadow-md);
+  --shadow-xl: var(--shadow-lg);
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Blur effects */
+  --blur-sm: blur(8px);
+  --blur-md: blur(16px);
+  --blur-lg: blur(24px);
+  --blur-navbar: saturate(180%) blur(20px);
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-black: #ffffff;
+    --color-white: #1d1d1f;
+    --color-gray-100: #2c2c2e;
+    --color-gray-200: #3a3a3c;
+    --color-gray-300: #48484a;
+    --color-gray-400: #98989d;
+    --color-gray-500: #aeaeb2;
+    --color-gray-600: #e8e8ed;
+    --color-accent: #2997ff;
+    --color-accent-hover: #4da8ff;
+  }
+}
+
+/* Premium Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.04),
+              inset 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.glass-premium {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  backdrop-filter: saturate(200%) blur(30px);
+  -webkit-backdrop-filter: saturate(200%) blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.04),
+              0 20px 40px rgba(0,0,0,0.08),
+              inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(29, 29, 31, 0.7);
+  backdrop-filter: var(--blur-navbar);
+  -webkit-backdrop-filter: var(--blur-navbar);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Morphing blob animation */
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.morph-blob {
+  animation: morph 8s ease-in-out infinite;
+  background: linear-gradient(45deg, var(--color-accent), #32ade6);
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(40px);
+}
+
+/* Smooth scroll animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--transition-slow);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all var(--transition-slow);
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all var(--transition-slow);
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all var(--transition-slow);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 3D Card effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-base);
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateZ(20px);
+}
+
+/* Enhanced Apple-style button with magnetic effect */
+.btn-apple {
+  background: var(--color-accent);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 980px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.btn-apple:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.015) translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.2);
+}
+
+.btn-apple:active {
+  transform: scale(0.985);
+}
+
+.btn-apple.magnetic {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating labels for forms */
+.form-field {
+  position: relative;
+  margin-bottom: var(--space-lg);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 20px 16px 8px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  font-size: 17px;
+  transition: all var(--transition-fast);
+  font-family: var(--font-primary);
+}
+
+.form-field label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: var(--color-gray-400);
+  font-size: 17px;
+  transition: all var(--transition-fast);
+  pointer-events: none;
+  background: var(--color-white);
+  padding: 0 4px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field input:not(:placeholder-shown),
+.form-field textarea:not(:placeholder-shown) {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.form-field input:focus + label,
+.form-field textarea:focus + label,
+.form-field input:not(:placeholder-shown) + label,
+.form-field textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 13px;
+  color: var(--color-accent);
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Interactive Element Styles */
+.interactive-card {
+  transform-style: preserve-3d;
+  transition: all var(--transition-base);
+  will-change: transform;
+}
+
+.interactive-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(20px);
+}
+
+/* Gradient Orb Styles */
+.gradient-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: var(--gradient-mesh);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.7;
+  pointer-events: none;
+  will-change: transform;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Premium Button Styles */
+.btn-premium {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 980px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 113, 227, 0.2);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-premium:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 113, 227, 0.3);
+}
+
+/* Smooth Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--color-accent);
+  border-radius: 25px;
+  opacity: 0.7;
+  transition: opacity var(--transition-base);
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(10px); }
+  60% { transform: translateX(-50%) translateY(5px); }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .gradient-orb {
+    animation: none;
+  }
+  
+  .interactive-card:hover {
+    transform: none;
+  }
+}
