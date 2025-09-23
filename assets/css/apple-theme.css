@@ -143,11 +143,12 @@
   filter: blur(40px);
 }
 
-/* Smooth scroll animation classes */
+/* Enhanced Smooth Scroll Animation Classes */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: all var(--transition-slow);
+  transition: opacity var(--transition-slow),
+              transform var(--transition-slow);
 }
 
 .fade-in.visible {
@@ -158,7 +159,8 @@
 .slide-in-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: all var(--transition-slow);
+  transition: opacity var(--transition-slow),
+              transform var(--transition-slow);
 }
 
 .slide-in-left.visible {
@@ -169,7 +171,8 @@
 .slide-in-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: all var(--transition-slow);
+  transition: opacity var(--transition-slow),
+              transform var(--transition-slow);
 }
 
 .slide-in-right.visible {
@@ -180,12 +183,93 @@
 .scale-in {
   opacity: 0;
   transform: scale(0.9);
-  transition: all var(--transition-slow);
+  transition: opacity var(--transition-slow),
+              transform var(--transition-slow);
 }
 
 .scale-in.visible {
   opacity: 1;
   transform: scale(1);
+}
+
+/* Smooth Scrolling Performance Enhancements */
+.smooth-scroll-container {
+  -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+  overflow-y: auto;
+  overscroll-behavior-y: contain; /* Prevent scroll chaining */
+}
+
+/* Optimized Parallax Effects */
+.parallax-layer {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.parallax-bg {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.parallax-fg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll-triggered Animations with Better Performance */
+[data-scroll] {
+  transition: opacity var(--transition-slow),
+              transform var(--transition-slow);
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Smooth Section Transitions */
+section {
+  scroll-margin-top: 65px; /* Account for fixed header */
+}
+
+/* Enhanced Scroll Snap */
+@supports (scroll-snap-type: y proximity) {
+  .scroll-snap-wrapper {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 65px;
+  }
+  
+  .scroll-snap-item {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
+
+/* Buttery Smooth Hover Effects */
+.smooth-hover {
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Natural Easing Functions */
+.ease-natural {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-smooth {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.ease-spring {
+  transition-timing-function: var(--transition-spring);
 }
 
 /* 3D Card effect */

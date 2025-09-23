@@ -9,12 +9,16 @@
   outline: none;
   border: none;
   text-transform: capitalize;
-  transition: all 0.2s linear;
+  /* Optimized: Only transition specific properties that change */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  /* Removed scroll-behavior to prevent conflicts with JS smooth scroll */
+  /* scroll-behavior: smooth; */
 }
 body {
   background: #f7f7f7;
@@ -38,6 +42,50 @@ html::-webkit-scrollbar-track {
 }
 html::-webkit-scrollbar-thumb {
   background: #420177;
+}
+
+/* Performance optimizations for smooth scrolling */
+.will-change-transform {
+  will-change: transform;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize sections for smooth scrolling */
+section {
+  contain: layout style paint;
+}
+
+/* Optimize animated elements */
+.home .image,
+.about .image,
+.contact .image-box {
+  will-change: transform, opacity;
+}
+
+/* Optimize scroll-triggered animations */
+.animate-on-scroll {
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .home .image,
+  .about .image,
+  .contact .image-box {
+    will-change: auto;
+  }
 }
 
 /* pre loader start */

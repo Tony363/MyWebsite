@@ -67,13 +67,8 @@ $(document).ready(function () {
         });
     });
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
-    });
+    // Smooth scrolling is now handled by smooth-scroll.js module
+    // Legacy jQuery smooth scrolling removed to prevent conflicts
 
     // Contact form handler - improved security
     $("#contact-form").submit(function (event) {
@@ -192,13 +187,7 @@ function showProjects(projects) {
     // Initialize VanillaTilt for dynamic projects
     VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
 
-    // Reveal dynamic project boxes using ScrollReveal
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
+    // Reveal dynamic project boxes using existing ScrollReveal instance
     srtop.reveal('.work .box', { interval: 200 });
 }
 
@@ -226,9 +215,13 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
     origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
+    distance: '60px',
+    duration: 800,
+    reset: false, // Prevent repeated animations for better performance
+    easing: 'cubic-bezier(0.4, 0, 0.2, 1)', // Natural easing curve
+    mobile: true,
+    useDelay: 'onload',
+    viewFactor: 0.2
 });
 
 /* SCROLL HOME */
