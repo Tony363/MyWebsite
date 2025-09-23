@@ -394,20 +394,17 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact .container {
-    padding: var(--space-lg);
-  }
-  
-  .contact .container .content {
-    flex-direction: column;
-  }
-  
-  .contact .image-box {
-    display: none;
-  }
-  
   .contact form {
+    max-width: none;
     width: 100%;
+  }
+  
+  .form-field {
+    margin-bottom: 20px;
+  }
+  
+  .form-field label {
+    font-size: 14px;
   }
 }
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Layout Test</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form-enhancements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: #f0f0f5;
+            padding: 20px;
+        }
+        .test-info {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-info h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .test-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .test-info li {
+            padding: 5px 0;
+            color: #666;
+        }
+        .test-info li.done {
+            color: #30d158;
+        }
+        .test-info li.done::before {
+            content: "✓ ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h2>Contact Form Layout Test</h2>
+        <ul>
+            <li class="done">✅ Changed to CSS Grid layout (50-50 split)</li>
+            <li class="done">✅ Fixed image sizing (max-height: 500px)</li>
+            <li class="done">✅ Form width set to 100% within grid cell</li>
+            <li class="done">✅ Floating labels with proper states</li>
+            <li class="done">✅ Responsive design (stacks on mobile)</li>
+        </ul>
+        <p>Test the form below at different screen sizes to verify the layout fixes.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+        
+        <div class="container">
+            <div class="content">
+                <div class="image-box">
+                    <img src="./assets/images/contact1.png" alt="Contact illustration">
+                </div>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <div class="form-field">
+                            <input type="text" name="name" placeholder=" " required id="name-input">
+                            <label for="name-input">Name</label>
+                            <i class='fas fa-user'></i>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" name="email" placeholder=" " required id="email-input">
+                            <label for="email-input">Email</label>
+                            <i class='fas fa-envelope'></i>
+                        </div>
+                        <div class="form-field">
+                            <input type="tel" name="phone" placeholder=" " id="phone-input">
+                            <label for="phone-input">Phone (Optional)</label>
+                            <i class='fas fa-phone-alt'></i>
+                        </div>
+                        <div class="form-field message-field">
+                            <textarea placeholder=" " name="message" required id="message-input"></textarea>
+                            <label for="message-input">Message</label>
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <button type="submit" class="btn-premium">
+                            <span>Send Message</span>
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Test form behavior
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submission test - Layout is working correctly!');
+        });
+    </script>
+</body>
+</html>
