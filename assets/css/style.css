@@ -1568,3 +1568,26 @@ form .button-area {
   transition: transform 0.3s ease;
 }
 /* scroll top ends */
+
+/* Contact image display fix */
+.contact .image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.contact .image-box {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .content .image-box img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}

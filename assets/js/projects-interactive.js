@@ -21,7 +21,7 @@ class InteractiveProjects {
         title: 'Multi-Modal AI Research',
         category: 'mult',
         description: 'Advanced generative AI system combining vision and language models',
-        image: '/assets/images/projects/ai-research.jpg',
+        image: './assets/images/projects/googlecv.png',
         tags: ['PyTorch', 'Transformers', 'Computer Vision'],
         github: 'https://github.com/Tony363',
         demo: '#'
@@ -30,7 +30,7 @@ class InteractiveProjects {
         title: 'Computer Vision Suite',
         category: 'cv',
         description: 'Comprehensive CV testing framework for Google Pixel devices',
-        image: '/assets/images/projects/cv-suite.jpg',
+        image: './assets/images/projects/hackharvard.png',
         tags: ['OpenCV', 'TensorFlow', 'Python'],
         github: 'https://github.com/Tony363',
         demo: '#'
@@ -39,7 +39,7 @@ class InteractiveProjects {
         title: 'Portfolio Website',
         category: 'webapps',
         description: 'Modern portfolio with Apple-inspired design and interactions',
-        image: '/assets/images/projects/portfolio.jpg',
+        image: './assets/images/projects/bootstrapportfolio.png',
         tags: ['JavaScript', 'CSS3', 'HTML5'],
         github: 'https://github.com/Tony363',
         demo: '#'
@@ -73,7 +73,7 @@ class InteractiveProjects {
     `;
     
     const img = document.createElement('img');
-    img.src = project.image || '/assets/images/projects/default.jpg';
+    img.src = project.image || './assets/images/projects/default.jpg';
     img.alt = project.title;
     img.loading = 'lazy';
     img.style.cssText = `
