@@ -73,6 +73,31 @@ section {
 }
 
 /* Reduce motion for accessibility */
+/* Global contrast improvement variables */
+:root {
+  --improved-blue: #4FC3F7;
+  --improved-light-blue: #64B5F6;
+  --improved-purple: #DA70D6;
+  --improved-light-purple: #CE93D8;
+  --improved-text-light: #F0F4F8;
+  --improved-text-medium: #B0BEC5;
+  --improved-text-dark: #263238;
+  --text-shadow-light: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --text-shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --text-shadow-strong: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Apply improved contrast to existing classes */
+.text-blue {
+  color: var(--improved-blue) !important;
+  text-shadow: var(--text-shadow-light);
+}
+
+.text-purple {
+  color: var(--improved-purple) !important;
+  text-shadow: var(--text-shadow-medium);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -133,17 +158,59 @@ header {
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
 }
 section {
+  min-height: auto;
+  padding: 4rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Hero section keeps full height */
+.home {
   min-height: 100vh;
-  padding: 2rem 9%;
+  max-width: 100%;
+  padding: 2rem 5%;
 }
 .heading {
   font-size: 3.5rem;
-  color: rgb(32, 32, 32);
+  color: #ffffff;
   font-weight: 800;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
 }
 .heading span {
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Light section headings */
+.about .heading,
+.education .heading,
+.experience .heading,
+.contact .heading {
+  color: rgb(32, 32, 32);
+  text-shadow: none;
+}
+
+.about .heading span,
+.education .heading span,
+.experience .heading span,
+.contact .heading span {
   color: rgb(115, 3, 167);
+  text-shadow: none;
+}
+
+/* Dark section headings - already white */
+.skills .heading,
+.work .heading {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.skills .heading span,
+.work .heading span {
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 header .logo {
   font-size: 1.9rem;
@@ -247,6 +314,7 @@ header .navbar ul li a:hover {
   align-items: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-attachment: fixed;
+  overflow: visible;
 }
 .home #particles-js {
   position: absolute;
@@ -274,19 +342,25 @@ header .navbar ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .home .image img {
+  display: block;
   width: 70%;
   max-width: 350px;
+  height: auto;
   margin-left: 6rem;
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   border: 4px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 .home .image img:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
 }
 .home .content h1,
 .home .content h2 {
@@ -315,6 +389,17 @@ header .navbar ul li a:hover {
   font-weight: 600;
   padding: 1rem 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced contrast for hero section text */
+.home .content .subtitle-blue {
+  color: #64B5F6 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.home .content .subtitle-light {
+  color: #F5F5F5 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 .home .btn {
   margin-top: 1rem;
@@ -496,6 +581,23 @@ header .navbar ul li a:hover {
   color: rgb(27, 27, 27);
   font-size: 2.5rem;
 }
+
+/* Improved contrast for Me section */
+.about-dark-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+.about-purple-heading {
+  color: #DA70D6 !important; /* Brighter purple for better contrast */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.about-blue-subtitle {
+  color: #64B5F6 !important; /* Lighter blue for better readability */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+}
 .about .row .content .tag {
   font-size: 1.4rem;
   color: #020133;
@@ -579,12 +681,23 @@ header .navbar ul li a:hover {
   min-height: 90vh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
 }
-.skills h2 {
-  color: #fff;
+
+/* Enhanced text contrast for dark sections */
+.enhanced-contrast-text {
+  color: #E3F2FD !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
-.skills .heading span {
-  color: rgb(255, 230, 0);
+
+.enhanced-contrast-blue {
+  color: #64B5F6 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
+
+.enhanced-contrast-purple {
+  color: #CE93D8 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Skills heading handled by .heading styles */
 .skills .container {
   background: rgba(0, 0, 22, 0.4);
   color: #fff;
@@ -760,13 +873,25 @@ header .navbar ul li a:hover {
   /* background: #010124; */
   background: linear-gradient(to bottom, #000031, #00002c);
 }
-.work h2 {
-  color: #fff;
-  padding: 1rem;
+
+/* High contrast mode for portfolio sections */
+.high-contrast-card {
+  background: rgba(30, 35, 45, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.work .heading span {
-  color: rgb(255, 230, 0);
+
+.high-contrast-text {
+  color: #F0F4F8 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 500;
 }
+
+.high-contrast-accent {
+  color: #4FC3F7 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Work heading handled by .heading styles */
 .work .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -876,6 +1001,29 @@ header .navbar ul li a:hover {
 /* work section ends */
 
 /* experience section starts */
+
+/* Improved contrast for experience cards */
+.experience-card-blue-text {
+  color: #4FC3F7 !important; /* Improved contrast blue */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card-date {
+  color: #B0BEC5 !important; /* Better contrast for dates */
+  font-weight: 500;
+}
+
+.experience-card-title {
+  color: #E1F5FE !important; /* High contrast for job titles */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.experience-card-dark {
+  background: rgba(40, 44, 52, 0.95) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .experience .timeline {
   position: relative;
   max-width: 1200px;
@@ -955,6 +1103,28 @@ header .navbar ul li a:hover {
   background-color: #b8b0a6;
   position: relative;
   border-radius: 6px;
+}
+
+/* Enhanced experience content cards with better contrast */
+.experience .content.dark-theme {
+  background: linear-gradient(135deg, rgba(40, 44, 52, 0.98), rgba(33, 37, 43, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.experience .content.dark-theme .tag {
+  color: #B0BEC5;
+  font-weight: 500;
+}
+
+.experience .content.dark-theme h3 {
+  color: #E1F5FE;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.experience .content.dark-theme p {
+  color: #90CAF9;
+  font-weight: 400;
 }
 .experience .content .tag {
   font-size: 1.3rem;
