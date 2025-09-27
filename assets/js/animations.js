@@ -254,48 +254,6 @@ class TimelineAnimation {
   }
 }
 
-// Smooth Scroll with Momentum
-class SmoothScroll {
-  constructor() {
-    this.currentY = window.scrollY;
-    this.targetY = window.scrollY;
-    this.ease = 0.08;
-    this.isScrolling = false;
-    this.init();
-  }
-
-  init() {
-    // Only apply on desktop
-    if (window.innerWidth > 768) {
-      document.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
-      this.animate();
-    }
-  }
-
-  handleWheel(e) {
-    e.preventDefault();
-    this.targetY += e.deltaY;
-    this.targetY = Math.max(0, Math.min(this.targetY, document.body.scrollHeight - window.innerHeight));
-    
-    if (!this.isScrolling) {
-      this.isScrolling = true;
-    }
-  }
-
-  animate() {
-    if (this.isScrolling) {
-      this.currentY += (this.targetY - this.currentY) * this.ease;
-      window.scrollTo(0, this.currentY);
-      
-      if (Math.abs(this.targetY - this.currentY) < 0.5) {
-        this.isScrolling = false;
-      }
-    }
-    
-    requestAnimationFrame(() => this.animate());
-  }
-}
-
 // Enhanced Scroll Animations
 class ScrollAnimations {
   constructor() {
@@ -554,6 +512,7 @@ function addInteractiveHints() {
 }
 
 // Add necessary CSS for animations
+(function() {
 const style = document.createElement('style');
 style.textContent = `
   /* Magnetic button styles */
@@ -671,3 +630,4 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+})();

@@ -333,13 +333,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add ripple effect styles
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes rippleEffect {
-    to {
-      transform: translate(-50%, -50%) scale(4);
-      opacity: 0;
+(function() {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes rippleEffect {
+      to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+      }
     }
-  }
-`;
-document.head.appendChild(style);
+  `;
+  document.head.appendChild(style);
+})();
