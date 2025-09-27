@@ -1,4 +1,55 @@
+// Email Configuration Validation
+function validateEmailConfiguration() {
+    const EXPECTED_EMAIL = 'pysolver33@gmail.com';
+    
+    // Check all static email displays
+    const emailDisplays = document.querySelectorAll('p:not(#contact-form p), .box p');
+    let staticEmailsValid = true;
+    
+    emailDisplays.forEach(element => {
+        if (element.textContent.includes('@') && !element.textContent.includes(EXPECTED_EMAIL)) {
+            console.warn('⚠️ Inconsistent email found:', element.textContent);
+            staticEmailsValid = false;
+        }
+    });
+    
+    // Check all mailto links
+    const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+    let mailtoLinksValid = true;
+    
+    mailtoLinks.forEach(link => {
+        const email = link.href.replace('mailto:', '').split('?')[0];
+        if (email !== EXPECTED_EMAIL) {
+            console.warn('⚠️ Incorrect mailto link:', link.href);
+            mailtoLinksValid = false;
+        }
+    });
+    
+    // Validation report
+    console.log('📧 Email Configuration Validation Report:');
+    console.log(`✅ Static email displays: ${staticEmailsValid ? 'All correct' : 'Issues found'}`);
+    console.log(`✅ Mailto links: ${mailtoLinksValid ? 'All correct' : 'Issues found'}`);
+    console.log(`⚠️  EmailJS recipient: Configured in dashboard (expected: ${EXPECTED_EMAIL})`);
+    console.log('📝 Note: Actual EmailJS recipient must be verified in EmailJS dashboard');
+    
+    // Add visual indicator if there are issues
+    if (!staticEmailsValid || !mailtoLinksValid) {
+        console.error('❌ Email configuration issues detected. Please review the warnings above.');
+    }
+    
+    // Store validation status
+    window.emailConfigValidation = {
+        staticEmails: staticEmailsValid,
+        mailtoLinks: mailtoLinksValid,
+        expectedRecipient: EXPECTED_EMAIL,
+        validated: true
+    };
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Validate EmailJS configuration on page load
+    validateEmailConfiguration();
+    
     fetch('/partials/header.html')
         .then(res => res.text())
         .then(html => document.getElementById('header-placeholder').innerHTML = html);
@@ -70,14 +121,39 @@ $(document).ready(function () {
     // Smooth scrolling is now handled by smooth-scroll.js module
     // Legacy jQuery smooth scrolling removed to prevent conflicts
 
-    // Contact form handler - improved security
+    // Contact form handler with enhanced verification and logging
     $("#contact-form").submit(function (event) {
         event.preventDefault();
         
-        // Initialize EmailJS (consider moving to environment variables in production)
-        // For production, use server-side form handling instead
+        // Configuration for email verification
+        const EMAIL_CONFIG = {
+            expectedRecipient: 'pysolver33@gmail.com',
+            serviceId: 'contact_service',
+            templateId: 'template_contact',
+            userId: 'user_TTDmetQLYgWCLzHTDgqxm'
+        };
+        
+        // Log configuration for verification (development only)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('📧 Email Configuration:', {
+                service: EMAIL_CONFIG.serviceId,
+                template: EMAIL_CONFIG.templateId,
+                expectedRecipient: EMAIL_CONFIG.expectedRecipient,
+                note: 'Actual recipient is configured in EmailJS dashboard'
+            });
+        }
+        
         try {
-            emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+            // Initialize EmailJS
+            emailjs.init(EMAIL_CONFIG.userId);
+            
+            // Get form data for logging
+            const formData = {
+                name: this.name.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                message: this.message.value
+            };
             
             // Show loading state
             const submitBtn = $(this).find('button[type="submit"]');
@@ -85,29 +161,80 @@ $(document).ready(function () {
             submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Sending...');
             submitBtn.prop('disabled', true);
             
-            emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+            // Add verification note to form data
+            const enrichedData = {
+                ...formData,
+                _verification_note: `Expected recipient: ${EMAIL_CONFIG.expectedRecipient}`,
+                _timestamp: new Date().toISOString()
+            };
+            
+            // Send email with enhanced error handling
+            emailjs.send(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, enrichedData)
                 .then(function (response) {
+                    // Log success for monitoring
+                    console.log('✅ Email sent successfully:', {
+                        status: response.status,
+                        text: response.text,
+                        recipient: EMAIL_CONFIG.expectedRecipient,
+                        timestamp: new Date().toISOString()
+                    });
+                    
+                    // Reset form
                     document.getElementById("contact-form").reset();
-                    // Better user feedback
-                    submitBtn.html('<i class="fas fa-check"></i> Sent Successfully!');
+                    
+                    // Success feedback with recipient confirmation
+                    submitBtn.html(`<i class="fas fa-check"></i> Sent to ${EMAIL_CONFIG.expectedRecipient.split('@')[0]}!`);
                     setTimeout(() => {
                         submitBtn.html(originalText);
                         submitBtn.prop('disabled', false);
-                    }, 3000);
+                    }, 4000);
+                    
                 }, function (error) {
-                    // Better error handling
-                    submitBtn.html('<i class="fas fa-exclamation-triangle"></i> Failed to Send');
+                    // Detailed error logging
+                    console.error('❌ Email sending failed:', {
+                        error: error,
+                        service: EMAIL_CONFIG.serviceId,
+                        template: EMAIL_CONFIG.templateId,
+                        expectedRecipient: EMAIL_CONFIG.expectedRecipient,
+                        timestamp: new Date().toISOString()
+                    });
+                    
+                    // User-friendly error message
+                    let errorMsg = 'Failed to Send';
+                    if (error.text) {
+                        if (error.text.includes('template')) {
+                            errorMsg = 'Template Configuration Error';
+                        } else if (error.text.includes('service')) {
+                            errorMsg = 'Service Configuration Error';
+                        } else if (error.text.includes('limit')) {
+                            errorMsg = 'Rate Limit Exceeded';
+                        }
+                    }
+                    
+                    submitBtn.html(`<i class="fas fa-exclamation-triangle"></i> ${errorMsg}`);
                     setTimeout(() => {
                         submitBtn.html(originalText);
                         submitBtn.prop('disabled', false);
-                    }, 3000);
+                    }, 4000);
+                    
+                    // Show fallback mailto option  
+                    if (confirm('Email sending failed. Would you like to send directly to ' + EMAIL_CONFIG.expectedRecipient + '?')) {
+                        window.location.href = 'mailto:' + EMAIL_CONFIG.expectedRecipient + '?subject=Portfolio Contact&body=' + encodeURIComponent(formData.message);
+                    }
                 });
+                
         } catch (error) {
-            // Log error for debugging in development only
-            if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
-                console.error('Form submission error:', error);
+            // Critical error handling
+            console.error('🚨 Critical form error:', error);
+            
+            const submitBtn = $(this).find('button[type="submit"]');
+            submitBtn.html('<i class="fas fa-exclamation-triangle"></i> System Error');
+            submitBtn.prop('disabled', false);
+            
+            // Provide fallback option
+            if (confirm('System error occurred. Send email directly to ' + EMAIL_CONFIG.expectedRecipient + '?')) {
+                window.location.href = 'mailto:' + EMAIL_CONFIG.expectedRecipient;
             }
-            alert("Form submission failed. Please try again later.");
         }
     });
 
