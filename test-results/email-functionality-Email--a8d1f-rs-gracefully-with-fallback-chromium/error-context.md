@@ -1,0 +1,500 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3] [cursor=pointer]: Schedule time with me
+  - link "Skip to main content" [ref=e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e5]:
+    - link " Tony" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e7] [cursor=pointer]: 
+      - text: Tony
+    - text: 
+    - navigation [ref=e8]:
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - link "Home" [ref=e11] [cursor=pointer]:
+            - /url: "#home"
+        - listitem [ref=e12]:
+          - link "About" [ref=e13] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e14]:
+          - link "Skills" [ref=e15] [cursor=pointer]:
+            - /url: "#skills"
+        - listitem [ref=e16]:
+          - link "Education" [ref=e17] [cursor=pointer]:
+            - /url: "#education"
+        - listitem [ref=e18]:
+          - link "Work" [ref=e19] [cursor=pointer]:
+            - /url: "#work"
+        - listitem [ref=e20]:
+          - link "Experience" [ref=e21] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e22]:
+          - link "Contact" [ref=e23] [cursor=pointer]:
+            - /url: "#contact"
+  - main [ref=e24]:
+    - region "Hi There, I'm TonySiu" [ref=e25]:
+      - generic [ref=e28]:
+        - heading "Hi There, I'm TonySiu" [level=1] [ref=e29]:
+          - text: Hi There,
+          - text: I'm Tony
+          - generic [ref=e30]: Siu
+        - paragraph [ref=e31]:
+          - text: I am all about
+          - generic [ref=e32]: Natural Languag
+          - generic [ref=e33]: "|"
+        - link "About Me " [ref=e34] [cursor=pointer]:
+          - /url: "#about"
+          - generic [ref=e35] [cursor=pointer]: About Me
+          - generic [ref=e36] [cursor=pointer]: 
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - link "LinkedIn" [ref=e40] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/pysolver/
+              - generic [ref=e41] [cursor=pointer]: 
+          - listitem [ref=e42]:
+            - link "GitHub" [ref=e43] [cursor=pointer]:
+              - /url: https://github.com/Tony363
+              - generic [ref=e44] [cursor=pointer]: 
+          - listitem [ref=e45]:
+            - link "Twitter" [ref=e46] [cursor=pointer]:
+              - /url: https://x.com/Tony23152644
+              - generic [ref=e47] [cursor=pointer]: 
+      - img "Tony Siu working as a computer programmer - professional headshot" [ref=e49] [cursor=pointer]
+    - generic [ref=e51]:
+      - heading "About Me" [level=2] [ref=e52]:
+        - generic [ref=e53]: 
+        - text: About
+        - generic [ref=e54]: Me
+      - generic [ref=e55]:
+        - img "Tony Siu professional portrait - AI Engineer and Researcher" [ref=e57] [cursor=pointer]
+        - generic [ref=e58]:
+          - heading "I'm Tony" [level=3] [ref=e59]
+          - generic [ref=e60]: AI Engineer & Researcher
+          - paragraph [ref=e61]: I mainly focus my work on Multi-Modal Generative AI and Statistical Optimization research. I led Google University Research to enhance the Computer Vision testing suite for the Pixel mobile device. I am currently conducting statistical research on inverting confidence intervals for systems of multivariate higher order linear combinations. The application of this project is to develop an algorithm that simultaneously finds solutions for complex calibration systems that has multiple input factors. An example of this is the Mars Rover heat shield calibration upon atmospheric penetration.
+          - generic [ref=e63] [cursor=pointer]:
+            - paragraph [ref=e64] [cursor=pointer]:
+              - generic [ref=e65] [cursor=pointer]: "email :"
+              - text: pysolver33@gmail.com
+            - paragraph [ref=e66] [cursor=pointer]:
+              - generic [ref=e67] [cursor=pointer]: "place :"
+              - text: Philadelphia, PA
+          - link "Resume " [ref=e69] [cursor=pointer]:
+            - /url: https://drive.google.com/file/d/116AOY9gdQSEvq_2ClDNF00XB5ZEUWbKf/view?usp=sharing
+            - generic [ref=e70] [cursor=pointer]: Resume
+            - generic [ref=e71] [cursor=pointer]: 
+    - generic [ref=e72]:
+      - heading "Skills & Abilities" [level=2] [ref=e73]:
+        - generic [ref=e74]: 
+        - text: Skills &
+        - generic [ref=e75]: Abilities
+      - generic [ref=e77]:
+        - generic [ref=e79]:
+          - img "skill" [ref=e80]
+          - generic [ref=e81]: C
+        - generic [ref=e83]:
+          - img "skill" [ref=e84]
+          - generic [ref=e85]: C++
+        - generic [ref=e87]:
+          - img "skill" [ref=e88]
+          - generic [ref=e89]: Python
+        - generic [ref=e91]:
+          - img "skill" [ref=e92]
+          - generic [ref=e93]: Java
+        - generic [ref=e95]:
+          - img "skill" [ref=e96]
+          - generic [ref=e97]: PHP
+        - generic [ref=e99]:
+          - img "skill" [ref=e100]
+          - generic [ref=e101]: JavaScript
+        - generic [ref=e103]:
+          - img "skill" [ref=e104]
+          - generic [ref=e105]: ExpressJS
+        - generic [ref=e107]:
+          - img "skill" [ref=e108]
+          - generic [ref=e109]: NodeJS
+        - generic [ref=e111]:
+          - img "skill" [ref=e112]
+          - generic [ref=e113]: Typescript
+        - generic [ref=e115]:
+          - img "skill" [ref=e116]
+          - generic [ref=e117]: D3 JS
+        - generic [ref=e119]:
+          - img "skill" [ref=e120]
+          - generic [ref=e121]: Bootstrap
+        - generic [ref=e123]:
+          - img "skill" [ref=e124]
+          - generic [ref=e125]: CSS
+        - generic [ref=e127]:
+          - img "skill" [ref=e128]
+          - generic [ref=e129]: HTML5
+        - generic [ref=e131]:
+          - img "skill" [ref=e132]
+          - generic [ref=e133]: MongoDB
+        - generic [ref=e135]:
+          - img "skill" [ref=e136]
+          - generic [ref=e137]: MySQL
+        - generic [ref=e139]:
+          - img "skill" [ref=e140]
+          - generic [ref=e141]: PostgreSQL
+        - generic [ref=e143]:
+          - img "skill" [ref=e144]
+          - generic [ref=e145]: AWS
+        - generic [ref=e147]:
+          - img "skill" [ref=e148]
+          - generic [ref=e149]: GCP
+        - generic [ref=e151]:
+          - img "skill" [ref=e152]
+          - generic [ref=e153]: Docker
+        - generic [ref=e155]:
+          - img "skill" [ref=e156]
+          - generic [ref=e157]: Django
+        - generic [ref=e159]:
+          - img "skill" [ref=e160]
+          - generic [ref=e161]: Flask
+        - generic [ref=e163]:
+          - img "skill" [ref=e164]
+          - generic [ref=e165]: FastAPI
+        - generic [ref=e167]:
+          - img "skill" [ref=e168]
+          - generic [ref=e169]: Heroku
+        - generic [ref=e171]:
+          - img "skill" [ref=e172]
+          - generic [ref=e173]: Vercel
+        - generic [ref=e175]:
+          - img "skill" [ref=e176]
+          - generic [ref=e177]: Postman
+        - generic [ref=e179]:
+          - img "skill" [ref=e180]
+          - generic [ref=e181]: Git VCS
+        - generic [ref=e183]:
+          - img "skill" [ref=e184]
+          - generic [ref=e185]: GitHub
+        - generic [ref=e187]:
+          - img "skill" [ref=e188]
+          - generic [ref=e189]: Pytorch
+        - generic [ref=e191]:
+          - img "skill" [ref=e192]
+          - generic [ref=e193]: Tensorflow
+        - generic [ref=e195]:
+          - img "skill" [ref=e196]
+          - generic [ref=e197]: Keras
+        - generic [ref=e199]:
+          - img "skill" [ref=e200]
+          - generic [ref=e201]: Scikit-learn
+        - generic [ref=e203]:
+          - img "skill" [ref=e204]
+          - generic [ref=e205]: OpenCV
+        - generic [ref=e207]:
+          - img "skill" [ref=e208]
+          - generic [ref=e209]: Pandas
+        - generic [ref=e211]:
+          - img "skill" [ref=e212]
+          - generic [ref=e213]: Numpy
+        - generic [ref=e215]:
+          - img "skill" [ref=e216]
+          - generic [ref=e217]: Sympy
+        - generic [ref=e219]:
+          - img "skill" [ref=e220]
+          - generic [ref=e221]: Optuna
+        - generic [ref=e223]:
+          - img "skill" [ref=e224]
+          - generic [ref=e225]: Hyper Opt
+    - generic [ref=e226]:
+      - heading "My Education" [level=2] [ref=e227]:
+        - generic [ref=e228]: 
+        - text: My
+        - generic [ref=e229]: Education
+      - generic [ref=e230]:
+        - generic [ref=e231] [cursor=pointer]:
+          - img "Temple University campus building - where Tony completed Masters in Computational Data Science" [ref=e233] [cursor=pointer]
+          - generic [ref=e234] [cursor=pointer]:
+            - heading "Masters & Bachelors in Computational Data Science" [level=3] [ref=e235] [cursor=pointer]
+            - paragraph [ref=e236] [cursor=pointer]: Temple University | 3.87 GPA
+            - heading "2022-2025" [level=4] [ref=e237] [cursor=pointer]
+        - generic [ref=e238] [cursor=pointer]:
+          - img "TamKang University logo - where Tony completed Bachelors in Computer Science" [ref=e240] [cursor=pointer]
+          - generic [ref=e241] [cursor=pointer]:
+            - heading "Bachelors in Computer Science & Information Engineering" [level=3] [ref=e242] [cursor=pointer]
+            - paragraph [ref=e243] [cursor=pointer]: TamKang University | 4.0 GPA
+            - heading "2020-2023" [level=4] [ref=e244] [cursor=pointer]
+        - generic [ref=e245] [cursor=pointer]:
+          - img "National Taiwan Normal University logo - Tony's educational background" [ref=e247] [cursor=pointer]
+          - generic [ref=e248] [cursor=pointer]:
+            - heading "Bachelors in Computer Science & Information Engineering" [level=3] [ref=e249] [cursor=pointer]
+            - paragraph [ref=e250] [cursor=pointer]: National Taiwan Normal University | 4.3 GPA
+            - heading "2020-2020" [level=4] [ref=e251] [cursor=pointer]
+    - generic [ref=e252]:
+      - heading "Projects Made" [level=2] [ref=e253]:
+        - generic [ref=e254]: 
+        - text: Projects
+        - generic [ref=e255]: Made
+      - generic [ref=e256]:
+        - generic [ref=e257] [cursor=pointer]:
+          - img "project" [ref=e258] [cursor=pointer]
+          - generic [ref=e259] [cursor=pointer]:
+            - heading "Pixel Device CV Testing'" [level=3] [ref=e261] [cursor=pointer]
+            - generic [ref=e262] [cursor=pointer]:
+              - paragraph [ref=e263] [cursor=pointer]: Google University Research program for CV quality detection and flicker detection
+              - generic [ref=e264] [cursor=pointer]:
+                - link " View" [ref=e265] [cursor=pointer]:
+                  - /url: https://github.com/hc07180011/testing-cv
+                  - generic [ref=e266] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e267] [cursor=pointer]:
+                  - /url: https://github.com/hc07180011/testing-cv
+                  - text: Code
+                  - generic [ref=e268] [cursor=pointer]: 
+        - generic [ref=e269] [cursor=pointer]:
+          - img "project" [ref=e270] [cursor=pointer]
+          - generic [ref=e271] [cursor=pointer]:
+            - heading "HackHarvard Voice Coding" [level=3] [ref=e273] [cursor=pointer]
+            - generic [ref=e274] [cursor=pointer]:
+              - paragraph [ref=e275] [cursor=pointer]: HackHarvard Hackathon Project to go from Audio to Code and Visualization
+              - generic [ref=e276] [cursor=pointer]:
+                - link " View" [ref=e277] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/HackHarvard_voice_coding
+                  - generic [ref=e278] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e279] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/HackHarvard_voice_coding
+                  - text: Code
+                  - generic [ref=e280] [cursor=pointer]: 
+        - generic [ref=e281] [cursor=pointer]:
+          - img "project" [ref=e282] [cursor=pointer]
+          - generic [ref=e283] [cursor=pointer]:
+            - heading "Edge Sports Video Analytics" [level=3] [ref=e285] [cursor=pointer]
+            - generic [ref=e286] [cursor=pointer]:
+              - paragraph [ref=e287] [cursor=pointer]: Reduced fps stitching speed of 2x 3840X2160 pixels, 170 degree fisheye cameras from 6 seconds to 0.2 seconds on the Nvidia Jetson Xavier
+              - generic [ref=e288] [cursor=pointer]:
+                - link " View" [ref=e289] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/opencvStitch
+                  - generic [ref=e290] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e291] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/Teamplay_Yolov3
+                  - text: Code
+                  - generic [ref=e292] [cursor=pointer]: 
+        - generic [ref=e293] [cursor=pointer]:
+          - img "project" [ref=e294] [cursor=pointer]
+          - generic [ref=e295] [cursor=pointer]:
+            - heading "LAMP Stack Blog" [level=3] [ref=e297] [cursor=pointer]
+            - generic [ref=e298] [cursor=pointer]:
+              - paragraph [ref=e299] [cursor=pointer]: The Easy Blog site project is a simple PHP, CSS, and JavaScript project.
+              - generic [ref=e300] [cursor=pointer]:
+                - link " View" [ref=e301] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/opensource-final-project
+                  - generic [ref=e302] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e303] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/opensource-final-project
+                  - text: Code
+                  - generic [ref=e304] [cursor=pointer]: 
+      - link "View All " [ref=e306] [cursor=pointer]:
+        - /url: /projects
+        - generic [ref=e307] [cursor=pointer]: View All
+        - generic [ref=e308] [cursor=pointer]: 
+    - generic [ref=e309]:
+      - heading "Experience" [level=2] [ref=e310]:
+        - generic [ref=e311]: 
+        - text: Experience
+      - generic [ref=e312]:
+        - generic [ref=e313]:
+          - generic [ref=e314]:
+            - heading "TryVariant AI TryVariant AI" [level=2] [ref=e316]:
+              - img "TryVariant AI" [ref=e317]
+              - text: TryVariant AI
+            - generic [ref=e318]:
+              - heading "Founding Computer Vision & Animation Engineer" [level=3] [ref=e319]
+              - paragraph [ref=e320]: April 2025 - present
+          - text: 
+        - generic [ref=e321]:
+          - generic [ref=e322]:
+            - heading "A-Pro Solutions A-Pro Solutions" [level=2] [ref=e324]:
+              - img "A-Pro Solutions" [ref=e325]
+              - text: A-Pro Solutions
+            - generic [ref=e326]:
+              - heading "Generative AI Researcher & Engineer" [level=3] [ref=e327]
+              - paragraph [ref=e328]: Feb 2025 - Jul 2025
+          - text: 
+        - generic [ref=e329]:
+          - generic [ref=e330]:
+            - heading "Temple University Temple University" [level=2] [ref=e332]:
+              - img "Temple University" [ref=e333]
+              - text: Temple University
+            - generic [ref=e334]:
+              - heading "Multi-Modal Generative AI Researcher" [level=3] [ref=e335]
+              - paragraph [ref=e336]: May 2023 - April 2025
+          - text: 
+        - generic [ref=e337]:
+          - generic [ref=e338]:
+            - heading "Temple University Temple University" [level=2] [ref=e340]:
+              - img "Temple University" [ref=e341]
+              - text: Temple University
+            - generic [ref=e342]:
+              - heading "Financial Analytics Engineer" [level=3] [ref=e343]
+              - paragraph [ref=e344]: Jul 2023 - Jan 2025
+          - text: 
+        - generic [ref=e345]:
+          - generic [ref=e346]:
+            - heading "SYMETRI USA - Part of Addnode SYMETRI USA - Part of Addnode" [level=2] [ref=e348]:
+              - img "SYMETRI USA - Part of Addnode" [ref=e349]
+              - text: SYMETRI USA - Part of Addnode
+            - generic [ref=e350]:
+              - heading "EAM Intern" [level=3] [ref=e351]
+              - paragraph [ref=e352]: Jun 2024 - Sep 2024
+          - text: 
+        - generic [ref=e353]:
+          - generic [ref=e354]:
+            - heading "Google Research Google Research" [level=2] [ref=e356]:
+              - img "Google Research" [ref=e357]
+              - text: Google Research
+            - generic [ref=e358]:
+              - heading "Pixel team Computer Vision Research Lead" [level=3] [ref=e359]
+              - paragraph [ref=e360]: Jan 2022 - May 2023
+          - text: 
+        - generic [ref=e361]:
+          - generic [ref=e362]:
+            - heading "Caspian Pipeline Consortium Caspian Pipeline Consortium" [level=2] [ref=e364]:
+              - img "Caspian Pipeline Consortium" [ref=e365]
+              - text: Caspian Pipeline Consortium
+            - generic [ref=e366]:
+              - heading "Environmental Science Data Analyst" [level=3] [ref=e367]
+              - paragraph [ref=e368]: Oct 2021 - Apr 2022
+          - text: 
+        - generic [ref=e369]:
+          - generic [ref=e370]:
+            - heading "Smart Contract Research Forum Smart Contract Research Forum" [level=2] [ref=e372]:
+              - img "Smart Contract Research Forum" [ref=e373]
+              - text: Smart Contract Research Forum
+            - generic [ref=e374]:
+              - heading "Research Associate" [level=3] [ref=e375]
+              - paragraph [ref=e376]: Apr 2021 - May 2021
+          - text: 
+        - generic [ref=e377]:
+          - generic [ref=e378]:
+            - heading "FiO.one FiO.one" [level=2] [ref=e380]:
+              - img "FiO.one" [ref=e381]
+              - text: FiO.one
+            - generic [ref=e382]:
+              - heading "R&D Analytics Engineer" [level=3] [ref=e383]
+              - paragraph [ref=e384]: Jul 2021 - Sep 2021
+          - text: 
+        - generic [ref=e385]:
+          - generic [ref=e386]:
+            - heading "Wyzant Wyzant" [level=2] [ref=e388]:
+              - img "Wyzant" [ref=e389]
+              - text: Wyzant
+            - generic [ref=e390]:
+              - heading "Applied Statistics Engineer Consultant" [level=3] [ref=e391]
+              - paragraph [ref=e392]: Aug 2019 - Jan 2021
+          - text: 
+        - generic [ref=e393]:
+          - generic [ref=e394]:
+            - heading "Taiwan Tech Arena Taiwan Tech Arena" [level=2] [ref=e396]:
+              - img "Taiwan Tech Arena" [ref=e397]
+              - text: Taiwan Tech Arena
+            - generic [ref=e398]:
+              - heading "AI Specialist Engineer" [level=3] [ref=e399]
+              - paragraph [ref=e400]: May 2020 - Oct 2020
+          - text: 
+      - link " Back to Home" [ref=e402] [cursor=pointer]:
+        - /url: /#experience
+        - generic [ref=e403] [cursor=pointer]: 
+        - generic [ref=e404] [cursor=pointer]: Back to Home
+    - generic [ref=e405]:
+      - heading "Get in Touch" [level=2] [ref=e406]:
+        - generic [ref=e407]: 
+        - text: Get in
+        - generic [ref=e408]: Touch
+      - generic [ref=e410]:
+        - img "Contact illustration showing person at computer for getting in touch with Tony Siu" [ref=e412]
+        - generic [ref=e413]:
+          - generic [ref=e414]:
+            - generic [ref=e415]:
+              - textbox "Name" [ref=e416]
+              - generic: Name
+              - generic: 
+            - generic [ref=e417]:
+              - textbox "Email" [ref=e418]
+              - generic: Email
+              - generic: 
+            - generic [ref=e419]:
+              - textbox "Phone (Optional)" [ref=e420]
+              - generic: Phone (Optional)
+              - generic: 
+            - generic [ref=e421]:
+              - textbox "Message" [ref=e422]
+              - generic: Message
+              - generic: 
+          - button " Sent to pysolver33!" [disabled] [ref=e424] [cursor=pointer]:
+            - generic: 
+            - text: Sent to pysolver33!
+  - generic [ref=e426]:
+    - generic [ref=e427]:
+      - generic [ref=e428]:
+        - heading "Tony's Portfolio" [level=3] [ref=e429]
+        - paragraph [ref=e430]:
+          - text: Thank you for visiting my personal portfolio website. Connect with me over socials.
+          - text: Keep Rising 🚀. Connect with me over live chat!
+      - generic [ref=e431]:
+        - heading "quick links" [level=3] [ref=e432]
+        - link " home" [ref=e433] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e434] [cursor=pointer]: 
+          - text: home
+        - link " about" [ref=e435] [cursor=pointer]:
+          - /url: "#about"
+          - generic [ref=e436] [cursor=pointer]: 
+          - text: about
+        - link " skills" [ref=e437] [cursor=pointer]:
+          - /url: "#skills"
+          - generic [ref=e438] [cursor=pointer]: 
+          - text: skills
+        - link " education" [ref=e439] [cursor=pointer]:
+          - /url: "#education"
+          - generic [ref=e440] [cursor=pointer]: 
+          - text: education
+        - link " work" [ref=e441] [cursor=pointer]:
+          - /url: "#work"
+          - generic [ref=e442] [cursor=pointer]: 
+          - text: work
+        - link " experience" [ref=e443] [cursor=pointer]:
+          - /url: "#experience"
+          - generic [ref=e444] [cursor=pointer]: 
+          - text: experience
+      - generic [ref=e445]:
+        - heading "contact info" [level=3] [ref=e446]
+        - paragraph [ref=e447]:
+          - generic [ref=e448]: 
+          - text: +1 267-301-1691
+        - paragraph [ref=e449]:
+          - generic [ref=e450]: 
+          - text: pysolver33@gmail.com
+        - paragraph [ref=e451]:
+          - generic [ref=e452]: 
+          - text: Philadelphia, PA
+        - generic [ref=e453]:
+          - link "" [ref=e454] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/pysolver/
+          - link "" [ref=e455] [cursor=pointer]:
+            - /url: https://github.com/Tony363
+          - link "" [ref=e456] [cursor=pointer]:
+            - /url: mailto:pysolver33@gmail.com
+          - link "" [ref=e457] [cursor=pointer]:
+            - /url: https://x.com/pysolver33
+    - heading "Designed with  by Tony Siu" [level=1] [ref=e458]:
+      - text: Designed with
+      - generic [ref=e459]: 
+      - text: by
+      - link "Tony Siu" [ref=e460] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/pysolver
+  - link "ScrollTop" [ref=e461] [cursor=pointer]:
+    - /url: "#home"
+    - text: 
+  - iframe [ref=e462]:
+    - button "Chat widget" [ref=f1e4] [cursor=pointer]:
+      - img "Opens Chat This icon Opens the chat window." [ref=f1e7] [cursor=pointer]
+```
