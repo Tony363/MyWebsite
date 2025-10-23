@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Validate EmailJS configuration on page load
     validateEmailConfiguration();
     
-    fetch('/partials/header.html')
+    fetch('partials/header.html')
         .then(res => res.text())
         .then(html => {
             const headerPlaceholder = document.getElementById('header-placeholder');
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Failed to load header partial.', error);
         });
-    fetch('/partials/footer.html')
+    fetch('partials/footer.html')
         .then(res => res.text())
         .then(html => {
             const footerPlaceholder = document.getElementById('footer-placeholder');
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Dynamic experience timeline
-    fetch('/assets/data/experience.json')
+    fetch('assets/data/experience.json')
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('experience-timeline');
@@ -238,7 +238,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Initialize VanillaTilt for static elements
-    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+    if (window.VanillaTilt) {
+        VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+    } else {
+        console.warn('VanillaTilt library not available; skipping tilt initialization.');
+    }
 });
 
 $(document).ready(function () {
@@ -409,15 +413,28 @@ document.addEventListener('visibilitychange',
     });
 
 
-// <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["Multi-Modal Generative AI", "Computer Vision", "Natural Language Processing", "Data Engineering", "Statistical Optimization"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
-});
-// <!-- typed js effect ends -->
+function initializeTypedEffect() {
+    if (!window.Typed) {
+        console.warn('Typed.js library not available; skipping typing animation.');
+        return;
+    }
+
+    return new Typed(".typing-text", {
+        strings: [
+            "Multi-Modal Generative AI",
+            "Computer Vision",
+            "Natural Language Processing",
+            "Data Engineering",
+            "Statistical Optimization"
+        ],
+        loop: true,
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 500
+    });
+}
+
+initializeTypedEffect();
 
 async function fetchData(type = "skills") {
     let response
@@ -468,10 +485,14 @@ function showProjects(projects) {
     projectsContainer.innerHTML = projectHTML;
 
     // Initialize VanillaTilt for dynamic projects
-    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+    if (window.VanillaTilt) {
+        VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+    }
 
     // Reveal dynamic project boxes using existing ScrollReveal instance
-    srtop.reveal('.work .box', { interval: 200 });
+    if (srtop) {
+        srtop.reveal('.work .box', { interval: 200 });
+    }
 }
 
 fetchData().then(data => {
@@ -496,28 +517,32 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 800,
-    reset: false, // Prevent repeated animations for better performance
-    easing: 'cubic-bezier(0.4, 0, 0.2, 1)', // Natural easing curve
-    mobile: true,
-    useDelay: 'onload',
-    viewFactor: 0.2
-});
+const srtop = window.ScrollReveal
+    ? ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 800,
+        reset: false, // Prevent repeated animations for better performance
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)', // Natural easing curve
+        mobile: true,
+        useDelay: 'onload',
+        viewFactor: 0.2
+    })
+    : null;
 
 /* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
+if (srtop) {
+    srtop.reveal('.home .content h3', { delay: 200 });
+    srtop.reveal('.home .content p', { delay: 200 });
+    srtop.reveal('.home .content .btn', { delay: 200 });
 
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
+    srtop.reveal('.home .image', { delay: 400 });
+    srtop.reveal('.home .linkedin', { interval: 600 });
+    srtop.reveal('.home .github', { interval: 800 });
+    srtop.reveal('.home .twitter', { interval: 1000 });
+    srtop.reveal('.home .telegram', { interval: 600 });
+    srtop.reveal('.home .instagram', { interval: 600 });
+}
 srtop.reveal('.home .dev', { interval: 600 });
 
 /* SCROLL ABOUT */

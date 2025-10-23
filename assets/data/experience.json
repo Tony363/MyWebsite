@@ -1,7 +1,7 @@
 [
   {
     "company": "TryVariant AI",
-    "companyIcon": "/assets/images/companies/variantlabs_ai_logo.jpeg",
+    "companyIcon": "./assets/images/companies/variantlabs_ai_logo.jpeg",
     "alt": "TryVariant AI",
     "title": "Founding Computer Vision & Animation Engineer",
     "period": "April 2025 - present",
@@ -9,7 +9,7 @@
   },
   {
     "company": "A-Pro Solutions",
-    "companyIcon": "/assets/images/companies/apro-logo1.png",
+    "companyIcon": "./assets/images/companies/apro-logo1.png",
     "alt": "A-Pro Solutions",
     "title": "Generative AI Researcher & Engineer",
     "period": "Feb 2025 - Jul 2025",
@@ -33,7 +33,7 @@
   },
   {
     "company": "SYMETRI USA - Part of Addnode",
-    "companyIcon": "/assets/images/symetri.webp",
+    "companyIcon": "./assets/images/symetri.webp",
     "alt": "SYMETRI USA - Part of Addnode",
     "title": "EAM Intern",
     "period": "Jun 2024 - Sep 2024",
@@ -41,7 +41,7 @@
   },
   {
     "company": "Google Research",
-    "companyIcon": "/assets/images/google.webp",
+    "companyIcon": "./assets/images/google.webp",
     "alt": "Google Research",
     "title": "Pixel team Computer Vision Research Lead",
     "period": "Jan 2022 - May 2023",
@@ -49,7 +49,7 @@
   },
   {
     "company": "Caspian Pipeline Consortium",
-    "companyIcon": "/assets/images/cpc.png",
+    "companyIcon": "./assets/images/cpc.png",
     "alt": "Caspian Pipeline Consortium",
     "title": "Environmental Science Data Analyst",
     "period": "Oct 2021 - Apr 2022",
@@ -57,7 +57,7 @@
   },
   {
     "company": "Smart Contract Research Forum",
-    "companyIcon": "/assets/images/scrf.webp",
+    "companyIcon": "./assets/images/scrf.webp",
     "alt": "Smart Contract Research Forum",
     "title": "Research Associate",
     "period": "Apr 2021 - May 2021",
@@ -65,7 +65,7 @@
   },
   {
     "company": "FiO.one",
-    "companyIcon": "/assets/images/fio.webp",
+    "companyIcon": "./assets/images/fio.webp",
     "alt": "FiO.one",
     "title": "R&D Analytics Engineer",
     "period": "Jul 2021 - Sep 2021",
@@ -73,7 +73,7 @@
   },
   {
     "company": "Wyzant",
-    "companyIcon": "/assets/images/wyzant.webp",
+    "companyIcon": "./assets/images/wyzant.webp",
     "alt": "Wyzant",
     "title": "Applied Statistics Engineer Consultant",
     "period": "Aug 2019 - Jan 2021",
@@ -81,7 +81,7 @@
   },
   {
     "company": "Taiwan Tech Arena",
-    "companyIcon": "/assets/images/tta.webp",
+    "companyIcon": "./assets/images/tta.webp",
     "alt": "Taiwan Tech Arena",
     "title": "AI Specialist Engineer",
     "period": "May 2020 - Oct 2020",
