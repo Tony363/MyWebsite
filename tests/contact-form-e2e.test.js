@@ -145,9 +145,11 @@ test.describe('Contact Form E2E Testing', () => {
     const borderColor = await nameField.evaluate(el => getComputedStyle(el).borderColor);
     const boxShadow = await nameField.evaluate(el => getComputedStyle(el).boxShadow);
     
-    // Should have blue border and shadow when focused
-    expect(borderColor).toContain('0, 113, 227'); // #0071e3
-    expect(boxShadow).toContain('rgba(0, 113, 227, 0.1)');
+    // Should have accent border and shadow when focused (light or dark theme)
+    const allowedBorderColors = ['0, 113, 227', '18, 247, 176'];
+    expect(allowedBorderColors.some(color => borderColor.includes(color))).toBeTruthy();
+    const allowedShadows = ['rgba(0, 113, 227, 0.1)', 'rgba(51, 255, 153, 0.2)'];
+    expect(allowedShadows.some(shadow => boxShadow.includes(shadow))).toBeTruthy();
     
     // Test email field
     const emailField = page.locator('#email-input');

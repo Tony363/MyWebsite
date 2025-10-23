@@ -1,8 +1,7 @@
 <!-- Shared Header -->
 <header>
-    <a href="/" class="logo"><i class="fab fa-node-js"></i> Tony</a>
-    <div id="menu" class="fas fa-bars"></div>
-    <nav class="navbar">
+    <a href="/" class="logo"><i class="fab fa-node-js" aria-hidden="true"></i> Tony</a>
+    <nav id="primary-navigation" class="navbar">
         <ul>
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -13,4 +12,11 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" data-theme-mode="light">
+            <span class="icon icon-sun fas fa-sun" aria-hidden="true"></span>
+            <span class="icon icon-moon fas fa-moon" aria-hidden="true"></span>
+        </button>
+        <button id="menu" class="fas fa-bars" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation menu"></button>
+    </div>
 </header>

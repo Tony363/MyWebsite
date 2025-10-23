@@ -1,3 +1,139 @@
+const THEME_STORAGE_KEY = 'portfolio-theme';
+const colorSchemeQuery = typeof window !== 'undefined' && window.matchMedia
+  ? window.matchMedia('(prefers-color-scheme: dark)')
+  : null;
+let themePreferenceSource = 'system';
+let currentTheme = 'light';
+
+function getStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_STORAGE_KEY);
+  } catch (error) {
+    console.warn('Unable to access theme preference storage.', error);
+    return null;
+  }
+}
+
+function syncThemeToggle() {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) {
+    return;
+  }
+
+  toggle.setAttribute('data-theme-mode', currentTheme);
+  toggle.setAttribute('aria-pressed', currentTheme === 'dark' ? 'true' : 'false');
+  toggle.setAttribute('aria-label', currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  toggle.classList.toggle('is-dark', currentTheme === 'dark');
+}
+
+function applyTheme(theme, options = {}) {
+  const { persist = true, syncToggle = true } = options;
+  currentTheme = theme === 'dark' ? 'dark' : 'light';
+  const root = document.documentElement;
+
+  root.setAttribute('data-theme', currentTheme);
+  root.style.colorScheme = currentTheme;
+
+  if (persist) {
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
+    } catch (error) {
+      console.warn('Unable to persist theme preference.', error);
+    }
+  }
+
+  if (syncToggle) {
+    syncThemeToggle();
+  }
+}
+
+function handleSystemThemeChange(event) {
+  if (themePreferenceSource === 'user') {
+    return;
+  }
+  const nextTheme = event.matches ? 'dark' : 'light';
+  applyTheme(nextTheme, { persist: false });
+}
+
+function initializeThemeFromPreferences() {
+  const storedTheme = getStoredTheme();
+
+  if (storedTheme === 'dark' || storedTheme === 'light') {
+    themePreferenceSource = 'user';
+    applyTheme(storedTheme, { persist: false, syncToggle: false });
+  } else {
+    themePreferenceSource = 'system';
+    const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
+    applyTheme(prefersDark ? 'dark' : 'light', { persist: false, syncToggle: false });
+  }
+
+  if (colorSchemeQuery) {
+    try {
+      colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
+    } catch (error) {
+      if (typeof colorSchemeQuery.addListener === 'function') {
+        colorSchemeQuery.addListener(handleSystemThemeChange);
+      }
+    }
+  }
+}
+
+function bindThemeToggle() {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) {
+    return;
+  }
+
+  if (toggle.dataset.bound === 'true') {
+    syncThemeToggle();
+    return;
+  }
+
+  toggle.dataset.bound = 'true';
+  toggle.addEventListener('click', () => {
+    themePreferenceSource = 'user';
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme);
+  });
+
+  syncThemeToggle();
+}
+
+function attachMenuHandler() {
+  const menuButton = document.getElementById('menu');
+  const navbar = document.querySelector('.navbar');
+
+  if (!menuButton || !navbar || menuButton.dataset.bound === 'true') {
+    return;
+  }
+
+  const closeNav = () => {
+    navbar.classList.remove('nav-toggle');
+    menuButton.classList.remove('fa-times');
+    menuButton.setAttribute('aria-expanded', 'false');
+  };
+
+  menuButton.dataset.bound = 'true';
+  closeNav();
+  menuButton.addEventListener('click', () => {
+    menuButton.classList.toggle('fa-times');
+    const isOpen = navbar.classList.toggle('nav-toggle');
+    menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  navbar.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNav);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeNav();
+    }
+  });
+}
+
+initializeThemeFromPreferences();
+
 // Email Configuration Validation
 function validateEmailConfiguration() {
     const EXPECTED_EMAIL = 'pysolver33@gmail.com';
@@ -52,10 +188,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     fetch('/partials/header.html')
         .then(res => res.text())
-        .then(html => document.getElementById('header-placeholder').innerHTML = html);
+        .then(html => {
+            const headerPlaceholder = document.getElementById('header-placeholder');
+            if (headerPlaceholder) {
+                headerPlaceholder.innerHTML = html;
+                bindThemeToggle();
+                attachMenuHandler();
+            }
+        })
+        .catch(error => {
+            console.error('Failed to load header partial.', error);
+        });
     fetch('/partials/footer.html')
         .then(res => res.text())
-        .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+        .then(html => {
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            if (footerPlaceholder) {
+                footerPlaceholder.innerHTML = html;
+            }
+        })
+        .catch(error => {
+            console.error('Failed to load footer partial.', error);
+        });
 
     // Dynamic experience timeline
     fetch('/assets/data/experience.json')
@@ -89,14 +243,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function () {
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+    bindThemeToggle();
+    attachMenuHandler();
 
     $(window).on('scroll load', function () {
         $('#menu').removeClass('fa-times');
         $('.navbar').removeClass('nav-toggle');
+        const menuButton = document.getElementById('menu');
+        if (menuButton) {
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
 
         if (window.scrollY > 60) {
             document.querySelector('#scroll-top').classList.add('active');
