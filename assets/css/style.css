@@ -342,6 +342,35 @@ section {
   text-shadow: 0 1px 2px rgba(28, 18, 13, 0.4);
 }
 
+.glitch-text {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.18em;
+  overflow: visible;
+  animation: glitchColor 4s linear infinite;
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-glitch);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  clip-path: inset(0 0 0 0);
+}
+.glitch-text::before {
+  transform: translate3d(-1px, 0, 0);
+  color: #5af1ff;
+  animation: glitchSlice 2.8s steps(6) infinite;
+}
+.glitch-text::after {
+  transform: translate3d(1px, 0, 0);
+  color: #ff6fb7;
+  animation: glitchSlice 2.8s steps(5) infinite reverse;
+}
+
 /* Light section headings - high contrast */
 .about .heading,
 .education .heading,
@@ -635,6 +664,27 @@ header .navbar ul li a:hover {
   animation-duration: 16s;
   animation-delay: -6s;
 }
+.home .hero-ambient__piece--chip {
+  top: 8%;
+  right: 40%;
+  font-size: clamp(2.8rem, 3.4vw, 4.2rem);
+  animation: cyberDrift 22s ease-in-out infinite;
+  opacity: 0.75;
+}
+.home .hero-ambient__piece--code {
+  bottom: 28%;
+  left: 18%;
+  font-size: clamp(2.6rem, 3vw, 3.6rem);
+  animation: neonOrbit 18s ease-in-out infinite;
+  opacity: 0.7;
+}
+.home .hero-ambient__piece--terminal {
+  top: 64%;
+  left: 4%;
+  font-size: clamp(3rem, 3.6vw, 4.6rem);
+  animation: neonOrbit 24s ease-in-out infinite reverse;
+  opacity: 0.68;
+}
 .home .image {
   flex: 1 1 40rem;
   z-index: 10;
@@ -855,6 +905,7 @@ header .navbar ul li a:hover {
 .about .row .image {
   text-align: center;
   flex: 1 1 35rem;
+  position: relative;
 }
 .about .row .image img {
   margin: clamp(1.6rem, 4vw, 2.6rem);
@@ -865,6 +916,17 @@ header .navbar ul li a:hover {
   mix-blend-mode: luminosity;
   transition: 0.3s;
   cursor: pointer;
+}
+.about .row .image::after {
+  content: "";
+  position: absolute;
+  inset: clamp(1rem, 3vw, 1.8rem);
+  border-radius: 2.4rem;
+  background: linear-gradient(180deg, rgba(217, 160, 102, 0) 0%, rgba(217, 160, 102, 0.2) 45%, rgba(17, 10, 6, 0) 100%);
+  mix-blend-mode: screen;
+  opacity: 0.0;
+  animation: scanSweep 8s linear infinite;
+  pointer-events: none;
 }
 .about .row .image img:hover {
   mix-blend-mode: normal;
@@ -978,6 +1040,8 @@ header .navbar ul li a:hover {
   min-height: auto;
   background: linear-gradient(160deg, #2b1912 0%, #120a06 100%);
   padding-bottom: 2.4rem;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Enhanced text contrast for dark sections */
@@ -1003,6 +1067,32 @@ header .navbar ul li a:hover {
   padding: clamp(1.6rem, 3vw, 2.6rem);
   width: min(92%, 980px);
   margin: clamp(1rem, 3vw, 1.6rem) auto 0;
+  position: relative;
+  z-index: 1;
+}
+.skills::before,
+.skills::after {
+  content: "";
+  position: absolute;
+  inset: -15% -30%;
+  pointer-events: none;
+  opacity: 0.25;
+  filter: blur(0.2px);
+}
+.skills::before {
+  background-image:
+    linear-gradient(120deg, rgba(255, 235, 214, 0.08) 0%, rgba(26, 16, 10, 0) 65%),
+    repeating-linear-gradient(90deg, rgba(255, 235, 214, 0.06) 0 2px, transparent 2px 36px);
+  animation: codeDrift 26s linear infinite;
+}
+.skills::after {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(90, 241, 255, 0.05) 0 15px,
+    transparent 15px 30px
+  );
+  mix-blend-mode: screen;
+  animation: codeFall 18s linear infinite;
 }
 .skills .container .row {
   display: grid;
@@ -1169,6 +1259,8 @@ header .navbar ul li a:hover {
 .work {
   /* background: #010124; */
   background: linear-gradient(180deg, #22140c 0%, #0f0804 100%);
+  position: relative;
+  overflow: hidden;
 }
 
 /* High contrast mode for portfolio sections */
@@ -1202,6 +1294,18 @@ header .navbar ul li a:hover {
   position: relative;
   overflow: hidden;
   height: 30rem;
+}
+.work::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 235, 214, 0.12), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(90, 241, 255, 0.08), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(217, 160, 102, 0.05) 0 8px, transparent 8px 16px);
+  opacity: 0.5;
+  animation: circuitDrift 32s linear infinite;
+  pointer-events: none;
 }
 .work .box-container .box img {
   height: 100%;
@@ -1545,6 +1649,8 @@ header .navbar ul li a:hover {
 .contact {
   background: var(--theme-surface-alt);
   min-height: 60vh;
+  position: relative;
+  overflow: hidden;
 }
 .contact .container {
   max-width: 1050px;
@@ -1553,6 +1659,35 @@ header .navbar ul li a:hover {
   border-radius: 2.2rem;
   margin: clamp(1.2rem, 4vw, 2.4rem) auto;
   box-shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
+  position: relative;
+  z-index: 1;
+}
+.contact::before,
+.contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.contact::before {
+  background: linear-gradient(180deg, rgba(255, 201, 134, 0) 0%, rgba(255, 201, 134, 0.18) 45%, rgba(255, 201, 134, 0) 90%);
+  mix-blend-mode: screen;
+  transform: translateY(-100%);
+  animation: scanSweep 10s linear infinite;
+}
+.contact::after {
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(217, 160, 102, 0.05) 0 1px,
+      transparent 1px 32px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(217, 160, 102, 0.04) 0 1px,
+      transparent 1px 24px
+    );
+  opacity: 0.18;
+  animation: gridPulse 16s ease-in-out infinite;
 }
 .contact .container .content {
   display: grid;
