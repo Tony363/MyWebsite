@@ -130,6 +130,12 @@ section {
                    radial-gradient(at 72% 22%, rgba(111, 50, 16, 0.32) 0, transparent 58%),
                    radial-gradient(at 50% 76%, rgba(66, 43, 27, 0.35) 0, transparent 65%);
   --gradient-glow: radial-gradient(circle at center, rgba(255, 240, 220, 0.85) 0, transparent 70%);
+
+  --section-radius: clamp(24px, 5vw, 44px);
+  --section-padding-y: clamp(2.4rem, 5vw, 4.6rem);
+  --section-padding-x: clamp(2rem, 6vw, 5.5rem);
+  --section-gap: clamp(2.4rem, 5vw, 4rem);
+  --section-shadow: 0 24px 60px rgba(28, 18, 13, 0.08);
 }
 
 /* Apply improved contrast to existing classes */
@@ -298,14 +304,18 @@ header .theme-toggle:focus-visible {
 }
 section {
   min-height: auto;
-  padding: 2rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: 1180px;
+  margin: var(--section-gap) auto;
+  border-radius: var(--section-radius);
+  position: relative;
+  box-shadow: var(--section-shadow);
+  background-clip: padding-box;
 }
 
 @media (max-width: 480px) {
   section {
-    padding: 1.25rem 5%;
+    padding: clamp(1.6rem, 8vw, 2.4rem) 1.8rem;
   }
 }
 
@@ -313,7 +323,10 @@ section {
 .home {
   min-height: 100vh;
   max-width: 100%;
-  padding: 2rem 5%;
+  padding: clamp(4rem, 8vw, 7rem) 5%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 .heading {
   font-size: 3.5rem;
@@ -321,7 +334,7 @@ section {
   font-weight: 800;
   text-align: center;
   text-shadow: 0 1px 2px rgba(28, 18, 13, 0.55);
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   letter-spacing: 0.02em;
 }
 .heading span {
@@ -835,19 +848,19 @@ header .navbar ul li a:hover {
 .about .row {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: clamp(1.6rem, 4vw, 2.4rem);
   flex-wrap: wrap;
-  padding: 4rem;
+  padding: clamp(2.4rem, 4vw, 3.2rem);
 }
 .about .row .image {
   text-align: center;
   flex: 1 1 35rem;
 }
 .about .row .image img {
-  margin: 4rem;
+  margin: clamp(1.6rem, 4vw, 2.6rem);
   width: 30rem;
   height: auto;
-  border-radius: 5%;
+  border-radius: 2.4rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   mix-blend-mode: luminosity;
   transition: 0.3s;
@@ -858,7 +871,7 @@ header .navbar ul li a:hover {
 }
 .about .row .content {
   flex: 1 1 45rem;
-  padding: 3rem;
+  padding: clamp(1.8rem, 4vw, 2.6rem);
 }
 .about .row .content h3 {
   color: var(--theme-text);
@@ -964,7 +977,7 @@ header .navbar ul li a:hover {
 .skills {
   min-height: auto;
   background: linear-gradient(160deg, #2b1912 0%, #120a06 100%);
-  padding-bottom: 3rem;
+  padding-bottom: 2.4rem;
 }
 
 /* Enhanced text contrast for dark sections */
@@ -986,11 +999,10 @@ header .navbar ul li a:hover {
 .skills .container {
   background: rgba(28, 18, 13, 0.55);
   color: var(--earth-cream);
-  border-radius: 1rem;
-  padding: 2rem;
-  width: 90%;
-  margin: auto;
-  margin-top: 2rem;
+  border-radius: 1.6rem;
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+  width: min(92%, 980px);
+  margin: clamp(1rem, 3vw, 1.6rem) auto 0;
 }
 .skills .container .row {
   display: grid;
@@ -1068,19 +1080,19 @@ header .navbar ul li a:hover {
 .education .box-container .box {
   display: flex;
   flex-direction: row;
-  width: 80%;
-  border-radius: 0.5rem;
-  box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: min(88%, 900px);
+  border-radius: 1.6rem;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
   text-align: center;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   overflow: hidden;
   transition: 0.3s;
   background: rgb(252, 252, 252);
 }
 .education .box-container .box:hover {
-  transform: scale(1.03);
-  box-shadow: 1rem 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
 }
 .education .box-container .box .image {
   flex: 1 1 20rem;
@@ -1180,13 +1192,13 @@ header .navbar ul li a:hover {
 .work .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem;
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+  margin: clamp(1rem, 3vw, 1.6rem);
 }
 .work .box-container .box {
   flex: 1 1 30rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1.6rem;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
   height: 30rem;
@@ -1538,16 +1550,16 @@ header .navbar ul li a:hover {
   max-width: 1050px;
   width: 100%;
   background: var(--theme-surface);
-  border-radius: 1.5rem;
-  margin: 2rem 5rem;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 2.2rem;
+  margin: clamp(1.2rem, 4vw, 2.4rem) auto;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
 }
 .contact .container .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 3rem;
-  padding: 2.5rem 2rem;
+  gap: clamp(2rem, 4vw, 2.6rem);
+  padding: clamp(2rem, 4vw, 2.8rem) clamp(1.6rem, 4vw, 2.4rem);
 }
 .contact .content .image-box {
   width: 100%;
@@ -2088,7 +2100,8 @@ form .button-area {
     padding-right: 0;
   }
   section {
-    padding: 2rem;
+    padding: 1.6rem;
+    margin: 1.6rem auto;
   }
 }
 /* common media queries ends*/
