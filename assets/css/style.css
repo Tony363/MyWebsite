@@ -157,7 +157,7 @@ section {
     will-change: auto;
   }
 
-  .home::before,
+  /* .home::before removed - no longer has animation */
   .home .hero-ambient__glow,
   .home .hero-ambient__piece {
     animation: none !important;
@@ -535,9 +535,9 @@ header .navbar ul li a:hover {
       transparent
     );
   background-size: 140px 140px;
-  mix-blend-mode: soft-light;
-  opacity: 0.2;
-  animation: checkeredParallax 22s linear infinite;
+  /* mix-blend-mode: soft-light; -- Removed to neutralize pattern */
+  opacity: 0; /* Changed from 0.2 to 0 to hide the pattern completely */
+  /* animation: checkeredParallax 22s linear infinite; -- Removed animation */
 }
 .home .content {
   flex: 1 1 40rem;

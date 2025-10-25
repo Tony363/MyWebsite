@@ -1,0 +1,708 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3] [cursor=pointer]: Schedule time with me
+  - link "Skip to main content" [ref=e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e5]:
+    - link "Tony" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e7] [cursor=pointer]: 
+      - text: Tony
+    - navigation [ref=e8]:
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - link "Home" [ref=e11] [cursor=pointer]:
+            - /url: "#home"
+        - listitem [ref=e12]:
+          - link "About" [ref=e13] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e14]:
+          - link "Skills" [ref=e15] [cursor=pointer]:
+            - /url: "#skills"
+        - listitem [ref=e16]:
+          - link "Education" [ref=e17] [cursor=pointer]:
+            - /url: "#education"
+        - listitem [ref=e18]:
+          - link "Work" [ref=e19] [cursor=pointer]:
+            - /url: "#work"
+        - listitem [ref=e20]:
+          - link "Experience" [ref=e21] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e22]:
+          - link "Contact" [ref=e23] [cursor=pointer]:
+            - /url: "#contact"
+    - generic [ref=e24]:
+      - button "Schedule a call" [active] [ref=e25] [cursor=pointer]:
+        - generic [ref=e26] [cursor=pointer]: 
+        - generic [ref=e27] [cursor=pointer]: Schedule Call
+      - button "Switch to dark mode" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29] [cursor=pointer]: 
+        - generic [ref=e30] [cursor=pointer]: 
+      - text: 
+  - main [ref=e31]:
+    - region "Hi There, I'm TonySiu" [ref=e32]:
+      - generic:
+        - generic:
+          - generic:
+            - generic: 
+          - generic:
+            - generic: 
+          - generic:
+            - generic: 
+      - generic [ref=e35]:
+        - heading "Hi There, I'm TonySiu" [level=1] [ref=e36]:
+          - text: Hi There,
+          - text: I'm Tony
+          - generic [ref=e37]: Siu
+        - paragraph [ref=e38]:
+          - text: I am all about
+          - generic [ref=e39]: Data Engineerin
+          - generic [ref=e40]: "|"
+        - generic [ref=e41]:
+          - generic [ref=e42]: 
+          - generic [ref=e43]: Chess-Born Strategy
+        - paragraph [ref=e44]: Earthy motion, soulful gradients, and deliberate moves that feel like a grandmaster's opening.
+        - link "About Me " [ref=e45] [cursor=pointer]:
+          - /url: "#about"
+          - generic [ref=e46] [cursor=pointer]: About Me
+          - generic [ref=e47] [cursor=pointer]: 
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - link "LinkedIn" [ref=e51] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/pysolver/
+              - generic [ref=e52] [cursor=pointer]: 
+          - listitem [ref=e53]:
+            - link "GitHub" [ref=e54] [cursor=pointer]:
+              - /url: https://github.com/Tony363
+              - generic [ref=e55] [cursor=pointer]: 
+          - listitem [ref=e56]:
+            - link "Twitter" [ref=e57] [cursor=pointer]:
+              - /url: https://x.com/Tony23152644
+              - generic [ref=e58] [cursor=pointer]: 
+      - img "Tony Siu working as a computer programmer - professional headshot" [ref=e60] [cursor=pointer]
+    - generic [ref=e62]:
+      - heading "About Me" [level=2] [ref=e63]:
+        - generic [ref=e64]: 
+        - text: About
+        - generic [ref=e65]: Me
+      - generic [ref=e66]:
+        - img "Tony Siu professional portrait - AI Engineer and Researcher" [ref=e68] [cursor=pointer]
+        - generic [ref=e69]:
+          - heading "I'm Tony" [level=3] [ref=e70]
+          - generic [ref=e71]: AI Engineer & Researcher
+          - paragraph [ref=e72]: I mainly focus my work on Multi-Modal Generative AI and Statistical Optimization research. I led Google University Research to enhance the Computer Vision testing suite for the Pixel mobile device. I am currently conducting statistical research on inverting confidence intervals for systems of multivariate higher order linear combinations. The application of this project is to develop an algorithm that simultaneously finds solutions for complex calibration systems that has multiple input factors. An example of this is the Mars Rover heat shield calibration upon atmospheric penetration.
+          - generic [ref=e74] [cursor=pointer]:
+            - paragraph [ref=e75] [cursor=pointer]:
+              - generic [ref=e76] [cursor=pointer]: "email :"
+              - link "pysolver33@gmail.com" [ref=e77] [cursor=pointer]:
+                - /url: mailto:pysolver33@gmail.com
+            - paragraph [ref=e78] [cursor=pointer]:
+              - generic [ref=e79] [cursor=pointer]: "place :"
+              - text: Philadelphia, PA
+          - link "Resume " [ref=e81] [cursor=pointer]:
+            - /url: https://drive.google.com/file/d/116AOY9gdQSEvq_2ClDNF00XB5ZEUWbKf/view?usp=sharing
+            - generic [ref=e82] [cursor=pointer]: Resume
+            - generic [ref=e83] [cursor=pointer]: 
+    - generic [ref=e84]:
+      - heading "Skills & Abilities" [level=2] [ref=e85]:
+        - generic [ref=e86]: 
+        - text: Skills &
+        - generic [ref=e87]: Abilities
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - button "🎯 All" [ref=e90] [cursor=pointer]:
+            - generic [ref=e91] [cursor=pointer]: 🎯
+            - text: All
+          - button "🤖 AI/ML" [ref=e92] [cursor=pointer]:
+            - generic [ref=e93] [cursor=pointer]: 🤖
+            - text: AI/ML
+          - button "💻 Languages" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95] [cursor=pointer]: 💻
+            - text: Languages
+          - button "🛠️ Tools" [ref=e96] [cursor=pointer]:
+            - generic [ref=e97] [cursor=pointer]: 🛠️
+            - text: Tools
+          - button "📊 Data" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99] [cursor=pointer]: 📊
+            - text: Data
+        - generic [ref=e100]:
+          - generic [ref=e102]:
+            - img "skill" [ref=e103]
+            - generic [ref=e104]: C
+          - generic [ref=e106]:
+            - img "skill" [ref=e107]
+            - generic [ref=e108]: C++
+          - generic [ref=e110]:
+            - img "skill" [ref=e111]
+            - generic [ref=e112]: Python
+          - generic [ref=e114]:
+            - img "skill" [ref=e115]
+            - generic [ref=e116]: Java
+          - generic [ref=e118]:
+            - img "skill" [ref=e119]
+            - generic [ref=e120]: PHP
+          - generic [ref=e122]:
+            - img "skill" [ref=e123]
+            - generic [ref=e124]: JavaScript
+          - generic [ref=e126]:
+            - img "skill" [ref=e127]
+            - generic [ref=e128]: ExpressJS
+          - generic [ref=e130]:
+            - img "skill" [ref=e131]
+            - generic [ref=e132]: NodeJS
+          - generic [ref=e134]:
+            - img "skill" [ref=e135]
+            - generic [ref=e136]: Typescript
+          - generic [ref=e138]:
+            - img "skill" [ref=e139]
+            - generic [ref=e140]: D3 JS
+          - generic [ref=e142]:
+            - img "skill" [ref=e143]
+            - generic [ref=e144]: Bootstrap
+          - generic [ref=e146]:
+            - img "skill" [ref=e147]
+            - generic [ref=e148]: CSS
+          - generic [ref=e150]:
+            - img "skill" [ref=e151]
+            - generic [ref=e152]: HTML5
+          - generic [ref=e154]:
+            - img "skill" [ref=e155]
+            - generic [ref=e156]: MongoDB
+          - generic [ref=e158]:
+            - img "skill" [ref=e159]
+            - generic [ref=e160]: MySQL
+          - generic [ref=e162]:
+            - img "skill" [ref=e163]
+            - generic [ref=e164]: PostgreSQL
+          - generic [ref=e166]:
+            - img "skill" [ref=e167]
+            - generic [ref=e168]: AWS
+          - generic [ref=e170]:
+            - img "skill" [ref=e171]
+            - generic [ref=e172]: GCP
+          - generic [ref=e174]:
+            - img "skill" [ref=e175]
+            - generic [ref=e176]: Docker
+          - generic [ref=e178]:
+            - img "skill" [ref=e179]
+            - generic [ref=e180]: Django
+          - generic [ref=e182]:
+            - img "skill" [ref=e183]
+            - generic [ref=e184]: Flask
+          - generic [ref=e186]:
+            - img "skill" [ref=e187]
+            - generic [ref=e188]: FastAPI
+          - generic [ref=e190]:
+            - img "skill" [ref=e191]
+            - generic [ref=e192]: Heroku
+          - generic [ref=e194]:
+            - img "skill" [ref=e195]
+            - generic [ref=e196]: Vercel
+          - generic [ref=e198]:
+            - img "skill" [ref=e199]
+            - generic [ref=e200]: Postman
+          - generic [ref=e202]:
+            - img "skill" [ref=e203]
+            - generic [ref=e204]: Git VCS
+          - generic [ref=e206]:
+            - img "skill" [ref=e207]
+            - generic [ref=e208]: GitHub
+          - generic [ref=e210]:
+            - img "skill" [ref=e211]
+            - generic [ref=e212]: Pytorch
+          - generic [ref=e214]:
+            - img "skill" [ref=e215]
+            - generic [ref=e216]: Tensorflow
+          - generic [ref=e218]:
+            - img "skill" [ref=e219]
+            - generic [ref=e220]: Keras
+          - generic [ref=e222]:
+            - img "skill" [ref=e223]
+            - generic [ref=e224]: Scikit-learn
+          - generic [ref=e226]:
+            - img "skill" [ref=e227]
+            - generic [ref=e228]: OpenCV
+          - generic [ref=e230]:
+            - img "skill" [ref=e231]
+            - generic [ref=e232]: Pandas
+          - generic [ref=e234]:
+            - img "skill" [ref=e235]
+            - generic [ref=e236]: Numpy
+          - generic [ref=e238]:
+            - img "skill" [ref=e239]
+            - generic [ref=e240]: Sympy
+          - generic [ref=e242]:
+            - img "skill" [ref=e243]
+            - generic [ref=e244]: Optuna
+          - generic [ref=e246]:
+            - img "skill" [ref=e247]
+            - generic [ref=e248]: Hyper Opt
+    - generic [ref=e249]:
+      - heading "My Education" [level=2] [ref=e250]:
+        - generic [ref=e251]: 
+        - text: My
+        - generic [ref=e252]: Education
+      - generic [ref=e253]:
+        - generic [ref=e254] [cursor=pointer]:
+          - img "Temple University campus building - where Tony completed Masters in Computational Data Science" [ref=e256] [cursor=pointer]
+          - generic [ref=e257] [cursor=pointer]:
+            - heading "Masters & Bachelors in Computational Data Science" [level=3] [ref=e258] [cursor=pointer]
+            - paragraph [ref=e259] [cursor=pointer]: Temple University | 3.87 GPA
+            - heading "2022-2025" [level=4] [ref=e260] [cursor=pointer]
+        - generic [ref=e261] [cursor=pointer]:
+          - img "TamKang University logo - where Tony completed Bachelors in Computer Science" [ref=e263] [cursor=pointer]
+          - generic [ref=e264] [cursor=pointer]:
+            - heading "Bachelors in Computer Science & Information Engineering" [level=3] [ref=e265] [cursor=pointer]
+            - paragraph [ref=e266] [cursor=pointer]: TamKang University | 4.0 GPA
+            - heading "2020-2023" [level=4] [ref=e267] [cursor=pointer]
+        - generic [ref=e268] [cursor=pointer]:
+          - img "National Taiwan Normal University logo - Tony's educational background" [ref=e270] [cursor=pointer]
+          - generic [ref=e271] [cursor=pointer]:
+            - heading "Bachelors in Computer Science & Information Engineering" [level=3] [ref=e272] [cursor=pointer]
+            - paragraph [ref=e273] [cursor=pointer]: National Taiwan Normal University | 4.3 GPA
+            - heading "2020-2020" [level=4] [ref=e274] [cursor=pointer]
+    - generic [ref=e275]:
+      - heading "Projects Made" [level=2] [ref=e276]:
+        - generic [ref=e277]: 
+        - text: Projects
+        - generic [ref=e278]: Made
+      - generic [ref=e279]:
+        - generic [ref=e280] [cursor=pointer]:
+          - img "project" [ref=e281] [cursor=pointer]
+          - generic [ref=e282] [cursor=pointer]:
+            - heading "Pixel Device CV Testing'" [level=3] [ref=e284] [cursor=pointer]
+            - generic [ref=e285] [cursor=pointer]:
+              - paragraph [ref=e286] [cursor=pointer]: Google University Research program for CV quality detection and flicker detection
+              - generic [ref=e287] [cursor=pointer]:
+                - link " View" [ref=e288] [cursor=pointer]:
+                  - /url: https://github.com/hc07180011/testing-cv
+                  - generic [ref=e289] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e290] [cursor=pointer]:
+                  - /url: https://github.com/hc07180011/testing-cv
+                  - text: Code
+                  - generic [ref=e291] [cursor=pointer]: 
+        - generic [ref=e292] [cursor=pointer]:
+          - img "project" [ref=e293] [cursor=pointer]
+          - generic [ref=e294] [cursor=pointer]:
+            - heading "HackHarvard Voice Coding" [level=3] [ref=e296] [cursor=pointer]
+            - generic [ref=e297] [cursor=pointer]:
+              - paragraph [ref=e298] [cursor=pointer]: HackHarvard Hackathon Project to go from Audio to Code and Visualization
+              - generic [ref=e299] [cursor=pointer]:
+                - link " View" [ref=e300] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/HackHarvard_voice_coding
+                  - generic [ref=e301] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e302] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/HackHarvard_voice_coding
+                  - text: Code
+                  - generic [ref=e303] [cursor=pointer]: 
+        - generic [ref=e304] [cursor=pointer]:
+          - img "project" [ref=e305] [cursor=pointer]
+          - generic [ref=e306] [cursor=pointer]:
+            - heading "Edge Sports Video Analytics" [level=3] [ref=e308] [cursor=pointer]
+            - generic [ref=e309] [cursor=pointer]:
+              - paragraph [ref=e310] [cursor=pointer]: Reduced fps stitching speed of 2x 3840X2160 pixels, 170 degree fisheye cameras from 6 seconds to 0.2 seconds on the Nvidia Jetson Xavier
+              - generic [ref=e311] [cursor=pointer]:
+                - link " View" [ref=e312] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/opencvStitch
+                  - generic [ref=e313] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e314] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/Teamplay_Yolov3
+                  - text: Code
+                  - generic [ref=e315] [cursor=pointer]: 
+        - generic [ref=e316] [cursor=pointer]:
+          - img "project" [ref=e317] [cursor=pointer]
+          - generic [ref=e318] [cursor=pointer]:
+            - heading "LAMP Stack Blog" [level=3] [ref=e320] [cursor=pointer]
+            - generic [ref=e321] [cursor=pointer]:
+              - paragraph [ref=e322] [cursor=pointer]: The Easy Blog site project is a simple PHP, CSS, and JavaScript project.
+              - generic [ref=e323] [cursor=pointer]:
+                - link " View" [ref=e324] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/opensource-final-project
+                  - generic [ref=e325] [cursor=pointer]: 
+                  - text: View
+                - link "Code " [ref=e326] [cursor=pointer]:
+                  - /url: https://github.com/Tony363/opensource-final-project
+                  - text: Code
+                  - generic [ref=e327] [cursor=pointer]: 
+      - link "View All " [ref=e329] [cursor=pointer]:
+        - /url: /projects
+        - generic [ref=e330] [cursor=pointer]: View All
+        - generic [ref=e331] [cursor=pointer]: 
+    - generic [ref=e332]:
+      - heading "Experience" [level=2] [ref=e333]:
+        - generic [ref=e334]: 
+        - text: Experience
+      - generic [ref=e335]:
+        - generic [ref=e336]:
+          - generic [ref=e337]:
+            - heading "TryVariant AI TryVariant AI" [level=2] [ref=e339]:
+              - img "TryVariant AI" [ref=e340]
+              - text: TryVariant AI
+            - generic [ref=e341]:
+              - heading "Founding Computer Vision & Animation Engineer" [level=3] [ref=e342]
+              - paragraph [ref=e343]: April 2025 - present
+          - text: 
+        - generic [ref=e344]:
+          - generic [ref=e345]:
+            - heading "A-Pro Solutions A-Pro Solutions" [level=2] [ref=e347]:
+              - img "A-Pro Solutions" [ref=e348]
+              - text: A-Pro Solutions
+            - generic [ref=e349]:
+              - heading "Generative AI Researcher & Engineer" [level=3] [ref=e350]
+              - paragraph [ref=e351]: Feb 2025 - Jul 2025
+          - text: 
+        - generic [ref=e352]:
+          - generic [ref=e353]:
+            - heading "Temple University Temple University" [level=2] [ref=e355]:
+              - img "Temple University" [ref=e356]
+              - text: Temple University
+            - generic [ref=e357]:
+              - heading "Multi-Modal Generative AI Researcher" [level=3] [ref=e358]
+              - paragraph [ref=e359]: May 2023 - April 2025
+          - text: 
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - heading "Temple University Temple University" [level=2] [ref=e363]:
+              - img "Temple University" [ref=e364]
+              - text: Temple University
+            - generic [ref=e365]:
+              - heading "Financial Analytics Engineer" [level=3] [ref=e366]
+              - paragraph [ref=e367]: Jul 2023 - Jan 2025
+          - text: 
+        - generic [ref=e368]:
+          - generic [ref=e369]:
+            - heading "SYMETRI USA - Part of Addnode SYMETRI USA - Part of Addnode" [level=2] [ref=e371]:
+              - img "SYMETRI USA - Part of Addnode" [ref=e372]
+              - text: SYMETRI USA - Part of Addnode
+            - generic [ref=e373]:
+              - heading "EAM Intern" [level=3] [ref=e374]
+              - paragraph [ref=e375]: Jun 2024 - Sep 2024
+          - text: 
+        - generic [ref=e376]:
+          - generic [ref=e377]:
+            - heading "Google Research Google Research" [level=2] [ref=e379]:
+              - img "Google Research" [ref=e380]
+              - text: Google Research
+            - generic [ref=e381]:
+              - heading "Pixel team Computer Vision Research Lead" [level=3] [ref=e382]
+              - paragraph [ref=e383]: Jan 2022 - May 2023
+          - text: 
+        - generic [ref=e384]:
+          - generic [ref=e385]:
+            - heading "Caspian Pipeline Consortium Caspian Pipeline Consortium" [level=2] [ref=e387]:
+              - img "Caspian Pipeline Consortium" [ref=e388]
+              - text: Caspian Pipeline Consortium
+            - generic [ref=e389]:
+              - heading "Environmental Science Data Analyst" [level=3] [ref=e390]
+              - paragraph [ref=e391]: Oct 2021 - Apr 2022
+          - text: 
+        - generic [ref=e392]:
+          - generic [ref=e393]:
+            - heading "Smart Contract Research Forum Smart Contract Research Forum" [level=2] [ref=e395]:
+              - img "Smart Contract Research Forum" [ref=e396]
+              - text: Smart Contract Research Forum
+            - generic [ref=e397]:
+              - heading "Research Associate" [level=3] [ref=e398]
+              - paragraph [ref=e399]: Apr 2021 - May 2021
+          - text: 
+        - generic [ref=e400]:
+          - generic [ref=e401]:
+            - heading "FiO.one FiO.one" [level=2] [ref=e403]:
+              - img "FiO.one" [ref=e404]
+              - text: FiO.one
+            - generic [ref=e405]:
+              - heading "R&D Analytics Engineer" [level=3] [ref=e406]
+              - paragraph [ref=e407]: Jul 2021 - Sep 2021
+          - text: 
+        - generic [ref=e408]:
+          - generic [ref=e409]:
+            - heading "Wyzant Wyzant" [level=2] [ref=e411]:
+              - img "Wyzant" [ref=e412]
+              - text: Wyzant
+            - generic [ref=e413]:
+              - heading "Applied Statistics Engineer Consultant" [level=3] [ref=e414]
+              - paragraph [ref=e415]: Aug 2019 - Jan 2021
+          - text: 
+        - generic [ref=e416]:
+          - generic [ref=e417]:
+            - heading "Taiwan Tech Arena Taiwan Tech Arena" [level=2] [ref=e419]:
+              - img "Taiwan Tech Arena" [ref=e420]
+              - text: Taiwan Tech Arena
+            - generic [ref=e421]:
+              - heading "AI Specialist Engineer" [level=3] [ref=e422]
+              - paragraph [ref=e423]: May 2020 - Oct 2020
+          - text: 
+      - link " Back to Home" [ref=e425] [cursor=pointer]:
+        - /url: /#experience
+        - generic [ref=e426] [cursor=pointer]: 
+        - generic [ref=e427] [cursor=pointer]: Back to Home
+    - generic [ref=e428]:
+      - heading "Get in Touch" [level=2] [ref=e429]:
+        - generic [ref=e430]: 
+        - text: Get in
+        - generic [ref=e431]: Touch
+      - generic [ref=e433]:
+        - generic [ref=e434]:
+          - img "Contact illustration showing person at computer for getting in touch with Tony Siu"
+        - generic [ref=e435]:
+          - generic [ref=e436]:
+            - generic [ref=e437]:
+              - textbox "Name" [ref=e438]
+              - generic: Name
+              - generic: 
+            - generic [ref=e439]:
+              - textbox "Email" [ref=e440]
+              - generic: Email
+              - generic: 
+            - generic [ref=e441]:
+              - textbox "Phone (Optional)" [ref=e442]
+              - generic: Phone (Optional)
+              - generic: 
+            - generic [ref=e443]:
+              - textbox "Message" [ref=e444]
+              - generic: Message
+              - generic: 
+          - button "" [ref=e446] [cursor=pointer]:
+            - generic: 
+  - generic [ref=e448]:
+    - generic [ref=e449]:
+      - generic [ref=e450]:
+        - heading "Tony's Portfolio" [level=3] [ref=e451]
+        - paragraph [ref=e452]:
+          - text: Thank you for visiting my personal portfolio website. Connect with me over socials.
+          - text: Keep Rising 🚀. Connect with me over live chat!
+      - generic [ref=e453]:
+        - heading "quick links" [level=3] [ref=e454]
+        - link " home" [ref=e455] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e456] [cursor=pointer]: 
+          - text: home
+        - link " about" [ref=e457] [cursor=pointer]:
+          - /url: "#about"
+          - generic [ref=e458] [cursor=pointer]: 
+          - text: about
+        - link " skills" [ref=e459] [cursor=pointer]:
+          - /url: "#skills"
+          - generic [ref=e460] [cursor=pointer]: 
+          - text: skills
+        - link " education" [ref=e461] [cursor=pointer]:
+          - /url: "#education"
+          - generic [ref=e462] [cursor=pointer]: 
+          - text: education
+        - link " work" [ref=e463] [cursor=pointer]:
+          - /url: "#work"
+          - generic [ref=e464] [cursor=pointer]: 
+          - text: work
+        - link " experience" [ref=e465] [cursor=pointer]:
+          - /url: "#experience"
+          - generic [ref=e466] [cursor=pointer]: 
+          - text: experience
+      - generic [ref=e467]:
+        - heading "contact info" [level=3] [ref=e468]
+        - paragraph [ref=e469]:
+          - generic [ref=e470]: 
+          - text: +1 267-301-1691
+        - paragraph [ref=e471]:
+          - generic [ref=e472]: 
+          - text: pysolver33@gmail.com
+        - paragraph [ref=e473]:
+          - generic [ref=e474]: 
+          - text: Philadelphia, PA
+        - generic [ref=e475]:
+          - link "" [ref=e476] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/pysolver/
+          - link "" [ref=e477] [cursor=pointer]:
+            - /url: https://github.com/Tony363
+          - link "" [ref=e478] [cursor=pointer]:
+            - /url: mailto:pysolver33@gmail.com
+          - link "" [ref=e479] [cursor=pointer]:
+            - /url: https://x.com/pysolver33
+    - heading "Designed with  by Tony Siu" [level=1] [ref=e480]:
+      - text: Designed with
+      - generic [ref=e481]: 
+      - text: by
+      - link "Tony Siu" [ref=e482] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/pysolver
+  - link "ScrollTop" [ref=e483] [cursor=pointer]:
+    - /url: "#home"
+    - text: 
+  - iframe [ref=e484]:
+    - button "Chat widget" [ref=f1e4] [cursor=pointer]:
+      - img "Opens Chat This icon Opens the chat window." [ref=f1e7] [cursor=pointer]
+  - iframe [ref=e492]:
+    - generic [active] [ref=f2e1]:
+      - generic [ref=f2e6]:
+        - link "powered by Calendly":
+          - /url: https://calendly.com/?utm_campaign=sign_up&utm_medium=badge&utm_source=invitee
+          - generic [ref=f2e7] [cursor=pointer]:
+            - generic [ref=f2e8] [cursor=pointer]: powered by
+            - generic [ref=f2e9] [cursor=pointer]: Calendly
+        - generic [ref=f2e11]:
+          - generic [ref=f2e17]:
+            - generic [ref=f2e18]:
+              - img "Tony Siu" [ref=f2e19]
+              - generic [ref=f2e20]: Tony Siu
+              - heading "30 Minute Meeting" [level=1] [ref=f2e21]
+            - generic [ref=f2e23]:
+              - generic [ref=f2e24]:
+                - img [ref=f2e27]
+                - text: 30 min
+              - generic [ref=f2e30]:
+                - img [ref=f2e34]
+                - text: Web conferencing details provided upon confirmation.
+          - button "Cookie settings" [ref=f2e37] [cursor=pointer]:
+            - generic [ref=f2e38] [cursor=pointer]: Cookie settings
+        - generic [ref=f2e40]:
+          - heading "Select a Date & Time" [level=2] [ref=f2e41]
+          - generic [ref=f2e44]:
+            - generic [ref=f2e45]:
+              - generic [ref=f2e46]:
+                - generic [ref=f2e47]:
+                  - button "Go to previous month" [disabled]:
+                    - generic:
+                      - img
+                - generic [ref=f2e48]: October 2025
+                - button "Go to next month" [ref=f2e50] [cursor=pointer]:
+                  - img [ref=f2e52] [cursor=pointer]
+                - status [ref=f2e54]: October is now displayed
+              - generic [ref=f2e55]:
+                - table "Select a Day" [ref=f2e56]:
+                  - rowgroup [ref=f2e57]:
+                    - row "Sun Mon Tue Wed Thu Fri Sat" [ref=f2e58]:
+                      - cell "Sun" [ref=f2e59]
+                      - cell "Mon" [ref=f2e60]
+                      - cell "Tue" [ref=f2e61]
+                      - cell "Wed" [ref=f2e62]
+                      - cell "Thu" [ref=f2e63]
+                      - cell "Fri" [ref=f2e64]
+                      - cell "Sat" [ref=f2e65]
+                  - rowgroup [ref=f2e66]:
+                    - row "Wednesday, October 1 - No times available Thursday, October 2 - No times available Friday, October 3 - No times available Saturday, October 4 - No times available" [ref=f2e67]:
+                      - gridcell [ref=f2e68]
+                      - gridcell [ref=f2e69]
+                      - gridcell [ref=f2e70]
+                      - gridcell "Wednesday, October 1 - No times available" [ref=f2e71]:
+                        - button "Wednesday, October 1 - No times available" [disabled]:
+                          - generic: "1"
+                      - gridcell "Thursday, October 2 - No times available" [ref=f2e72]:
+                        - button "Thursday, October 2 - No times available" [disabled]:
+                          - generic: "2"
+                      - gridcell "Friday, October 3 - No times available" [ref=f2e73]:
+                        - button "Friday, October 3 - No times available" [disabled]:
+                          - generic: "3"
+                      - gridcell "Saturday, October 4 - No times available" [ref=f2e74]:
+                        - button "Saturday, October 4 - No times available" [disabled]:
+                          - generic: "4"
+                    - row "Sunday, October 5 - No times available Monday, October 6 - No times available Tuesday, October 7 - No times available Wednesday, October 8 - No times available Thursday, October 9 - No times available Friday, October 10 - No times available Saturday, October 11 - No times available" [ref=f2e75]:
+                      - gridcell "Sunday, October 5 - No times available" [ref=f2e76]:
+                        - button "Sunday, October 5 - No times available" [disabled]:
+                          - generic: "5"
+                      - gridcell "Monday, October 6 - No times available" [ref=f2e77]:
+                        - button "Monday, October 6 - No times available" [disabled]:
+                          - generic: "6"
+                      - gridcell "Tuesday, October 7 - No times available" [ref=f2e78]:
+                        - button "Tuesday, October 7 - No times available" [disabled]:
+                          - generic: "7"
+                      - gridcell "Wednesday, October 8 - No times available" [ref=f2e79]:
+                        - button "Wednesday, October 8 - No times available" [disabled]:
+                          - generic: "8"
+                      - gridcell "Thursday, October 9 - No times available" [ref=f2e80]:
+                        - button "Thursday, October 9 - No times available" [disabled]:
+                          - generic: "9"
+                      - gridcell "Friday, October 10 - No times available" [ref=f2e81]:
+                        - button "Friday, October 10 - No times available" [disabled]:
+                          - generic: "10"
+                      - gridcell "Saturday, October 11 - No times available" [ref=f2e82]:
+                        - button "Saturday, October 11 - No times available" [disabled]:
+                          - generic: "11"
+                    - row "Sunday, October 12 - No times available Monday, October 13 - No times available Tuesday, October 14 - No times available Wednesday, October 15 - No times available Thursday, October 16 - No times available Friday, October 17 - No times available Saturday, October 18 - No times available" [ref=f2e83]:
+                      - gridcell "Sunday, October 12 - No times available" [ref=f2e84]:
+                        - button "Sunday, October 12 - No times available" [disabled]:
+                          - generic: "12"
+                      - gridcell "Monday, October 13 - No times available" [ref=f2e85]:
+                        - button "Monday, October 13 - No times available" [disabled]:
+                          - generic: "13"
+                      - gridcell "Tuesday, October 14 - No times available" [ref=f2e86]:
+                        - button "Tuesday, October 14 - No times available" [disabled]:
+                          - generic: "14"
+                      - gridcell "Wednesday, October 15 - No times available" [ref=f2e87]:
+                        - button "Wednesday, October 15 - No times available" [disabled]:
+                          - generic: "15"
+                      - gridcell "Thursday, October 16 - No times available" [ref=f2e88]:
+                        - button "Thursday, October 16 - No times available" [disabled]:
+                          - generic: "16"
+                      - gridcell "Friday, October 17 - No times available" [ref=f2e89]:
+                        - button "Friday, October 17 - No times available" [disabled]:
+                          - generic: "17"
+                      - gridcell "Saturday, October 18 - No times available" [ref=f2e90]:
+                        - button "Saturday, October 18 - No times available" [disabled]:
+                          - generic: "18"
+                    - row "Sunday, October 19 - No times available Monday, October 20 - No times available Tuesday, October 21 - No times available Wednesday, October 22 - No times available Thursday, October 23 - No times available Friday, October 24 - No times available Saturday, October 25 - No times available" [ref=f2e91]:
+                      - gridcell "Sunday, October 19 - No times available" [ref=f2e92]:
+                        - button "Sunday, October 19 - No times available" [disabled]:
+                          - generic: "19"
+                      - gridcell "Monday, October 20 - No times available" [ref=f2e93]:
+                        - button "Monday, October 20 - No times available" [disabled]:
+                          - generic: "20"
+                      - gridcell "Tuesday, October 21 - No times available" [ref=f2e94]:
+                        - button "Tuesday, October 21 - No times available" [disabled]:
+                          - generic: "21"
+                      - gridcell "Wednesday, October 22 - No times available" [ref=f2e95]:
+                        - button "Wednesday, October 22 - No times available" [disabled]:
+                          - generic: "22"
+                      - gridcell "Thursday, October 23 - No times available" [ref=f2e96]:
+                        - button "Thursday, October 23 - No times available" [disabled]:
+                          - generic: "23"
+                      - gridcell "Friday, October 24 - No times available" [ref=f2e97]:
+                        - button "Friday, October 24 - No times available" [disabled]:
+                          - generic: "24"
+                      - gridcell "Saturday, October 25 - No times available" [ref=f2e98]:
+                        - button "Saturday, October 25 - No times available" [disabled]:
+                          - generic: "25"
+                    - row "Sunday, October 26 - No times available Monday, October 27 - Times available Tuesday, October 28 - Times available Wednesday, October 29 - Times available Thursday, October 30 - Times available Friday, October 31 - Times available" [ref=f2e99]:
+                      - gridcell "Sunday, October 26 - No times available" [ref=f2e100]:
+                        - button "Sunday, October 26 - No times available" [disabled]:
+                          - generic: "26"
+                      - gridcell "Monday, October 27 - Times available" [ref=f2e101]:
+                        - button "Monday, October 27 - Times available" [ref=f2e102] [cursor=pointer]:
+                          - generic [ref=f2e103] [cursor=pointer]: "27"
+                      - gridcell "Tuesday, October 28 - Times available" [ref=f2e104]:
+                        - button "Tuesday, October 28 - Times available" [ref=f2e105] [cursor=pointer]:
+                          - generic [ref=f2e106] [cursor=pointer]: "28"
+                      - gridcell "Wednesday, October 29 - Times available" [ref=f2e107]:
+                        - button "Wednesday, October 29 - Times available" [ref=f2e108] [cursor=pointer]:
+                          - generic [ref=f2e109] [cursor=pointer]: "29"
+                      - gridcell "Thursday, October 30 - Times available" [ref=f2e110]:
+                        - button "Thursday, October 30 - Times available" [ref=f2e111] [cursor=pointer]:
+                          - generic [ref=f2e112] [cursor=pointer]: "30"
+                      - gridcell "Friday, October 31 - Times available" [ref=f2e113]:
+                        - button "Friday, October 31 - Times available" [ref=f2e114] [cursor=pointer]:
+                          - generic [ref=f2e115] [cursor=pointer]: "31"
+                      - gridcell [ref=f2e116]
+                - status [ref=f2e117]
+            - generic [ref=f2e119]:
+              - paragraph [ref=f2e120]: Time zone
+              - button "Time zone  Pacific Time - US & Canada (1:27pm) " [ref=f2e122] [cursor=pointer]:
+                - generic [ref=f2e123] [cursor=pointer]: 
+                - generic [ref=f2e124] [cursor=pointer]: Pacific Time - US & Canada
+                - generic [ref=f2e125] [cursor=pointer]: (1:27pm)
+                - generic [ref=f2e126] [cursor=pointer]: 
+      - region "Cookie banner" [ref=f2e128]:
+        - dialog "Privacy" [ref=f2e129]:
+          - generic [ref=f2e131]:
+            - generic [ref=f2e134]:
+              - text: We use cookies and similar technologies to improve and personalize your experience, to understand website interactions (including clicks, cursor movement and screen recordings), and for marketing. Click “Decline” to decline optional cookies or “Cookie Settings” to manage individual settings. To learn more, visit our
+              - link "privacy notice" [ref=f2e135] [cursor=pointer]:
+                - /url: https://calendly.com/privacy
+              - text: .
+            - generic [ref=f2e137]:
+              - button "Cookie settings, Opens the preference center dialog" [ref=f2e138] [cursor=pointer]: Cookie settings
+              - button "Decline" [ref=f2e139] [cursor=pointer]
+              - button "I understand" [ref=f2e140] [cursor=pointer]
+          - button "Close" [ref=f2e142] [cursor=pointer]
+```
