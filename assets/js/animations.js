@@ -299,22 +299,31 @@ class ParallaxEffect {
   init() {
     if (this.elements.length === 0) return;
     
+    this.updateParallax();
+
     window.addEventListener('scroll', () => {
+      requestAnimationFrame(() => this.updateParallax());
+    });
+
+    window.addEventListener('resize', () => {
       requestAnimationFrame(() => this.updateParallax());
     });
   }
 
   updateParallax() {
-    const scrolled = window.pageYOffset;
+    const viewportCenter = window.innerHeight / 2;
     
     this.elements.forEach(element => {
       const rect = element.getBoundingClientRect();
-      const speed = element.getAttribute('data-speed') || 0.5;
-      const yPos = -(scrolled - rect.top) * speed;
-      
-      if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
-        element.style.transform = `translateY(${yPos}px)`;
-      }
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+      const speedAttr = element.getAttribute('data-speed');
+      const speed = speedAttr ? parseFloat(speedAttr) : 0.35;
+      const elementCenter = rect.top + rect.height / 2;
+      const offset = (viewportCenter - elementCenter) * speed;
+      const clampedOffset = Math.max(-90, Math.min(90, offset));
+
+      element.style.transform = `translate3d(0, ${clampedOffset}px, 0)`;
     });
   }
 }
