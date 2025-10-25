@@ -107,18 +107,79 @@ function attachMenuHandler() {
     return;
   }
 
+  let focusableElements = [];
+  let firstFocusableElement = null;
+  let lastFocusableElement = null;
+
+  const updateFocusableElements = () => {
+    const selector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    focusableElements = navbar.querySelectorAll(selector);
+    firstFocusableElement = focusableElements[0];
+    lastFocusableElement = focusableElements[focusableElements.length - 1];
+  };
+
+  const trapFocus = (e) => {
+    if (e.key === 'Tab' || e.keyCode === 9) {
+      if (e.shiftKey) {
+        // Shift + Tab
+        if (document.activeElement === firstFocusableElement) {
+          e.preventDefault();
+          lastFocusableElement?.focus();
+        }
+      } else {
+        // Tab
+        if (document.activeElement === lastFocusableElement) {
+          e.preventDefault();
+          firstFocusableElement?.focus();
+        }
+      }
+    }
+
+    // Close menu on Escape
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      closeNav();
+      menuButton.focus();
+    }
+  };
+
+  const openNav = () => {
+    navbar.classList.add('nav-toggle');
+    menuButton.classList.add('fa-times');
+    menuButton.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+    document.body.style.overflow = 'hidden';
+
+    // Update and focus first element
+    updateFocusableElements();
+    setTimeout(() => {
+      firstFocusableElement?.focus();
+    }, 100);
+
+    // Add focus trap
+    document.addEventListener('keydown', trapFocus);
+  };
+
   const closeNav = () => {
     navbar.classList.remove('nav-toggle');
     menuButton.classList.remove('fa-times');
     menuButton.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    document.body.style.overflow = '';
+
+    // Remove focus trap
+    document.removeEventListener('keydown', trapFocus);
   };
 
   menuButton.dataset.bound = 'true';
   closeNav();
+
   menuButton.addEventListener('click', () => {
-    menuButton.classList.toggle('fa-times');
-    const isOpen = navbar.classList.toggle('nav-toggle');
-    menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const isOpen = navbar.classList.contains('nav-toggle');
+    if (isOpen) {
+      closeNav();
+    } else {
+      openNav();
+    }
   });
 
   navbar.querySelectorAll('a').forEach((link) => {
@@ -133,6 +194,46 @@ function attachMenuHandler() {
 }
 
 initializeThemeFromPreferences();
+
+// Load Calendly on-demand
+let calendlyLoaded = false;
+function loadCalendly() {
+  if (calendlyLoaded) {
+    // If already loaded, just show the widget
+    if (typeof Calendly !== 'undefined') {
+      Calendly.showPopupWidget('https://calendly.com/tony-tryvariant/30min');
+    }
+    return;
+  }
+
+  // Load Calendly CSS if not already loaded
+  if (!document.querySelector('link[href*="calendly.com/assets/external/widget.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(link);
+  }
+
+  // Load Calendly script if not already loaded
+  if (!document.querySelector('script[src*="calendly.com/assets/external/widget.js"]')) {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.type = 'text/javascript';
+    script.onload = function() {
+      calendlyLoaded = true;
+      if (typeof Calendly !== 'undefined') {
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/tony-tryvariant/30min'
+        });
+        Calendly.showPopupWidget('https://calendly.com/tony-tryvariant/30min');
+      }
+    };
+    document.body.appendChild(script);
+  }
+}
+
+// Make function globally available
+window.loadCalendly = loadCalendly;
 
 // Email Configuration Validation
 function validateEmailConfiguration() {

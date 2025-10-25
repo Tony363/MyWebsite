@@ -115,14 +115,27 @@
 <section class="home" id="home" aria-labelledby="hero-heading">
     <div id="particles-js"></div>
     <!-- Dynamic gradient orbs will be added here by JavaScript -->
+    <div class="hero-ambient" aria-hidden="true">
+      <div class="hero-ambient__glow"></div>
+      <div class="hero-ambient__pieces">
+        <span class="hero-ambient__piece hero-ambient__piece--knight"><i class="fas fa-chess-knight" aria-hidden="true"></i></span>
+        <span class="hero-ambient__piece hero-ambient__piece--queen"><i class="fas fa-chess-queen" aria-hidden="true"></i></span>
+        <span class="hero-ambient__piece hero-ambient__piece--rook"><i class="fas fa-chess-rook" aria-hidden="true"></i></span>
+      </div>
+    </div>
 
     <div class="content fade-in">
     <h1 id="hero-heading" class="animate-fadeInUp">Hi There,<br/> I'm Tony<span>Siu</span></h1>
     <p class="animate-fadeInUp stagger-2">I am all about <span class="typing-text"></span></p>
-    <a href="#about" class="btn btn-premium animate-fadeInUp stagger-3"><span>About Me</span>
+    <div class="hero-chess-badge animate-fadeInUp stagger-3">
+      <i class="fas fa-chess-knight" aria-hidden="true"></i>
+      <span>Chess-Born Strategy</span>
+    </div>
+    <p class="hero-subtitle animate-fadeInUp stagger-4">Earthy motion, soulful gradients, and deliberate moves that feel like a grandmaster's opening.</p>
+    <a href="#about" class="btn btn-premium animate-fadeInUp stagger-5"><span>About Me</span>
       <i class="fas fa-arrow-circle-down"></i>
     </a>
-    <div class="socials animate-fadeInUp stagger-4">
+    <div class="socials animate-fadeInUp stagger-5">
         <ul class="social-icons">
           <li><a class="linkedin magnetic" aria-label="LinkedIn" href="https://www.linkedin.com/in/pysolver/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
           <li><a class="github magnetic" aria-label="GitHub" href="https://github.com/Tony363" target="_blank"><i class="fab fa-github"></i></a></li>
@@ -131,7 +144,7 @@
       </div>
     </div>
 <div class="image animate-scaleIn" data-will-change="transform">
-    <img draggable="false" class="tilt parallax" data-speed="0.5" src="./assets/images/coder.jpg" loading="lazy" alt="Tony Siu working as a computer programmer - professional headshot">
+    <img draggable="false" class="tilt parallax" data-speed="0.5" src="./assets/images/coder.jpg" width="600" height="600" alt="Tony Siu working as a computer programmer - professional headshot">
 </div>
 <div class="scroll-indicator">
     <span></span>
@@ -161,7 +174,7 @@
               <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
             </div> -->
             <div class="box">
-              <p><span> email : </span> pysolver33@gmail.com</p>
+              <p><span> email : </span> <a href="mailto:pysolver33@gmail.com" style="color: var(--theme-accent); text-decoration: none;">pysolver33@gmail.com</a></p>
               <p><span> place : </span> Philadelphia, PA</p>
             </div>
         </div>
@@ -369,13 +382,13 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
+<script defer src="./assets/js/particles.min.js"></script>
+<script defer src="./assets/js/app.js"></script>
 
 <!-- Enhanced animations -->
-<script src="./assets/js/animations.js"></script>
-<script src="./assets/js/skills-interactive.js"></script>
-<script src="./assets/js/projects-interactive.js"></script>
+<script defer src="./assets/js/animations.js"></script>
+<script defer src="./assets/js/skills-interactive.js"></script>
+<script defer src="./assets/js/projects-interactive.js"></script>
 
 <!-- vanilla tilt.js links -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -386,17 +399,46 @@
 <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-     async></script>
+      async></script>
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
 <script defer src="./assets/js/script.js"></script>
 <script defer src="./assets/js/smooth-scroll.js"></script>
 
-<!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/tony-tryvariant/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff' }); };</script>
+<!-- Calendly badge widget - loads on demand -->
+<script type="text/javascript">
+// Optionally load Calendly badge after significant delay for users who don't use the header CTA
+document.addEventListener('DOMContentLoaded', function() {
+    // Only load badge if user hasn't clicked the CTA after 30 seconds
+    setTimeout(function() {
+        if (!window.calendlyLoaded) {
+            // Lazy load the Calendly CSS
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://assets.calendly.com/assets/external/widget.css';
+            document.head.appendChild(link);
+
+            // Lazy load the Calendly script
+            const script = document.createElement('script');
+            script.src = 'https://assets.calendly.com/assets/external/widget.js';
+            script.type = 'text/javascript';
+            script.onload = function() {
+                if (typeof Calendly !== 'undefined') {
+                    window.calendlyLoaded = true;
+                    Calendly.initBadgeWidget({
+                        url: 'https://calendly.com/tony-tryvariant/30min',
+                        text: 'Schedule time with me',
+                        color: '#0069ff',
+                        textColor: '#ffffff'
+                    });
+                }
+            };
+            document.body.appendChild(script);
+        }
+    }, 30000); // 30 seconds delay
+});
+</script>
 <!-- Calendly badge widget end -->
 
 

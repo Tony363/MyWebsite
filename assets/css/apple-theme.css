@@ -17,26 +17,26 @@
   --color-gray-700: #1c1c1e;
   
   /* Premium Accent Palette */
-  --color-accent: #0071e3;
-  --color-accent-hover: #0077ed;
-  --color-accent-light: rgba(0, 113, 227, 0.1);
-  --color-accent-glow: rgba(0, 113, 227, 0.4);
-  --color-secondary: #5e5ce6;
-  --color-secondary-light: rgba(94, 92, 230, 0.1);
-  --color-tertiary: #32ade6;
-  --color-success: #30d158;
-  --color-warning: #ff9f0a;
-  --color-error: #ff3b30;
+  --color-accent: #b4632d;
+  --color-accent-hover: #8d4219;
+  --color-accent-light: rgba(180, 99, 45, 0.16);
+  --color-accent-glow: rgba(180, 99, 45, 0.45);
+  --color-secondary: #d9a066;
+  --color-secondary-light: rgba(217, 160, 102, 0.14);
+  --color-tertiary: #402218;
+  --color-success: #f0b36c;
+  --color-warning: #d28a3c;
+  --color-error: #c04b37;
   
   /* Premium Gradients */
-  --gradient-hero: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
-  --gradient-card: linear-gradient(145deg, #ffffff, #f5f5f7);
-  --gradient-dark: linear-gradient(180deg, #1d1d1f 0%, #2c2c2e 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(255, 240, 220, 0.2) 0%, rgba(28, 18, 13, 0) 100%);
+  --gradient-card: linear-gradient(145deg, #fff8ee, #f4ede2);
+  --gradient-dark: linear-gradient(180deg, #1c120d 0%, #120a06 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
-  --gradient-mesh: radial-gradient(at 30% 30%, var(--color-accent-light) 0%, transparent 50%),
-                   radial-gradient(at 70% 70%, var(--color-secondary-light) 0%, transparent 50%),
-                   radial-gradient(at 50% 50%, var(--color-tertiary) 0%, transparent 70%);
-  --gradient-glow: radial-gradient(circle at center, var(--color-accent-glow) 0%, transparent 70%);
+  --gradient-mesh: radial-gradient(at 30% 30%, rgba(255, 232, 209, 0.28) 0%, transparent 50%),
+                   radial-gradient(at 70% 70%, rgba(92, 54, 32, 0.18) 0%, transparent 50%),
+                   radial-gradient(at 50% 50%, rgba(49, 29, 19, 0.22) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(circle at center, rgba(240, 179, 108, 0.4) 0%, transparent 70%);
   
   /* Spacing - More generous for Apple aesthetic */
   --space-xs: 0.8rem;
@@ -87,8 +87,8 @@
     --color-gray-400: #98989d;
     --color-gray-500: #aeaeb2;
     --color-gray-600: #e8e8ed;
-    --color-accent: #2997ff;
-    --color-accent-hover: #4da8ff;
+    --color-accent: #f0b36c;
+    --color-accent-hover: #d28a3c;
   }
 }
 
@@ -134,7 +134,7 @@
 
 .morph-blob {
   animation: morph 8s ease-in-out infinite;
-  background: linear-gradient(45deg, var(--color-accent), #32ade6);
+  background: linear-gradient(45deg, var(--color-accent), var(--color-secondary));
   position: absolute;
   width: 500px;
   height: 500px;

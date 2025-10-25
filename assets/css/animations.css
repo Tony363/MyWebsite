@@ -174,10 +174,10 @@
 /* Glow effect */
 @keyframes glow {
   from {
-    box-shadow: 0 0 10px rgba(0, 113, 227, 0.3);
+    box-shadow: 0 0 10px rgba(180, 99, 45, 0.3);
   }
   to {
-    box-shadow: 0 0 20px rgba(0, 113, 227, 0.6);
+    box-shadow: 0 0 22px rgba(180, 99, 45, 0.55);
   }
 }
 
@@ -206,6 +206,43 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+/* Earthy atmosphere animations */
+@keyframes emberPulse {
+  0% {
+    transform: translate3d(-2%, -2%, 0) scale(1);
+    opacity: 0.62;
+  }
+  50% {
+    transform: translate3d(2%, 3%, 0) scale(1.08);
+    opacity: 0.82;
+  }
+  100% {
+    transform: translate3d(-2%, -2%, 0) scale(1);
+    opacity: 0.62;
+  }
+}
+
+@keyframes chessFloat {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(3deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+}
+
+@keyframes checkeredParallax {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-140px, -140px, 0);
   }
 }
 
