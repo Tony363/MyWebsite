@@ -1,10 +1,18 @@
 [
+   {
+    "company": "Code & Coffee Philly",
+    "companyIcon": "./assets/images/companies/code_coffee_philadelphia_logo.jpeg",
+    "alt": "C&C Philly",
+    "title": "Founder",
+    "period": "Jan 2024 - present",
+    "side": "Left"
+  },
   {
-    "company": "TryVariant AI",
+    "company": "Variant Inc Labs",
     "companyIcon": "./assets/images/companies/variantlabs_ai_logo.jpeg",
-    "alt": "TryVariant AI",
+    "alt": "Variant AI",
     "title": "Founding Computer Vision & Animation Engineer",
-    "period": "April 2025 - present",
+    "period": "Mar 2025 - Oct 2025",
     "side": "right"
   },
   {
