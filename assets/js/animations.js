@@ -293,38 +293,57 @@ class ScrollAnimations {
 class ParallaxEffect {
   constructor() {
     this.elements = document.querySelectorAll('.parallax, .home .image img, .about .image img');
+    this.lastScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
     this.init();
   }
 
   init() {
     if (this.elements.length === 0) return;
-    
-    this.updateParallax();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    this.elements.forEach(element => {
+      element.dataset.parallaxOffset = '0';
+    });
+
+    this.updateParallax(true);
 
     window.addEventListener('scroll', () => {
       requestAnimationFrame(() => this.updateParallax());
     });
 
     window.addEventListener('resize', () => {
-      requestAnimationFrame(() => this.updateParallax());
+      requestAnimationFrame(() => this.updateParallax(true));
     });
   }
 
-  updateParallax() {
-    const viewportCenter = window.innerHeight / 2;
-    
+  updateParallax(force = false) {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const delta = force ? 0 : currentScrollY - this.lastScrollY;
+
     this.elements.forEach(element => {
       const rect = element.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const extendedViewportTop = -180;
+      const extendedViewportBottom = window.innerHeight + 180;
+
+      if (!force && (rect.bottom < extendedViewportTop || rect.top > extendedViewportBottom)) {
+        return;
+      }
 
       const speedAttr = element.getAttribute('data-speed');
       const speed = speedAttr ? parseFloat(speedAttr) : 0.35;
-      const elementCenter = rect.top + rect.height / 2;
-      const offset = (viewportCenter - elementCenter) * speed;
-      const clampedOffset = Math.max(-90, Math.min(90, offset));
 
-      element.style.transform = `translate3d(0, ${clampedOffset}px, 0)`;
+      let offset = force ? 0 : parseFloat(element.dataset.parallaxOffset || '0');
+
+      if (!force) {
+        offset += delta * speed;
+        offset = Math.max(-140, Math.min(140, offset));
+      }
+
+      element.dataset.parallaxOffset = String(offset);
+      element.style.transform = `translate3d(0, ${offset}px, 0)`;
     });
+
+    this.lastScrollY = currentScrollY;
   }
 }
 
