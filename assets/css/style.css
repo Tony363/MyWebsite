@@ -619,19 +619,19 @@ header .navbar ul li a:hover {
   opacity: 0.85;
 }
 .home .hero-ambient__piece--knight {
-  top: 18%;
-  left: 12%;
+  top: 14%;
+  left: 6%;
   animation-duration: 18s;
 }
 .home .hero-ambient__piece--queen {
-  bottom: 16%;
-  right: 18%;
+  bottom: 10%;
+  right: 8%;
   animation-duration: 20s;
   animation-delay: -3s;
 }
 .home .hero-ambient__piece--rook {
-  top: 55%;
-  right: 32%;
+  top: 32%;
+  right: 22%;
   animation-duration: 16s;
   animation-delay: -6s;
 }
