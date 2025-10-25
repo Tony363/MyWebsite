@@ -1,0 +1,154 @@
+/* Chessboard Pattern Backgrounds */
+
+/* Base chessboard pattern variables */
+:root {
+  --chess-light: rgba(255, 248, 238, 0.95);
+  --chess-dark: rgba(244, 237, 226, 0.95);
+  --chess-size: 50px;
+  --chess-subtle-light: rgba(255, 251, 245, 0.98);
+  --chess-subtle-dark: rgba(244, 237, 226, 0.15);
+  --chess-pattern-opacity: 0.4;
+}
+
+/* Dark theme chessboard colors */
+:root[data-theme="dark"] {
+  --chess-light: rgba(28, 18, 13, 0.92);
+  --chess-dark: rgba(35, 23, 17, 0.92);
+  --chess-subtle-light: rgba(20, 12, 8, 0.95);
+  --chess-subtle-dark: rgba(35, 23, 17, 0.22);
+  --chess-pattern-opacity: 0.3;
+}
+
+/* Subtle chessboard pattern for main sections */
+.chessboard-subtle {
+  background-image:
+    linear-gradient(45deg, var(--chess-subtle-dark) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--chess-subtle-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--chess-subtle-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--chess-subtle-dark) 75%);
+  background-size: var(--chess-size) var(--chess-size);
+  background-position: 0 0, 0 calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) 0;
+  background-color: var(--chess-subtle-light);
+}
+
+/* Standard chessboard pattern */
+.chessboard-standard {
+  background-image:
+    linear-gradient(45deg, var(--chess-dark) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--chess-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--chess-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--chess-dark) 75%);
+  background-size: var(--chess-size) var(--chess-size);
+  background-position: 0 0, 0 calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) 0;
+  background-color: var(--chess-light);
+}
+
+/* Large chessboard pattern */
+.chessboard-large {
+  --chess-size: 60px;
+  background-image:
+    linear-gradient(45deg, var(--chess-dark) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--chess-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--chess-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--chess-dark) 75%);
+  background-size: var(--chess-size) var(--chess-size);
+  background-position: 0 0, 0 calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) 0;
+  background-color: var(--chess-light);
+}
+
+/* Diagonal stripe pattern (alternative) */
+.diagonal-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--chess-subtle-light),
+    var(--chess-subtle-light) 10px,
+    var(--chess-subtle-dark) 10px,
+    var(--chess-subtle-dark) 20px
+  );
+}
+
+/* Apply chessboard to specific sections - unified sizing */
+.about,
+.education,
+.contact {
+  --chess-size: 50px;
+  background-image:
+    linear-gradient(45deg, var(--chess-subtle-dark) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--chess-subtle-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--chess-subtle-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--chess-subtle-dark) 75%);
+  background-size: var(--chess-size) var(--chess-size);
+  background-position: 0 0, 0 calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) calc(var(--chess-size) / 2), calc(var(--chess-size) / 2) 0;
+  background-color: var(--chess-subtle-light);
+}
+
+/* Keep container backgrounds slightly transparent to show pattern */
+.about .row,
+.education .box-container,
+.contact .container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark theme adjustments - unified approach */
+:root[data-theme="dark"] .about,
+:root[data-theme="dark"] .education,
+:root[data-theme="dark"] .contact {
+  background-color: var(--chess-subtle-light);
+}
+
+:root[data-theme="dark"] .about .row,
+:root[data-theme="dark"] .education .box-container,
+:root[data-theme="dark"] .contact .container {
+  background: rgba(28, 18, 13, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+/* Mobile responsiveness - unified smaller pattern on mobile */
+@media (max-width: 768px) {
+  .about,
+  .education,
+  .contact {
+    --chess-size: 35px;
+  }
+}
+
+/* Animation for pattern on scroll (optional, subtle) */
+@keyframes chessboard-slide {
+  from {
+    background-position: 0 0, 0 25px, 25px 25px, 25px 0;
+  }
+  to {
+    background-position: 50px 50px, 50px 75px, 75px 75px, 75px 50px;
+  }
+}
+
+/* Apply animation only on hover-capable devices for performance and accessibility */
+@media (hover: hover) and (pointer: fine) {
+  .about:hover,
+  .education:hover,
+  .contact:hover {
+    animation: chessboard-slide 30s linear infinite;
+    will-change: background-position;
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about:hover,
+  .education:hover,
+  .contact:hover {
+    animation: none !important;
+    will-change: auto;
+  }
+}
+
+/* Ensure text remains readable */
+.about .content,
+.education .content,
+.contact .content {
+  position: relative;
+  z-index: 1;
+}
