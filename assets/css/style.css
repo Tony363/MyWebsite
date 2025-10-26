@@ -1454,7 +1454,7 @@ header .navbar ul li a:hover {
 
 .experience .timeline {
   --timeline-node-size: 18px;
-  --timeline-card-gap: clamp(6rem, 10vw, 16rem);
+  --timeline-card-gap: clamp(2.8rem, 6vw, 7.2rem);
   position: relative;
   display: grid;
   grid-auto-flow: column;
@@ -1462,8 +1462,8 @@ header .navbar ul li a:hover {
   gap: clamp(3rem, 6vw, 6.4rem);
   width: 100%;
   margin: clamp(0.8rem, 3vw, 1.6rem) 0;
-  padding: clamp(0.8rem, 2.4vw, 2.2rem) clamp(1.6rem, 5vw, 3.6rem) clamp(4.6rem, 6.4vw, 6.2rem);
-  min-height: clamp(520px, 68vh, 760px);
+  padding: clamp(0.8rem, 2.4vw, 2.2rem) clamp(1.6rem, 5vw, 3.6rem) clamp(2.8rem, 5.6vw, 4.6rem);
+  min-height: clamp(420px, 60vh, 640px);
   overflow-x: auto;
   scroll-snap-type: x proximity;
 }
@@ -1618,10 +1618,10 @@ header .navbar ul li a:hover {
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 900px) {
   .experience .timeline {
-    --timeline-card-gap: clamp(4.8rem, 12vw, 9.6rem);
+    --timeline-card-gap: clamp(1.8rem, 6vw, 5.6rem);
     grid-auto-columns: minmax(240px, 80vw);
     gap: clamp(2rem, 4vw, 3.4rem);
-    padding: clamp(2.4rem, 4.4vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 6vw, 5.6rem);
+    padding: clamp(2rem, 4.4vw, 3.4rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 5.2vw, 4.6rem);
   }
 }
 
