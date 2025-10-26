@@ -1451,8 +1451,7 @@ header .navbar ul li a:hover {
 
 .experience .timeline {
   --timeline-node-size: 18px;
-  --timeline-spoke: clamp(4.4rem, 6vw, 7.4rem);
-  --timeline-card-offset: clamp(1.8rem, 4vw, 3.6rem);
+  --timeline-card-gap: clamp(5.6rem, 10vw, 16rem);
   position: relative;
   display: grid;
   grid-auto-flow: column;
@@ -1491,7 +1490,7 @@ header .navbar ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: clamp(280px, 34vw, 380px);
+  min-height: calc(var(--timeline-card-gap) * 2 + 220px);
   scroll-snap-align: center;
 }
 .experience .timeline .timeline-item::before {
@@ -1519,12 +1518,12 @@ header .navbar ul li a:hover {
 }
 .experience .timeline .timeline-item--top::after {
   bottom: calc(50% + var(--timeline-node-size) / 2);
-  height: calc(var(--timeline-spoke) + var(--timeline-card-offset) + 12px);
+  height: calc(var(--timeline-card-gap) + var(--timeline-node-size) / 2 + 14px);
   background: linear-gradient(0deg, var(--theme-accent), rgba(217, 160, 102, 0));
 }
 .experience .timeline .timeline-item--bottom::after {
   top: calc(50% + var(--timeline-node-size) / 2);
-  height: calc(var(--timeline-spoke) + var(--timeline-card-offset) + 12px);
+  height: calc(var(--timeline-card-gap) + var(--timeline-node-size) / 2 + 14px);
   background: linear-gradient(180deg, var(--theme-accent), rgba(217, 160, 102, 0));
 }
 .experience .timeline .timeline-card {
@@ -1548,14 +1547,14 @@ header .navbar ul li a:hover {
   border-right: 14px solid transparent;
 }
 .experience .timeline .timeline-item--top .timeline-card {
-  transform: translateY(calc(-1 * (var(--timeline-spoke) + var(--timeline-node-size) * 0.5 + var(--timeline-card-offset))));
+  transform: translateY(calc(-100% - var(--timeline-card-gap)));
 }
 .experience .timeline .timeline-item--top .timeline-card::after {
   bottom: -14px;
   border-top: 14px solid rgba(28, 18, 13, 0.9);
 }
 .experience .timeline .timeline-item--bottom .timeline-card {
-  transform: translateY(calc(var(--timeline-spoke) + var(--timeline-node-size) * 0.5 + var(--timeline-card-offset)));
+  transform: translateY(calc(100% + var(--timeline-card-gap)));
 }
 .experience .timeline .timeline-item--bottom .timeline-card::after {
   top: -14px;
@@ -1612,8 +1611,7 @@ header .navbar ul li a:hover {
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 900px) {
   .experience .timeline {
-    --timeline-spoke: clamp(3.2rem, 6vw, 4.6rem);
-    --timeline-card-offset: clamp(1.2rem, 3vw, 2.4rem);
+    --timeline-card-gap: clamp(3.6rem, 8vw, 7.2rem);
     grid-auto-columns: minmax(240px, 80vw);
     gap: clamp(2rem, 4vw, 3.4rem);
     padding: clamp(2.8rem, 5vw, 4.4rem) clamp(1.2rem, 5vw, 2.4rem) clamp(5.6rem, 7vw, 6.8rem);
@@ -1622,8 +1620,7 @@ header .navbar ul li a:hover {
 
 @media screen and (max-width: 600px) {
   .experience .timeline {
-    --timeline-spoke: clamp(2.4rem, 6vw, 3.6rem);
-    --timeline-card-offset: 0;
+    --timeline-card-gap: 0;
     grid-auto-columns: minmax(220px, 88vw);
     scroll-snap-type: x mandatory;
   }
