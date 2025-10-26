@@ -348,27 +348,10 @@ section {
   align-items: center;
   letter-spacing: 0.18em;
   overflow: visible;
-  animation: glitchColor 4s linear infinite;
 }
 .glitch-text::before,
 .glitch-text::after {
-  content: attr(data-glitch);
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.45;
-  mix-blend-mode: screen;
-  clip-path: inset(0 0 0 0);
-}
-.glitch-text::before {
-  transform: translate3d(-1px, 0, 0);
-  color: #5af1ff;
-  animation: glitchSlice 2.8s steps(6) infinite;
-}
-.glitch-text::after {
-  transform: translate3d(1px, 0, 0);
-  color: #ff6fb7;
-  animation: glitchSlice 2.8s steps(5) infinite reverse;
+  content: none;
 }
 
 /* Light section headings - high contrast */
