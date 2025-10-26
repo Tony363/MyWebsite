@@ -167,6 +167,7 @@ header .navbar ul li a:hover{
 .experience .timeline {
   --timeline-node-size: 16px;
   --timeline-spoke: clamp(2.8rem, 4vw, 4.4rem);
+  --timeline-card-offset: clamp(14px, 3vw, 24px);
   position: relative;
   display: grid;
   grid-auto-flow: column;
@@ -232,12 +233,12 @@ header .navbar ul li a:hover{
 }
 .experience .timeline .timeline-item--top::after {
   bottom: calc(50% + var(--timeline-node-size) / 2);
-  height: calc(var(--timeline-spoke) + 10px);
+  height: calc(var(--timeline-spoke) + var(--timeline-card-offset) + 10px);
   background: linear-gradient(0deg, #f68c09, rgba(246, 140, 9, 0));
 }
 .experience .timeline .timeline-item--bottom::after {
   top: calc(50% + var(--timeline-node-size) / 2);
-  height: calc(var(--timeline-spoke) + 10px);
+  height: calc(var(--timeline-spoke) + var(--timeline-card-offset) + 10px);
 }
 .experience .timeline .timeline-card {
   position: relative;
@@ -259,14 +260,14 @@ header .navbar ul li a:hover{
   border-right: 12px solid transparent;
 }
 .experience .timeline .timeline-item--top .timeline-card {
-  transform: translateY(calc(-1 * (var(--timeline-spoke) + var(--timeline-node-size) * 0.5)));
+  transform: translateY(calc(-1 * (var(--timeline-spoke) + var(--timeline-node-size) * 0.5 + var(--timeline-card-offset))));
 }
 .experience .timeline .timeline-item--top .timeline-card::after {
   bottom: -12px;
   border-top: 12px solid #ffffff;
 }
 .experience .timeline .timeline-item--bottom .timeline-card {
-  transform: translateY(calc(var(--timeline-spoke) + var(--timeline-node-size) * 0.5));
+  transform: translateY(calc(var(--timeline-spoke) + var(--timeline-node-size) * 0.5 + var(--timeline-card-offset)));
 }
 .experience .timeline .timeline-item--bottom .timeline-card::after {
   top: -12px;
