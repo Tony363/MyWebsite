@@ -1525,14 +1525,14 @@ header .navbar ul li a:hover {
   z-index: 1;
 }
 .experience .timeline .timeline-item--top::after {
-  top: calc(50% + var(--timeline-node-size) / 2);
-  height: var(--timeline-spoke);
-  background: linear-gradient(180deg, var(--theme-accent), rgba(217, 160, 102, 0));
+  bottom: calc(50% + var(--timeline-node-size) / 2);
+  height: calc(var(--timeline-spoke) + 12px);
+  background: linear-gradient(0deg, var(--theme-accent), rgba(217, 160, 102, 0));
 }
 .experience .timeline .timeline-item--bottom::after {
-  bottom: calc(50% + var(--timeline-node-size) / 2);
-  height: var(--timeline-spoke);
-  background: linear-gradient(180deg, rgba(217, 160, 102, 0), var(--theme-accent));
+  top: calc(50% + var(--timeline-node-size) / 2);
+  height: calc(var(--timeline-spoke) + 12px);
+  background: linear-gradient(180deg, var(--theme-accent), rgba(217, 160, 102, 0));
 }
 .experience .timeline .timeline-card {
   position: relative;
@@ -1543,6 +1543,7 @@ header .navbar ul li a:hover {
   background: rgba(28, 18, 13, 0.9);
   box-shadow: 0 22px 44px rgba(12, 7, 4, 0.35);
   backdrop-filter: blur(6px);
+  transition: transform 0.4s ease;
 }
 .experience .timeline .timeline-card::after {
   content: "";
@@ -1554,14 +1555,14 @@ header .navbar ul li a:hover {
   border-right: 14px solid transparent;
 }
 .experience .timeline .timeline-item--top .timeline-card {
-  margin-bottom: calc(var(--timeline-spoke) + var(--timeline-node-size));
+  transform: translateY(calc(-1 * (var(--timeline-spoke) + var(--timeline-node-size) * 0.5)));
 }
 .experience .timeline .timeline-item--top .timeline-card::after {
   bottom: -14px;
   border-top: 14px solid rgba(28, 18, 13, 0.9);
 }
 .experience .timeline .timeline-item--bottom .timeline-card {
-  margin-top: calc(var(--timeline-spoke) + var(--timeline-node-size));
+  transform: translateY(calc(var(--timeline-spoke) + var(--timeline-node-size) * 0.5));
 }
 .experience .timeline .timeline-item--bottom .timeline-card::after {
   top: -14px;
@@ -1639,6 +1640,16 @@ header .navbar ul li a:hover {
   }
   .experience .timeline .timeline-card {
     width: min(320px, 100%);
+  }
+  .experience .timeline .timeline-item::after {
+    display: none;
+  }
+  .experience .timeline .timeline-item::before {
+    display: none;
+  }
+  .experience .timeline .timeline-item--top .timeline-card,
+  .experience .timeline .timeline-item--bottom .timeline-card {
+    transform: none;
   }
   .morebtn {
     margin-top: 3rem;

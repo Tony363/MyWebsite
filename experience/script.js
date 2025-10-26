@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timelineContainer = document.getElementById('experience-timeline');
     if (!timelineContainer) return;
 
-    fetch('../assets/data/experience.json')
+    fetch('/assets/data/experience.json')
         .then(response => response.json())
         .then(experiences => {
             timelineContainer.setAttribute('role', 'list');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     : 'timeline-item--top';
 
                 const iconSource = item.companyIcon && item.companyIcon.startsWith('./')
-                    ? item.companyIcon.replace('./', '../')
+                    ? item.companyIcon.replace('./', '/')
                     : item.companyIcon;
 
                 return `

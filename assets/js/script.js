@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Dynamic experience timeline
-    fetch('assets/data/experience.json')
+    fetch('/assets/data/experience.json')
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('experience-timeline');
@@ -327,12 +327,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     ? 'timeline-item--bottom'
                     : 'timeline-item--top';
 
+                const iconSource = item.companyIcon && item.companyIcon.startsWith('./')
+                    ? item.companyIcon.replace('./', '/')
+                    : item.companyIcon;
+
                 return `
                 <article class="timeline-item ${positionClass}" role="listitem">
                   <div class="timeline-card experience-card-dark tilt">
                     <div class="tag">
                       <h2>
-                        <img src="${item.companyIcon}" alt="${item.alt}" class="company-icon">
+                        <img src="${iconSource}" alt="${item.alt}" class="company-icon">
                         ${item.company}
                       </h2>
                     </div>

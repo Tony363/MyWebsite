@@ -231,13 +231,13 @@ header .navbar ul li a:hover{
   z-index: 1;
 }
 .experience .timeline .timeline-item--top::after {
-  top: calc(50% + var(--timeline-node-size) / 2);
-  height: var(--timeline-spoke);
-  background: linear-gradient(180deg, #f68c09, rgba(246, 140, 9, 0));
+  bottom: calc(50% + var(--timeline-node-size) / 2);
+  height: calc(var(--timeline-spoke) + 10px);
+  background: linear-gradient(0deg, #f68c09, rgba(246, 140, 9, 0));
 }
 .experience .timeline .timeline-item--bottom::after {
-  bottom: calc(50% + var(--timeline-node-size) / 2);
-  height: var(--timeline-spoke);
+  top: calc(50% + var(--timeline-node-size) / 2);
+  height: calc(var(--timeline-spoke) + 10px);
 }
 .experience .timeline .timeline-card {
   position: relative;
@@ -247,6 +247,7 @@ header .navbar ul li a:hover{
   border: 1px solid rgba(2, 1, 51, 0.08);
   background: #ffffff;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease;
 }
 .experience .timeline .timeline-card::after {
   content: '';
@@ -258,14 +259,14 @@ header .navbar ul li a:hover{
   border-right: 12px solid transparent;
 }
 .experience .timeline .timeline-item--top .timeline-card {
-  margin-bottom: calc(var(--timeline-spoke) + var(--timeline-node-size));
+  transform: translateY(calc(-1 * (var(--timeline-spoke) + var(--timeline-node-size) * 0.5)));
 }
 .experience .timeline .timeline-item--top .timeline-card::after {
   bottom: -12px;
   border-top: 12px solid #ffffff;
 }
 .experience .timeline .timeline-item--bottom .timeline-card {
-  margin-top: calc(var(--timeline-spoke) + var(--timeline-node-size));
+  transform: translateY(calc(var(--timeline-spoke) + var(--timeline-node-size) * 0.5));
 }
 .experience .timeline .timeline-item--bottom .timeline-card::after {
   top: -12px;
@@ -344,6 +345,16 @@ header .navbar ul li a:hover{
   }
   .experience .timeline .timeline-card {
     width: min(300px, 100%);
+  }
+  .experience .timeline .timeline-item::after {
+    display: none;
+  }
+  .experience .timeline .timeline-item::before {
+    display: none;
+  }
+  .experience .timeline .timeline-item--top .timeline-card,
+  .experience .timeline .timeline-item--bottom .timeline-card {
+    transform: none;
   }
   .experience .timeline::-webkit-scrollbar {
     height: 6px;
