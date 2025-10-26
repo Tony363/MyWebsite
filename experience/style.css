@@ -169,15 +169,15 @@ header .navbar ul li a:hover{
 }
 .experience .timeline {
   --timeline-node-size: 16px;
-  --timeline-card-gap: clamp(2.8rem, 6vw, 6.4rem);
+  --timeline-card-gap: clamp(0.8rem, 3.5vw, 2.8rem);
   position: relative;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(260px, 1fr);
   gap: clamp(2rem, 4vw, 4rem);
   margin: 2rem auto;
-  padding: clamp(0.8rem, 2.6vw, 2.4rem) clamp(0.8rem, 4.2vw, 1.8rem) clamp(2.6rem, 5vw, 4.4rem);
-  min-height: clamp(420px, 60vh, 640px);
+  padding: clamp(0.6rem, 2.2vw, 2rem) clamp(0.8rem, 3.6vw, 1.6rem) clamp(2rem, 4.2vw, 3.4rem);
+  min-height: clamp(320px, 50vh, 520px);
   overflow-x: auto;
   scroll-snap-type: x proximity;
 }
@@ -211,7 +211,7 @@ header .navbar ul li a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(var(--timeline-card-gap) * 2 + 240px);
+  min-height: calc(var(--timeline-card-gap) * 2 + 220px);
   scroll-snap-align: center;
 }
 .experience .timeline .timeline-item::before {
@@ -262,10 +262,10 @@ header .navbar ul li a:hover{
   display: none;
 }
 .experience .timeline .timeline-item--top .timeline-card {
-  transform: translateY(calc(-100% - var(--timeline-card-gap)));
+  transform: translateY(calc(-100% - (var(--timeline-card-gap) * 0.5)));
 }
 .experience .timeline .timeline-item--bottom .timeline-card {
-  transform: translateY(calc(100% + var(--timeline-card-gap)));
+  transform: translateY(calc(100% + (var(--timeline-card-gap) * 0.5)));
 }
 .experience .timeline .timeline-card .tag {
   font-size: 1.35rem;
@@ -320,10 +320,10 @@ header .navbar ul li a:hover{
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 900px) {
   .experience .timeline {
-    --timeline-card-gap: clamp(1.8rem, 5vw, 4.8rem);
+    --timeline-card-gap: clamp(0.6rem, 3.6vw, 2.2rem);
     grid-auto-columns: minmax(240px, 82vw);
-    gap: clamp(1.6rem, 4vw, 3rem);
-    padding: clamp(1.6rem, 4vw, 3rem) clamp(0.6rem, 3.6vw, 1.2rem) clamp(2.8rem, 5vw, 4rem);
+    gap: clamp(1.4rem, 4vw, 2.6rem);
+    padding: clamp(1.4rem, 4vw, 2.6rem) clamp(0.6rem, 3.6vw, 1.2rem) clamp(2.2rem, 5vw, 3.6rem);
   }
 }
 @media screen and (max-width: 600px) {
