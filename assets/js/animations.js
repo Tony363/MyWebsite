@@ -192,31 +192,43 @@ class TimelineAnimation {
   }
 
   createConnectingLine() {
-    const timeline = document.querySelector('.timeline');
-    if (!timeline) return;
+    const timelines = document.querySelectorAll('.timeline');
+    if (!timelines.length) return;
 
-    // Create SVG path for connecting line
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
-      z-index: -1;
-    `;
+    timelines.forEach(timeline => {
+      if (timeline.dataset.timelineOrientation === 'horizontal') {
+        timeline.classList.add('timeline-horizontal');
+        return;
+      }
 
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('stroke', 'var(--color-accent)');
-    path.setAttribute('stroke-width', '2');
-    path.setAttribute('fill', 'none');
-    path.setAttribute('stroke-dasharray', '1000');
-    path.setAttribute('stroke-dashoffset', '1000');
-    path.classList.add('timeline-path');
+      // Prevent duplicate connectors if already created
+      if (timeline.querySelector('svg.timeline-connector')) {
+        return;
+      }
 
-    svg.appendChild(path);
-    timeline.appendChild(svg);
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.classList.add('timeline-connector');
+      svg.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        z-index: -1;
+      `;
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('stroke', 'var(--color-accent)');
+      path.setAttribute('stroke-width', '2');
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke-dasharray', '1000');
+      path.setAttribute('stroke-dashoffset', '1000');
+      path.classList.add('timeline-path');
+
+      svg.appendChild(path);
+      timeline.appendChild(svg);
+    });
   }
 
   observeTimeline() {

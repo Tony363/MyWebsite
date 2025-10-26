@@ -27,7 +27,50 @@ const srtop = ScrollReveal({
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline',{delay: 400});
-srtop.reveal('.experience .timeline .container',{interval: 400}); 
+srtop.reveal('.experience .timeline .timeline-item',{interval: 300}); 
+
+// Build horizontal experience timeline from shared data
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineContainer = document.getElementById('experience-timeline');
+    if (!timelineContainer) return;
+
+    fetch('../assets/data/experience.json')
+        .then(response => response.json())
+        .then(experiences => {
+            timelineContainer.setAttribute('role', 'list');
+            timelineContainer.setAttribute('aria-live', 'polite');
+
+            const markup = experiences.map(item => {
+                const positionClass = (item.side || '').toLowerCase() === 'right'
+                    ? 'timeline-item--bottom'
+                    : 'timeline-item--top';
+
+                const iconSource = item.companyIcon && item.companyIcon.startsWith('./')
+                    ? item.companyIcon.replace('./', '../')
+                    : item.companyIcon;
+
+                return `
+                <article class="timeline-item ${positionClass}" role="listitem">
+                    <div class="timeline-card">
+                        <div class="tag">
+                            <h2>
+                                <img src="${iconSource}" alt="${item.alt}" class="company-icon">
+                                ${item.company}
+                            </h2>
+                        </div>
+                        <div class="desc">
+                            <h3>${item.title}</h3>
+                            <p>${item.period}</p>
+                        </div>
+                    </div>
+                </article>`;
+            }).join('');
+
+            timelineContainer.innerHTML = markup;
+            timelineContainer.dataset.timelineOrientation = 'horizontal';
+        })
+        .catch(error => console.error('Unable to load experience timeline:', error));
+});
 
 
 // Start of Tawk.to Live Chat

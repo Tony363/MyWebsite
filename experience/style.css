@@ -165,100 +165,127 @@ header .navbar ul li a:hover{
   font-weight: 600;
 }
 .experience .timeline {
+  --timeline-node-size: 16px;
+  --timeline-spoke: clamp(2.8rem, 4vw, 4.4rem);
   position: relative;
-  max-width: 1200px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
   margin: 2rem auto;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(5rem, 6vw, 6.5rem);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
 }
-.experience .timeline::after {
+.experience .timeline::-webkit-scrollbar {
+  height: 8px;
+}
+.experience .timeline::-webkit-scrollbar-thumb {
+  background: #f68c09;
+  border-radius: 999px;
+}
+.experience .timeline::-webkit-scrollbar-track {
+  background: rgba(2, 1, 51, 0.1);
+}
+.experience .timeline::before {
   content: '';
   position: absolute;
-  width: 6px;
-  background: #020133;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-  z-index: -2;
+  left: clamp(1rem, 4vw, 2rem);
+  right: clamp(1rem, 4vw, 2rem);
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, rgba(2, 1, 51, 0.1), #020133, rgba(2, 1, 51, 0.1));
+  border-radius: 999px;
+  z-index: -1;
 }
-.experience .container {
-  padding: 10px 40px;
+.experience .timeline .timeline-item {
   position: relative;
-  background-color: inherit;
-  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: clamp(220px, 28vw, 300px);
+  scroll-snap-align: center;
 }
-/*circles on timeline*/
-.experience .container::after {    
-  content: "\f0b1";
+.experience .timeline .timeline-item::before {
+  content: '';
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: rgb(44, 65, 53);
+  top: 50%;
+  left: 50%;
+  width: var(--timeline-node-size);
+  height: var(--timeline-node-size);
+  transform: translate(-50%, -50%);
+  background: #f7f7f7;
   border: 4px solid #f68c09;
-  top: 15px;
   border-radius: 50%;
-  z-index: 100;
-  font-size: 1.89rem;
-  text-align: center;
-  font-weight: 600;
-  color:#02094b;
-  font-family: 'Font Awesome\ 5 Free';
+  box-shadow: 0 0 0 6px rgba(2, 1, 51, 0.1);
+  z-index: 2;
 }
-.experience .left {
-  left: 0;
-}
-.experience .right {
+.experience .timeline .timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 2px;
   left: 50%;
-}
-/* arrows pointing right */
-.experience .left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(246, 140, 9, 0), #f68c09);
   z-index: 1;
-  right: 30px;
-  border: medium solid #f68c09;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #f68c09;
 }
-/* arrows pointing left  */
-.experience .right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid #f68c09;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent #f68c09 transparent transparent;
+.experience .timeline .timeline-item--top::after {
+  top: calc(50% + var(--timeline-node-size) / 2);
+  height: var(--timeline-spoke);
+  background: linear-gradient(180deg, #f68c09, rgba(246, 140, 9, 0));
 }
-.experience .right::after {
-  left: -16px;
+.experience .timeline .timeline-item--bottom::after {
+  bottom: calc(50% + var(--timeline-node-size) / 2);
+  height: var(--timeline-spoke);
 }
-.experience .content {
-  background-color: #ecf0ec;
+.experience .timeline .timeline-card {
   position: relative;
-  border-radius: 6px;
+  width: min(320px, 92%);
+  padding: 2.2rem;
+  border-radius: 1.4rem;
+  border: 1px solid rgba(2, 1, 51, 0.08);
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
-.experience .content .tag{
-  font-size: 1.3rem;
-  padding-top: 1.5rem;
-  padding-left: 1.5rem;
+.experience .timeline .timeline-card::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
 }
-.experience .content .desc{
-  margin-left: 1.5rem;
-  padding-bottom: 1rem;
+.experience .timeline .timeline-item--top .timeline-card {
+  margin-bottom: calc(var(--timeline-spoke) + var(--timeline-node-size));
 }
-.experience .content .desc h3{
-  font-size: 1.5rem;
+.experience .timeline .timeline-item--top .timeline-card::after {
+  bottom: -12px;
+  border-top: 12px solid #ffffff;
+}
+.experience .timeline .timeline-item--bottom .timeline-card {
+  margin-top: calc(var(--timeline-spoke) + var(--timeline-node-size));
+}
+.experience .timeline .timeline-item--bottom .timeline-card::after {
+  top: -12px;
+  border-bottom: 12px solid #ffffff;
+}
+.experience .timeline .timeline-card .tag {
+  font-size: 1.35rem;
   font-weight: 600;
+  color: #020133;
+  padding-bottom: 1.2rem;
 }
-.experience .content .desc p{
-  font-size: 1.2rem;
+.experience .timeline .timeline-card .desc h3 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #333;
+}
+.experience .timeline .timeline-card .desc p {
+  font-size: 1.3rem;
+  color: #676767;
+  margin-top: 0.6rem;
 }
 /* view all button */
 .morebtn{
@@ -295,32 +322,31 @@ header .navbar ul li a:hover{
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 900px) {
+  .experience .timeline {
+    grid-auto-columns: minmax(240px, 82vw);
+    gap: clamp(1.6rem, 4vw, 3rem);
+    padding: clamp(2rem, 4vw, 3.4rem) clamp(0.8rem, 4vw, 1.4rem) clamp(4.2rem, 6vw, 5.6rem);
+  }
+}
 @media screen and (max-width: 600px) {
-  .experience .timeline::after {
-  left: 31px;
+  .experience .timeline {
+    --timeline-spoke: clamp(2rem, 6vw, 3rem);
+    grid-auto-columns: minmax(220px, 88vw);
+    scroll-snap-type: x mandatory;
   }
-  .experience .container {
-  width: 100%;
-  padding-left: 70px;
-  padding-right: 25px;
+  .experience .timeline::before {
+    left: clamp(0.6rem, 6vw, 1rem);
+    right: clamp(0.6rem, 6vw, 1rem);
   }
-  .experience .container::before {
-  left: 60px;
-  border: medium solid #f68c09;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent #f68c09 transparent transparent;
+  .experience .timeline .timeline-item {
+    min-height: 240px;
   }
-  .experience .left::after {
-    left: 15px;
+  .experience .timeline .timeline-card {
+    width: min(300px, 100%);
   }
-  .experience .right::after {
-    left: 15px;
-  }
-  .experience .right {
-  left: 0%;
-  }
-  .experience .container::after {
-    font-size: 2.2rem;;
+  .experience .timeline::-webkit-scrollbar {
+    height: 6px;
   }
 }
 /* experience media queries ends */

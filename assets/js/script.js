@@ -317,11 +317,19 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('experience-timeline');
-            let html = '';
-            data.forEach(item => {
-                html += `
-                <div class="container ${item.side}">
-                  <div class="content">
+            if (!container) return;
+
+            container.setAttribute('role', 'list');
+            container.setAttribute('aria-live', 'polite');
+
+            const timelineMarkup = data.map(item => {
+                const positionClass = (item.side || '').toLowerCase() === 'right'
+                    ? 'timeline-item--bottom'
+                    : 'timeline-item--top';
+
+                return `
+                <article class="timeline-item ${positionClass}" role="listitem">
+                  <div class="timeline-card experience-card-dark tilt">
                     <div class="tag">
                       <h2>
                         <img src="${item.companyIcon}" alt="${item.alt}" class="company-icon">
@@ -333,9 +341,14 @@ document.addEventListener('DOMContentLoaded', function() {
                       <p>${item.period}</p>
                     </div>
                   </div>
-                </div>`;
-            });
-            container.innerHTML = html;
+                </article>`;
+            }).join('');
+
+            container.innerHTML = timelineMarkup;
+            container.dataset.timelineOrientation = 'horizontal';
+        })
+        .catch(error => {
+            console.error('Failed to load experience timeline:', error);
         });
 
     // Initialize VanillaTilt for static elements
