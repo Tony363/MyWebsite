@@ -190,8 +190,8 @@ header .navbar ul li a:hover{
 .experience .timeline::before {
   content: '';
   position: absolute;
-  left: clamp(0.8rem, 3.6vw, 1.4rem);
-  right: clamp(0.8rem, 3.6vw, 1.4rem);
+  left: 0;
+  right: 0;
   top: 50%;
   height: 4px;
   transform: translateY(-50%);
@@ -326,8 +326,8 @@ header .navbar ul li a:hover{
     padding: clamp(2rem, 5.5vw, 3.6rem) clamp(0.6rem, 4vw, 1.4rem) clamp(4.6rem, 7vw, 5.8rem);
   }
   .experience .timeline::before {
-    left: clamp(0.6rem, 6vw, 1rem);
-    right: clamp(0.6rem, 6vw, 1rem);
+    left: 0;
+    right: 0;
   }
   .experience .timeline .timeline-item {
     min-height: 240px;
