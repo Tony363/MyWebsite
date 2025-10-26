@@ -1451,7 +1451,7 @@ header .navbar ul li a:hover {
 
 .experience .timeline {
   --timeline-node-size: 18px;
-  --timeline-card-gap: clamp(8rem, 12vw, 22rem);
+  --timeline-card-gap: clamp(2.5rem, 6.5vw, 6rem);
   position: relative;
   display: grid;
   grid-auto-flow: column;
@@ -1459,7 +1459,7 @@ header .navbar ul li a:hover {
   gap: clamp(3rem, 6vw, 6.4rem);
   width: 100%;
   margin: clamp(0.8rem, 3vw, 1.6rem) 0;
-  padding: clamp(4rem, 6vw, 7.4rem) clamp(1.6rem, 5vw, 3.6rem) clamp(7.8rem, 8vw, 9.4rem);
+  padding: clamp(3.4rem, 5.2vw, 5.8rem) clamp(1.6rem, 5vw, 3.6rem) clamp(5.8rem, 7vw, 7.2rem);
   overflow-x: auto;
   scroll-snap-type: x proximity;
 }
@@ -1476,8 +1476,8 @@ header .navbar ul li a:hover {
 .experience .timeline::before {
   content: "";
   position: absolute;
-  left: clamp(1.6rem, 5vw, 4.2rem);
-  right: clamp(1.6rem, 5vw, 4.2rem);
+  left: clamp(1.6rem, 5vw, 3.4rem);
+  right: clamp(1.6rem, 5vw, 3.4rem);
   top: 50%;
   height: 4px;
   transform: translateY(-50%);
@@ -1490,7 +1490,7 @@ header .navbar ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(var(--timeline-card-gap) * 2 + 320px);
+  min-height: calc(var(--timeline-card-gap) * 2 + 240px);
   scroll-snap-align: center;
 }
 .experience .timeline .timeline-item::before {
@@ -1518,12 +1518,12 @@ header .navbar ul li a:hover {
 }
 .experience .timeline .timeline-item--top::after {
   bottom: calc(50% + var(--timeline-node-size) / 2);
-  height: calc(var(--timeline-card-gap) + var(--timeline-node-size) / 2 + 24px);
+  height: calc(var(--timeline-card-gap) + var(--timeline-node-size) / 2 + 10px);
   background: linear-gradient(0deg, var(--theme-accent), rgba(217, 160, 102, 0));
 }
 .experience .timeline .timeline-item--bottom::after {
   top: calc(50% + var(--timeline-node-size) / 2);
-  height: calc(var(--timeline-card-gap) + var(--timeline-node-size) / 2 + 24px);
+  height: calc(var(--timeline-card-gap) + var(--timeline-node-size) / 2 + 10px);
   background: linear-gradient(180deg, var(--theme-accent), rgba(217, 160, 102, 0));
 }
 .experience .timeline .timeline-card {
@@ -1550,15 +1550,15 @@ header .navbar ul li a:hover {
   transform: translateY(calc(-100% - var(--timeline-card-gap)));
 }
 .experience .timeline .timeline-item--top .timeline-card::after {
-  bottom: -12px;
-  border-top: 12px solid rgba(28, 18, 13, 0.9);
+  bottom: -10px;
+  border-top: 10px solid rgba(28, 18, 13, 0.9);
 }
 .experience .timeline .timeline-item--bottom .timeline-card {
   transform: translateY(calc(100% + var(--timeline-card-gap)));
 }
 .experience .timeline .timeline-item--bottom .timeline-card::after {
-  top: -12px;
-  border-bottom: 12px solid rgba(28, 18, 13, 0.9);
+  top: -10px;
+  border-bottom: 10px solid rgba(28, 18, 13, 0.9);
 }
 .experience .timeline .timeline-card .tag {
   font-size: 1.4rem;
@@ -1611,10 +1611,10 @@ header .navbar ul li a:hover {
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 900px) {
   .experience .timeline {
-    --timeline-card-gap: clamp(4.2rem, 10vw, 10rem);
+    --timeline-card-gap: clamp(2rem, 6.5vw, 4.6rem);
     grid-auto-columns: minmax(240px, 80vw);
     gap: clamp(2rem, 4vw, 3.4rem);
-    padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 4vw, 2.2rem) clamp(6.2rem, 7vw, 7.6rem);
+    padding: clamp(2.6rem, 4.6vw, 4.2rem) clamp(1rem, 4vw, 2rem) clamp(4.6rem, 6.6vw, 6.2rem);
   }
 }
 
@@ -1623,7 +1623,7 @@ header .navbar ul li a:hover {
     --timeline-card-gap: 0;
     grid-auto-columns: minmax(220px, 88vw);
     scroll-snap-type: x mandatory;
-    padding: clamp(2.4rem, 6vw, 4rem) clamp(0.8rem, 4vw, 1.6rem) clamp(5rem, 8vw, 6.2rem);
+    padding: clamp(2.4rem, 6vw, 4rem) clamp(0.8rem, 4vw, 1.6rem) clamp(4.4rem, 7vw, 5.2rem);
   }
   .experience .timeline::before {
     left: clamp(0.5rem, 5vw, 1.2rem);
