@@ -38,6 +38,9 @@ html::-webkit-scrollbar-track{
 html::-webkit-scrollbar-thumb{
   background: #420177;
 }
+html::-webkit-scrollbar-corner{
+  background: rgb(235, 202, 245);
+}
 
 /* navbar starts */
 header{
@@ -185,6 +188,9 @@ header .navbar ul li a:hover{
   border-radius: 999px;
 }
 .experience .timeline::-webkit-scrollbar-track {
+  background: rgba(2, 1, 51, 0.1);
+}
+.experience .timeline::-webkit-scrollbar-corner {
   background: rgba(2, 1, 51, 0.1);
 }
 .experience .timeline::before {

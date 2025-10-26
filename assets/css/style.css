@@ -54,6 +54,9 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: var(--theme-accent-strong);
 }
+html::-webkit-scrollbar-corner {
+  background: rgba(236, 221, 205, 0.85);
+}
 
 /* Performance optimizations for smooth scrolling */
 .will-change-transform {
@@ -1471,6 +1474,9 @@ header .navbar ul li a:hover {
   border-radius: 999px;
 }
 .experience .timeline::-webkit-scrollbar-track {
+  background: rgba(217, 160, 102, 0.15);
+}
+.experience .timeline::-webkit-scrollbar-corner {
   background: rgba(217, 160, 102, 0.15);
 }
 .experience .timeline::before {
