@@ -1463,6 +1463,7 @@ header .navbar ul li a:hover {
   width: 100%;
   margin: clamp(0.8rem, 3vw, 1.6rem) 0;
   padding: clamp(2.8rem, 4.6vw, 4.6rem) clamp(1.6rem, 5vw, 3.6rem) clamp(4.6rem, 6.4vw, 6.2rem);
+  min-height: clamp(520px, 68vh, 760px);
   overflow-x: auto;
   scroll-snap-type: x proximity;
 }
