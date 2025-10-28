@@ -1427,7 +1427,9 @@ header .navbar ul li a:hover {
   margin: clamp(2.4rem, 6vw, 6.4rem) 0;
   border-radius: 0;
   box-shadow: none;
-  padding: clamp(2.4rem, 5vw, 4.8rem) clamp(1.4rem, 5vw, 4.8rem);
+  padding: clamp(1.8rem, 4.6vw, 4rem) clamp(1.4rem, 5vw, 4.8rem);
+  overflow: visible;
+  contain: none;
 }
 
 /* Improved contrast for experience cards */
