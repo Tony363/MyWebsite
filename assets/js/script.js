@@ -350,6 +350,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
             container.innerHTML = timelineMarkup;
             container.dataset.timelineOrientation = 'horizontal';
+
+            const scheduleTrackUpdate = () => {
+                window.requestAnimationFrame(() => {
+                    const items = container.querySelectorAll('.timeline-item');
+                    if (!items.length) {
+                        return;
+                    }
+
+                    const firstItem = items[0];
+                    const lastItem = items[items.length - 1];
+                    const firstCenter = firstItem.offsetLeft + firstItem.offsetWidth / 2;
+                    const lastCenter = lastItem.offsetLeft + lastItem.offsetWidth / 2;
+
+                    const computedStyles = window.getComputedStyle(container);
+                    const nodeSize = parseFloat(computedStyles.getPropertyValue('--timeline-node-size')) || 16;
+                    const extension = nodeSize * 0.75;
+
+                    const start = Math.max(0, firstCenter - extension);
+                    const width = Math.max(0, lastCenter - firstCenter + extension * 2);
+
+                    container.style.setProperty('--timeline-track-start', `${start}px`);
+                    container.style.setProperty('--timeline-track-width', `${width}px`);
+                });
+            };
+
+            scheduleTrackUpdate();
+            window.addEventListener('resize', scheduleTrackUpdate);
+
+            container.querySelectorAll('img').forEach((img) => {
+                if (img.complete) {
+                    scheduleTrackUpdate();
+                } else {
+                    img.addEventListener('load', scheduleTrackUpdate, { once: true });
+                    img.addEventListener('error', scheduleTrackUpdate, { once: true });
+                }
+            });
+
+            if (typeof ResizeObserver !== 'undefined') {
+                const resizeObserver = new ResizeObserver(scheduleTrackUpdate);
+                resizeObserver.observe(container);
+            }
         })
         .catch(error => {
             console.error('Failed to load experience timeline:', error);
