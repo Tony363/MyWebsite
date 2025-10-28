@@ -179,6 +179,7 @@ header .navbar ul li a:hover{
   padding: clamp(0.6rem, 2.2vw, 2rem) clamp(0.8rem, 3.6vw, 1.6rem) clamp(2rem, 4.2vw, 3.4rem);
   min-height: clamp(320px, 50vh, 520px);
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x proximity;
 }
 .experience .timeline::-webkit-scrollbar {
