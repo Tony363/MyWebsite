@@ -1465,7 +1465,7 @@ header .navbar ul li a:hover {
   width: 100%;
   margin: clamp(0.8rem, 3vw, 1.6rem) 0;
   padding: clamp(0.6rem, 2vw, 1.8rem) clamp(1.4rem, 4.6vw, 3.2rem) clamp(2.2rem, 5vw, 3.8rem);
-  min-height: clamp(360px, 56vh, 560px);
+  min-height: clamp(620px, 78vh, 860px);
   overflow-x: auto;
   overflow-y: visible;
   scroll-snap-type: x proximity;
@@ -1625,6 +1625,7 @@ header .navbar ul li a:hover {
     grid-auto-columns: minmax(240px, 80vw);
     gap: clamp(1.8rem, 4vw, 3rem);
     padding: clamp(1.6rem, 4.4vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.4rem, 4.8vw, 3.8rem);
+    min-height: clamp(560px, 82vh, 860px);
   }
 }
 
@@ -1634,6 +1635,7 @@ header .navbar ul li a:hover {
     grid-auto-columns: minmax(220px, 88vw);
     scroll-snap-type: x mandatory;
     padding: clamp(2.4rem, 6vw, 4rem) clamp(0.8rem, 4vw, 1.6rem) clamp(4.4rem, 7vw, 5.2rem);
+    min-height: clamp(360px, 68vh, 520px);
   }
   .experience .timeline::before {
     left: 0;
