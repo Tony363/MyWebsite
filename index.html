@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="./assets/css/animations.css">
     <link rel="stylesheet" href="./assets/css/accessibility.css">
     <link rel="stylesheet" href="./assets/css/chessboard-pattern.css">
+    <link rel="stylesheet" href="./assets/css/press.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
@@ -194,27 +195,6 @@
 </section>
 <!-- about section ends -->
 
-<!-- skills section starts -->
-<section class="skills" id="skills">
-
-    <h2 class="heading fade-in"><i class="fas fa-laptop-code" aria-hidden="true"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row" id="skillsContainer">
-
-            <!-- <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png" loading="lazy"/>
-                <span>AdobeXD</span>
-              </div>
-            </div> -->
-
-      </div>
-</div>
-</section>
-<!-- skills section ends -->
-
-
 <!-- education section starts -->
 <section class="education" id="education">
 
@@ -319,6 +299,39 @@
 </section>
 <!-- experience section ends -->
 
+<!-- press section starts -->
+<section class="press" id="press">
+  <div class="section-header">
+    <h2 class="heading fade-in"><i class="fas fa-newspaper" aria-hidden="true"></i> Featured <span>In</span></h2>
+    <p class="section-subtitle">Media coverage & publications</p>
+  </div>
+
+  <div class="press-grid" id="press-container">
+    <!-- Rendered from JSON by press.js -->
+  </div>
+
+  <!-- GitHub Activity Visualization -->
+  <div class="github-activity" id="github-activity">
+    <div class="github-activity__header">
+      <h3 class="github-activity__title">
+        <i class="fab fa-github" aria-hidden="true"></i>
+        <span>GitHub Activity</span>
+      </h3>
+      <a href="https://github.com/Tony363" target="_blank" rel="noopener noreferrer" class="github-activity__link">
+        <span>View Profile</span>
+        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="github-stats">
+      <!-- Populated by github-activity.js -->
+    </div>
+    <div class="github-heatmap">
+      <!-- Populated by github-activity.js -->
+    </div>
+  </div>
+</section>
+<!-- press section ends -->
+
 <!-- contact section starts -->
 <section class="contact" id="contact">
   
@@ -391,7 +404,6 @@
 
 <!-- Enhanced animations -->
 <script defer src="./assets/js/animations.js"></script>
-<script defer src="./assets/js/skills-interactive.js"></script>
 <script defer src="./assets/js/projects-interactive.js"></script>
 
 <!-- vanilla tilt.js links -->
@@ -409,6 +421,8 @@
 
 <script defer src="./assets/js/script.js"></script>
 <script defer src="./assets/js/smooth-scroll.js"></script>
+<script defer src="./assets/js/press.js"></script>
+<script defer src="./assets/js/github-activity.js"></script>
 
 <!-- Calendly badge widget - loads on demand -->
 <script type="text/javascript">
