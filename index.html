@@ -306,7 +306,7 @@
     <p class="section-subtitle">Media coverage & publications</p>
   </div>
 
-  <div class="press-grid" id="press-container">
+  <div class="press-grid" id="press-container" aria-live="polite" aria-busy="true">
     <!-- Rendered from JSON by press.js -->
   </div>
 
@@ -322,10 +322,10 @@
         <i class="fas fa-external-link-alt" aria-hidden="true"></i>
       </a>
     </div>
-    <div class="github-stats">
+    <div class="github-stats" aria-live="polite" aria-busy="true">
       <!-- Populated by github-activity.js -->
     </div>
-    <div class="github-heatmap">
+    <div class="github-heatmap" aria-live="polite" aria-busy="true">
       <!-- Populated by github-activity.js -->
     </div>
   </div>
@@ -351,12 +351,12 @@
           <i class='fas fa-user'></i>
         </div>
         <div class="form-field">
-          <input type="email" name="email" placeholder=" " required id="email-input">
+          <input type="email" name="email" placeholder=" " required id="email-input" inputmode="email" autocomplete="email">
           <label for="email-input">Email</label>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="form-field">
-          <input type="tel" name="phone" placeholder=" " id="phone-input">
+          <input type="tel" name="phone" placeholder=" " id="phone-input" inputmode="tel" autocomplete="tel">
           <label for="phone-input">Phone (Optional)</label>
           <i class='fas fa-phone-alt'></i>
         </div>

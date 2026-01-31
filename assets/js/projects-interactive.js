@@ -14,45 +14,44 @@ class InteractiveProjects {
     this.addKeyboardNavigation();
   }
 
-  loadProjects() {
-    // Sample project data - replace with actual projects
-    const projectData = [
-      {
-        title: 'Multi-Modal AI Research',
-        category: 'mult',
-        description: 'Advanced generative AI system combining vision and language models',
-        image: './assets/images/projects/googlecv.png',
-        tags: ['PyTorch', 'Transformers', 'Computer Vision'],
-        github: 'https://github.com/Tony363',
-        demo: '#'
-      },
-      {
-        title: 'Computer Vision Suite',
-        category: 'cv',
-        description: 'Comprehensive CV testing framework for Google Pixel devices',
-        image: './assets/images/projects/hackharvard.png',
-        tags: ['OpenCV', 'TensorFlow', 'Python'],
-        github: 'https://github.com/Tony363',
-        demo: '#'
-      },
-      {
-        title: 'Portfolio Website',
-        category: 'webapps',
-        description: 'Modern portfolio with Apple-inspired design and interactions',
-        image: './assets/images/projects/bootstrapportfolio.png',
-        tags: ['JavaScript', 'CSS3', 'HTML5'],
-        github: 'https://github.com/Tony363',
-        demo: '#'
-      }
-    ];
-
+  async loadProjects() {
     const container = document.querySelector('.work .box-container');
     if (!container) return;
 
-    projectData.forEach((project, index) => {
-      const card = this.createProjectCard(project, index);
-      container.appendChild(card);
-    });
+    try {
+      const response = await fetch('/projects/projects.json');
+      if (!response.ok) throw new Error('Failed to fetch projects');
+
+      const projectData = await response.json();
+
+      projectData.forEach((project, index) => {
+        // Transform JSON structure to match createProjectCard expectations
+        const cardData = {
+          title: project.name,
+          category: project.category,
+          description: project.desc,
+          image: `./assets/images/projects/${project.image}.png`,
+          tags: this.getTagsForCategory(project.category),
+          github: project.links.code,
+          demo: project.links.view
+        };
+        const card = this.createProjectCard(cardData, index);
+        container.appendChild(card);
+      });
+    } catch (error) {
+      console.error('Error loading projects:', error);
+      // Fallback to show error message
+      container.innerHTML = '<p style="color: var(--theme-text-muted); text-align: center; padding: 2rem;">Unable to load projects.</p>';
+    }
+  }
+
+  getTagsForCategory(category) {
+    const tagMap = {
+      'cv': ['OpenCV', 'Python', 'Computer Vision'],
+      'mult': ['PyTorch', 'Transformers', 'Multi-Modal'],
+      'webapps': ['JavaScript', 'CSS3', 'HTML5']
+    };
+    return tagMap[category] || ['Project'];
   }
 
   createProjectCard(project, index) {

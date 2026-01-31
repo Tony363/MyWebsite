@@ -722,6 +722,11 @@ srtop.reveal('.education .box', { interval: 200 });
 srtop.reveal('.experience .timeline', { delay: 400 });
 srtop.reveal('.experience .timeline .container', { interval: 400 });
 
+/* SCROLL PRESS */
+srtop.reveal('.press .section-header', { delay: 200 });
+srtop.reveal('.press .press-card', { interval: 200 });
+srtop.reveal('.press .github-activity', { delay: 400 });
+
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });

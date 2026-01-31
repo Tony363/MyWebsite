@@ -1,0 +1,7 @@
+# robots.txt for tonysiu.dev
+User-agent: *
+Allow: /
+Disallow: /test-results/
+Disallow: /playwright-report/
+
+Sitemap: https://tonysiu.dev/sitemap.xml
