@@ -34,13 +34,19 @@
 
   function createPressCard(item) {
     const card = document.createElement('article');
-    card.className = `press-card${item.featured ? ' featured' : ''}`;
+    card.className = `press-card${item.featured ? ' featured' : ''}${item.image ? ' has-image' : ''}`;
     card.setAttribute('role', 'article');
 
     card.innerHTML = `
-      <div class="press-card__logo">
-        <span class="press-card__logo-text">${item.publication}</span>
-      </div>
+      ${item.image ? `
+        <div class="press-card__image">
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+        </div>
+      ` : `
+        <div class="press-card__logo">
+          <span class="press-card__logo-text">${item.publication}</span>
+        </div>
+      `}
       <div class="press-card__content">
         <span class="press-card__date">
           <i class="fas fa-calendar-alt" aria-hidden="true"></i>
