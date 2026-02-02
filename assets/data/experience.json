@@ -1,25 +1,25 @@
 [
-   {
+  {
     "company": "Code & Coffee Philly",
     "companyIcon": "./assets/images/companies/code_coffee_philadelphia_logo.jpeg",
     "alt": "C&C Philly",
     "title": "Founder",
-    "period": "Jan 2024 - present",
-    "side": "Left"
+    "period": "Jan 2024 - Present",
+    "side": "left"
   },
   {
-    "company": "Variant Inc Labs",
-    "companyIcon": "./assets/images/companies/variantlabs_ai_logo.jpeg",
-    "alt": "Variant AI",
-    "title": "Founding Computer Vision & Animation Engineer",
-    "period": "Mar 2025 - Oct 2025",
+    "company": "A16z Speedrun SR005",
+    "companyIcon": "./assets/images/companies/a16z-logo.png",
+    "alt": "A16z Speedrun",
+    "title": "Founding AI Engineer",
+    "period": "Apr 2025 - Dec 2025",
     "side": "right"
   },
   {
-    "company": "A-Pro Solutions",
+    "company": "A Pro Inc Solutions",
     "companyIcon": "./assets/images/companies/apro-logo1.png",
-    "alt": "A-Pro Solutions",
-    "title": "Generative AI Researcher & Engineer",
+    "alt": "A Pro Inc Solutions",
+    "title": "Generative AI Engineer",
     "period": "Feb 2025 - Jul 2025",
     "side": "left"
   },
@@ -28,7 +28,23 @@
     "companyIcon": "https://tuportal6.temple.edu/documents/20121/0/TempleT_NoBox_Red.png/03f1f315-a520-5b50-cfba-51ff28cde995?version=1.0&t=1681129531723&imagePreview=1",
     "alt": "Temple University",
     "title": "Multi-Modal Generative AI Researcher",
-    "period": "May 2023 - April 2025",
+    "period": "May 2023 - May 2025",
+    "side": "right"
+  },
+  {
+    "company": "Google Research",
+    "companyIcon": "./assets/images/google.webp",
+    "alt": "Google Research",
+    "title": "Google UR Computer Vision Research Lead",
+    "period": "Jan 2022 - May 2023",
+    "side": "left"
+  },
+  {
+    "company": "Taiwan Tech Arena",
+    "companyIcon": "./assets/images/tta.webp",
+    "alt": "Taiwan Tech Arena",
+    "title": "AI Specialist Engineer",
+    "period": "May 2020 - Oct 2020",
     "side": "right"
   },
   {
@@ -46,14 +62,6 @@
     "title": "Data Analyst",
     "period": "Jun 2024 - Sep 2024",
     "side": "right"
-  },
-  {
-    "company": "Google Research",
-    "companyIcon": "./assets/images/google.webp",
-    "alt": "Google Research",
-    "title": "Pixel team Computer Vision Research Lead",
-    "period": "Jan 2022 - May 2023",
-    "side": "left"
   },
   {
     "company": "Caspian Pipeline Consortium",
@@ -86,13 +94,5 @@
     "title": "Applied Statistics Engineer Consultant",
     "period": "Aug 2019 - Jan 2021",
     "side": "left"
-  },
-  {
-    "company": "Taiwan Tech Arena",
-    "companyIcon": "./assets/images/tta.webp",
-    "alt": "Taiwan Tech Arena",
-    "title": "AI Specialist Engineer",
-    "period": "May 2020 - Oct 2020",
-    "side": "right"
   }
 ]
