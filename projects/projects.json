@@ -1,42 +1,62 @@
 [
   {
-    "name": "Pixel Device CV Testing'",
-    "desc": "Google University Research program for CV quality detection and flicker detection",
-    "image": "googlecv",
-    "category": "cv",
+    "name": "SuperClaude",
+    "desc": "A configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies.",
+    "image": "superclaude",
+    "category": "github",
     "links": {
-      "view": "https://github.com/hc07180011/testing-cv",
-      "code": "https://github.com/hc07180011/testing-cv"
+      "view": "https://github.com/Tony363/SuperClaude",
+      "code": "https://github.com/Tony363/SuperClaude"
     }
   },
   {
-    "name": "HackHarvard Voice Coding",
-    "desc": "HackHarvard Hackathon Project to go from Audio to Code and Visualization",
-    "image": "hackharvard",
-    "category": "mult",
+    "name": "testing-cv",
+    "desc": "CV quality detection and flicker detection for display testing and quality assurance.",
+    "image": "testing-cv",
+    "category": "github",
     "links": {
-      "view": "https://github.com/Tony363/HackHarvard_voice_coding",
-      "code": "https://github.com/Tony363/HackHarvard_voice_coding"
+      "view": "https://github.com/Tony363/testing-cv",
+      "code": "https://github.com/Tony363/testing-cv"
     }
   },
   {
-    "name": "Edge Sports Video Analytics",
-    "desc": "Reduced fps stitching speed of 2x 3840X2160 pixels, 170 degree fisheye cameras from 6 seconds to 0.2 seconds on the Nvidia Jetson Xavier",
-    "image": "teamplay",
-    "category": "cv",
+    "name": "sec_filings",
+    "desc": "Collecting BDC Schedule of investments data from sec.gov for financial analysis.",
+    "image": "sec_filings",
+    "category": "github",
+    "links": {
+      "view": "https://github.com/Tony363/sec_filings",
+      "code": "https://github.com/Tony363/sec_filings"
+    }
+  },
+  {
+    "name": "Chartmetric_Analysis",
+    "desc": "Music industry analytics and data visualization using Chartmetric API.",
+    "image": "chartmetric_analysis",
+    "category": "github",
+    "links": {
+      "view": "https://github.com/Tony363/Chartmetric_Analysis",
+      "code": "https://github.com/Tony363/Chartmetric_Analysis"
+    }
+  },
+  {
+    "name": "opencvStitch",
+    "desc": "estimateTransform once, ComposePanorama CUDA optimization for real-time video stitching.",
+    "image": "opencvstitch",
+    "category": "github",
     "links": {
       "view": "https://github.com/Tony363/opencvStitch",
-      "code": "https://github.com/Tony363/Teamplay_Yolov3"
+      "code": "https://github.com/Tony363/opencvStitch"
     }
   },
   {
-    "name": "LAMP Stack Blog",
-    "desc": "The Easy Blog site project is a simple PHP, CSS, and JavaScript project.",
-    "image": "lamp",
-    "category": "webapps",
+    "name": "DocAutomate",
+    "desc": "Claude Code as a personal army of Computer Use Agents for automating operations work.",
+    "image": "docautomate",
+    "category": "github",
     "links": {
-      "view": "https://github.com/Tony363/opensource-final-project",
-      "code": "https://github.com/Tony363/opensource-final-project"
+      "view": "https://github.com/Tony363/DocAutomate",
+      "code": "https://github.com/Tony363/DocAutomate"
     }
   }
 ]

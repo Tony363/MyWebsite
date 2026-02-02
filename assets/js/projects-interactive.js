@@ -49,7 +49,8 @@ class InteractiveProjects {
     const tagMap = {
       'cv': ['OpenCV', 'Python', 'Computer Vision'],
       'mult': ['PyTorch', 'Transformers', 'Multi-Modal'],
-      'webapps': ['JavaScript', 'CSS3', 'HTML5']
+      'webapps': ['JavaScript', 'CSS3', 'HTML5'],
+      'github': ['GitHub', 'Open Source', 'Portfolio']
     };
     return tagMap[category] || ['Project'];
   }
