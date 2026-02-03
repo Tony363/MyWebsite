@@ -543,9 +543,9 @@ $(document).ready(function () {
         // Configuration for email verification
         const EMAIL_CONFIG = {
             expectedRecipient: 'pysolver33@gmail.com',
-            serviceId: 'contact_service',
-            templateId: 'template_contact',
-            userId: 'user_TTDmetQLYgWCLzHTDgqxm'
+            serviceId: 'service_x1rumfu',
+            templateId: 'template_y1e3nzi',
+            userId: 'j4Eu2xVGox4yB1Nqk'
         };
         
         // Log configuration for verification (development only)

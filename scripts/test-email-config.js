@@ -112,11 +112,11 @@ function testEmailJSConfig() {
         }
         
         // Check for service and template IDs
-        if (content.includes("serviceId: 'contact_service'")) {
+        if (content.includes("serviceId: 'service_x1rumfu'")) {
             testResults.passed.push('✅ EmailJS service ID is configured');
         }
-        
-        if (content.includes("templateId: 'template_contact'")) {
+
+        if (content.includes("templateId: 'template_y1e3nzi'")) {
             testResults.passed.push('✅ EmailJS template ID is configured');
         }
         
@@ -202,9 +202,9 @@ function runTests() {
     // Action items
     console.log(`\n${colors.blue}📝 ACTION ITEMS:${colors.reset}`);
     console.log('1. Log into EmailJS dashboard: https://dashboard.emailjs.com');
-    console.log('2. Navigate to Email Templates → template_contact');
+    console.log('2. Navigate to Email Templates → template_y1e3nzi');
     console.log(`3. Verify "To Email" field is set to: ${EXPECTED_EMAIL}`);
-    console.log('4. Check service "contact_service" configuration');
+    console.log('4. Check service "service_x1rumfu" configuration');
     console.log('5. Test the contact form manually to confirm delivery');
     
     // Exit with appropriate code
