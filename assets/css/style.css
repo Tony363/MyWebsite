@@ -711,12 +711,12 @@ header .navbar ul li a:hover {
 
 /* Hero Featured Section */
 .hero-featured {
-  flex: 1 1 45rem;
+  flex: 1 1 50rem;
   z-index: 10;
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .hero-featured__header {
@@ -777,8 +777,8 @@ header .navbar ul li a:hover {
 }
 
 .hero-featured .press-card__image {
-  max-height: 280px;
   overflow: hidden;
+  border-radius: 1rem;
 }
 
 .hero-featured .press-card__date {
@@ -816,9 +816,6 @@ header .navbar ul li a:hover {
     flex: 1 1 100%;
   }
 
-  .hero-featured .press-card__image {
-    max-height: 200px;
-  }
 }
 
 /* GitHub Section Standalone */
