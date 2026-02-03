@@ -433,6 +433,113 @@ header .navbar ul li a:hover {
 }
 /* navbar ends */
 
+/* IBT Press Badge */
+.ibt-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, rgba(180, 99, 45, 0.15), rgba(217, 160, 102, 0.1));
+  border: 1px solid rgba(217, 160, 102, 0.3);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.ibt-badge:hover {
+  background: linear-gradient(135deg, rgba(180, 99, 45, 0.25), rgba(217, 160, 102, 0.18));
+  border-color: rgba(217, 160, 102, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(180, 99, 45, 0.2);
+}
+
+.ibt-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+}
+
+.ibt-badge__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ibt-badge__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.ibt-badge__label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--theme-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ibt-badge__source {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--theme-text);
+}
+
+.ibt-badge__arrow {
+  font-size: 1rem;
+  color: var(--theme-accent);
+  transition: transform 0.3s ease;
+}
+
+.ibt-badge:hover .ibt-badge__arrow {
+  transform: translateX(2px);
+}
+
+/* IBT Badge - Tablet: Icon only */
+@media (max-width: 1024px) {
+  .ibt-badge__text {
+    display: none;
+  }
+  .ibt-badge__arrow {
+    display: none;
+  }
+  .ibt-badge {
+    padding: 0.7rem;
+  }
+}
+
+/* IBT Badge - Mobile: Hidden */
+@media (max-width: 768px) {
+  .ibt-badge {
+    display: none;
+  }
+}
+
+/* IBT Badge Dark Mode */
+:root[data-theme="dark"] .ibt-badge {
+  background: linear-gradient(135deg, rgba(240, 179, 108, 0.12), rgba(210, 138, 60, 0.08));
+  border-color: rgba(240, 179, 108, 0.25);
+}
+
+:root[data-theme="dark"] .ibt-badge:hover {
+  background: linear-gradient(135deg, rgba(240, 179, 108, 0.2), rgba(210, 138, 60, 0.15));
+  border-color: rgba(240, 179, 108, 0.4);
+  box-shadow: 0 4px 12px rgba(240, 179, 108, 0.15);
+}
+
+:root[data-theme="dark"] .ibt-badge__label {
+  color: var(--theme-accent);
+}
+
+:root[data-theme="dark"] .ibt-badge__source {
+  color: var(--theme-text);
+}
+/* IBT Press Badge ends */
+
 /* hamburger icon starts*/
 #menu {
   font-size: 3rem;
