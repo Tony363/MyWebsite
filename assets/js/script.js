@@ -312,27 +312,31 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Failed to load footer partial.', error);
         });
 
-    // Dynamic experience timeline
+    // Dynamic experience timeline carousel
     fetch('/assets/data/experience.json')
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('experience-timeline');
+            const dotsContainer = document.getElementById('carousel-dots');
+            const prevBtn = document.querySelector('.carousel-nav--prev');
+            const nextBtn = document.querySelector('.carousel-nav--next');
             if (!container) return;
 
             container.setAttribute('role', 'list');
             container.setAttribute('aria-live', 'polite');
 
-            const timelineMarkup = data.map(item => {
-                const positionClass = (item.side || '').toLowerCase() === 'right'
-                    ? 'timeline-item--bottom'
-                    : 'timeline-item--top';
+            // Build timeline cards
+            const timelineMarkup = data.map((item, index) => {
+                const positionClass = index % 2 === 0
+                    ? 'timeline-item--top'
+                    : 'timeline-item--bottom';
 
                 const iconSource = item.companyIcon && item.companyIcon.startsWith('./')
                     ? item.companyIcon.replace('./', '/')
                     : item.companyIcon;
 
                 return `
-                <article class="timeline-item ${positionClass}" role="listitem">
+                <article class="timeline-item ${positionClass}" role="listitem" data-index="${index}">
                   <div class="timeline-card experience-card-dark tilt">
                     <div class="tag">
                       <h2>
@@ -351,12 +355,109 @@ document.addEventListener('DOMContentLoaded', function() {
             container.innerHTML = timelineMarkup;
             container.dataset.timelineOrientation = 'horizontal';
 
+            // Carousel state
+            const items = container.querySelectorAll('.timeline-item');
+            const totalItems = items.length;
+            let currentIndex = 0;
+
+            // Responsive items per view
+            const getItemsPerView = () => {
+                if (window.innerWidth <= 600) return 1;
+                if (window.innerWidth <= 900) return 2;
+                return 3;
+            };
+
+            let itemsPerView = getItemsPerView();
+            let totalPages = Math.ceil(totalItems / itemsPerView);
+
+            // Create dots
+            const createDots = () => {
+                if (!dotsContainer) return;
+                totalPages = Math.ceil(totalItems / itemsPerView);
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalPages; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `carousel-dot${i === 0 ? ' active' : ''}`;
+                    dot.setAttribute('role', 'tab');
+                    dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+                    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+                    dot.addEventListener('click', () => goToPage(i));
+                    dotsContainer.appendChild(dot);
+                }
+            };
+
+            // Update carousel position
+            const updateCarousel = () => {
+                const itemWidth = items[0]?.offsetWidth || 300;
+                const gap = parseFloat(getComputedStyle(container).gap) || 48;
+                const offset = currentIndex * (itemWidth + gap);
+                container.style.transform = `translateX(-${offset}px)`;
+
+                // Update dots
+                if (dotsContainer) {
+                    const currentPage = Math.floor(currentIndex / itemsPerView);
+                    dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentPage);
+                        dot.setAttribute('aria-selected', i === currentPage ? 'true' : 'false');
+                    });
+                }
+
+                // Update button states
+                if (prevBtn) prevBtn.disabled = currentIndex === 0;
+                if (nextBtn) nextBtn.disabled = currentIndex >= totalItems - itemsPerView;
+            };
+
+            const goToPage = (page) => {
+                currentIndex = page * itemsPerView;
+                if (currentIndex > totalItems - itemsPerView) {
+                    currentIndex = totalItems - itemsPerView;
+                }
+                updateCarousel();
+            };
+
+            const goNext = () => {
+                if (currentIndex < totalItems - itemsPerView) {
+                    currentIndex += itemsPerView;
+                    if (currentIndex > totalItems - itemsPerView) {
+                        currentIndex = totalItems - itemsPerView;
+                    }
+                    updateCarousel();
+                }
+            };
+
+            const goPrev = () => {
+                if (currentIndex > 0) {
+                    currentIndex -= itemsPerView;
+                    if (currentIndex < 0) currentIndex = 0;
+                    updateCarousel();
+                }
+            };
+
+            // Event listeners
+            if (prevBtn) prevBtn.addEventListener('click', goPrev);
+            if (nextBtn) nextBtn.addEventListener('click', goNext);
+
+            // Handle resize
+            const handleResize = () => {
+                const newItemsPerView = getItemsPerView();
+                if (newItemsPerView !== itemsPerView) {
+                    itemsPerView = newItemsPerView;
+                    currentIndex = 0;
+                    createDots();
+                }
+                updateCarousel();
+            };
+
+            window.addEventListener('resize', handleResize);
+
+            // Initialize
+            createDots();
+            updateCarousel();
+
+            // Timeline track update
             const scheduleTrackUpdate = () => {
                 window.requestAnimationFrame(() => {
-                    const items = container.querySelectorAll('.timeline-item');
-                    if (!items.length) {
-                        return;
-                    }
+                    if (!items.length) return;
 
                     const firstItem = items[0];
                     const lastItem = items[items.length - 1];
@@ -386,11 +487,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     img.addEventListener('error', scheduleTrackUpdate, { once: true });
                 }
             });
-
-            if (typeof ResizeObserver !== 'undefined') {
-                const resizeObserver = new ResizeObserver(scheduleTrackUpdate);
-                resizeObserver.observe(container);
-            }
         })
         .catch(error => {
             console.error('Failed to load experience timeline:', error);

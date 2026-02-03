@@ -1715,6 +1715,83 @@ header .navbar ul li a:hover {
   border: 1px solid rgba(217, 160, 102, 0.25);
 }
 
+/* Timeline Carousel */
+.timeline-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(180, 99, 45, 0.9), rgba(217, 160, 102, 0.85));
+  border: 2px solid rgba(217, 160, 102, 0.5);
+  color: var(--earth-cream);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-nav:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(217, 160, 102, 0.95), rgba(180, 99, 45, 0.95));
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-nav--prev {
+  left: 10px;
+}
+
+.carousel-nav--next {
+  right: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(217, 160, 102, 0.3);
+  border: 2px solid rgba(217, 160, 102, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background: rgba(217, 160, 102, 0.5);
+  transform: scale(1.2);
+}
+
+.carousel-dot.active {
+  background: var(--theme-accent);
+  border-color: var(--theme-accent);
+  transform: scale(1.2);
+}
+
 .experience .timeline {
   --timeline-node-size: 18px;
   --timeline-card-gap: clamp(1rem, 4vw, 4rem);
@@ -1723,15 +1800,14 @@ header .navbar ul li a:hover {
   position: relative;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(300px, 1fr);
-  gap: clamp(3rem, 6vw, 6.4rem);
-  width: 100%;
+  grid-auto-columns: minmax(280px, 320px);
+  gap: clamp(2rem, 4vw, 4rem);
+  width: max-content;
   margin: clamp(0.8rem, 3vw, 1.6rem) 0;
-  padding: clamp(0.6rem, 2vw, 1.8rem) clamp(1.4rem, 4.6vw, 3.2rem) clamp(2.2rem, 5vw, 3.8rem);
-  min-height: clamp(620px, 78vh, 860px);
-  overflow-x: auto;
-  overflow-y: visible;
-  scroll-snap-type: x proximity;
+  padding: clamp(0.6rem, 2vw, 1.8rem) 60px clamp(2.2rem, 5vw, 3.8rem);
+  min-height: clamp(520px, 65vh, 700px);
+  overflow: visible;
+  transition: transform 0.5s ease;
 }
 .experience .timeline::-webkit-scrollbar {
   height: 8px;
@@ -1889,27 +1965,55 @@ header .navbar ul li a:hover {
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Media queries - Responsive timeline on screens less than 600px wide */
+/* Media queries - Responsive timeline carousel */
 @media screen and (max-width: 900px) {
   .experience .timeline {
     --timeline-card-gap: clamp(0.8rem, 4.8vw, 3rem);
-    grid-auto-columns: minmax(240px, 80vw);
+    grid-auto-columns: minmax(240px, 280px);
     gap: clamp(1.8rem, 4vw, 3rem);
-    padding: clamp(1.6rem, 4.4vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.4rem, 4.8vw, 3.8rem);
-    min-height: clamp(560px, 82vh, 860px);
+    padding: clamp(1.6rem, 4.4vw, 3rem) 50px clamp(2.4rem, 4.8vw, 3.8rem);
+    min-height: clamp(480px, 65vh, 650px);
+  }
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+  .carousel-nav--prev {
+    left: 5px;
+  }
+  .carousel-nav--next {
+    right: 5px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .experience .timeline {
     --timeline-card-gap: 0;
-    grid-auto-columns: minmax(220px, 88vw);
-    scroll-snap-type: x mandatory;
-    padding: clamp(2.4rem, 6vw, 4rem) clamp(0.8rem, 4vw, 1.6rem) clamp(4.4rem, 7vw, 5.2rem);
-    min-height: clamp(360px, 68vh, 520px);
+    grid-auto-columns: minmax(260px, 85vw);
+    padding: clamp(2.4rem, 6vw, 4rem) 45px clamp(4.4rem, 7vw, 5.2rem);
+    min-height: clamp(360px, 60vh, 480px);
   }
   .experience .timeline::before {
     width: 100%;
+  }
+  .carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  .carousel-nav--prev {
+    left: 2px;
+  }
+  .carousel-nav--next {
+    right: 2px;
+  }
+  .carousel-dots {
+    gap: 8px;
+  }
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
   }
   .experience .timeline .timeline-item {
     min-height: 260px;
