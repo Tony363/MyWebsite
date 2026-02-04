@@ -16,27 +16,27 @@
   --color-gray-600: #2c2c2e;
   --color-gray-700: #1c1c1e;
   
-  /* Premium Accent Palette */
-  --color-accent: #b4632d;
-  --color-accent-hover: #8d4219;
-  --color-accent-light: rgba(180, 99, 45, 0.16);
-  --color-accent-glow: rgba(180, 99, 45, 0.45);
-  --color-secondary: #d9a066;
-  --color-secondary-light: rgba(217, 160, 102, 0.14);
-  --color-tertiary: #402218;
-  --color-success: #f0b36c;
-  --color-warning: #d28a3c;
-  --color-error: #c04b37;
+  /* Premium Accent Palette - Dark Forest */
+  --color-accent: #3d5a45;
+  --color-accent-hover: #2d4a35;
+  --color-accent-light: rgba(61, 90, 69, 0.1);
+  --color-accent-glow: rgba(61, 90, 69, 0.2);
+  --color-secondary: #4a6b52;
+  --color-secondary-light: rgba(74, 107, 82, 0.1);
+  --color-tertiary: #1d3a25;
+  --color-success: #3d5a45;
+  --color-warning: #a68a4a;
+  --color-error: #8b4a4a;
   
-  /* Premium Gradients */
-  --gradient-hero: linear-gradient(135deg, rgba(255, 240, 220, 0.2) 0%, rgba(28, 18, 13, 0) 100%);
-  --gradient-card: linear-gradient(145deg, #fff8ee, #f4ede2);
-  --gradient-dark: linear-gradient(180deg, #1c120d 0%, #120a06 100%);
+  /* Premium Gradients - Dark Forest Theme */
+  --gradient-hero: linear-gradient(135deg, rgba(61, 90, 69, 0.05) 0%, rgba(10, 10, 10, 0) 100%);
+  --gradient-card: linear-gradient(145deg, #fafaf8, #f5f5f0);
+  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
-  --gradient-mesh: radial-gradient(at 30% 30%, rgba(255, 232, 209, 0.28) 0%, transparent 50%),
-                   radial-gradient(at 70% 70%, rgba(92, 54, 32, 0.18) 0%, transparent 50%),
-                   radial-gradient(at 50% 50%, rgba(49, 29, 19, 0.22) 0%, transparent 70%);
-  --gradient-glow: radial-gradient(circle at center, rgba(240, 179, 108, 0.4) 0%, transparent 70%);
+  --gradient-mesh: radial-gradient(at 30% 30%, rgba(61, 90, 69, 0.05) 0%, transparent 50%),
+                   radial-gradient(at 70% 70%, rgba(90, 107, 85, 0.04) 0%, transparent 50%),
+                   radial-gradient(at 50% 50%, rgba(45, 74, 53, 0.05) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(circle at center, rgba(61, 90, 69, 0.1) 0%, transparent 70%);
   
   /* Spacing - More generous for Apple aesthetic */
   --space-xs: 0.8rem;
@@ -79,16 +79,16 @@
 /* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-black: #ffffff;
-    --color-white: #1d1d1f;
-    --color-gray-100: #2c2c2e;
-    --color-gray-200: #3a3a3c;
-    --color-gray-300: #48484a;
-    --color-gray-400: #98989d;
-    --color-gray-500: #aeaeb2;
-    --color-gray-600: #e8e8ed;
-    --color-accent: #f0b36c;
-    --color-accent-hover: #d28a3c;
+    --color-black: #e0e0dc;
+    --color-white: #0a0a0a;
+    --color-gray-100: #121212;
+    --color-gray-200: #1a1a1a;
+    --color-gray-300: #262626;
+    --color-gray-400: #8a8a85;
+    --color-gray-500: #a0a098;
+    --color-gray-600: #e0e0dc;
+    --color-accent: #4a6b52;
+    --color-accent-hover: #3d5a45;
   }
 }
 
@@ -139,7 +139,7 @@
   width: 500px;
   height: 500px;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.4;
   filter: blur(40px);
 }
 

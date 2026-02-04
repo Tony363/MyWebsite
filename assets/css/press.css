@@ -35,7 +35,7 @@
   background: linear-gradient(
     90deg,
     var(--theme-chip-bg) 25%,
-    rgba(217, 160, 102, 0.2) 50%,
+    rgba(61, 90, 69, 0.2) 50%,
     var(--theme-chip-bg) 75%
   );
   background-size: 200% 100%;
@@ -48,7 +48,7 @@
   background: linear-gradient(
     90deg,
     var(--theme-chip-bg) 25%,
-    rgba(217, 160, 102, 0.2) 50%,
+    rgba(61, 90, 69, 0.2) 50%,
     var(--theme-chip-bg) 75%
   );
   background-size: 200% 100%;
@@ -276,7 +276,7 @@
 .press-card__quote {
   position: relative;
   padding: 1.5rem 1.5rem 1.5rem 3rem;
-  background: linear-gradient(135deg, rgba(180, 99, 45, 0.08), rgba(217, 160, 102, 0.05));
+  background: linear-gradient(135deg, rgba(45, 74, 53, 0.08), rgba(61, 90, 69, 0.05));
   border-left: 3px solid var(--theme-accent);
   border-radius: 0 1rem 1rem 0;
   margin: 1rem 0;
@@ -309,8 +309,8 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1.2rem 2rem;
-  background: linear-gradient(135deg, rgba(180, 99, 45, 0.9), rgba(217, 160, 102, 0.85));
-  color: var(--earth-cream);
+  background: linear-gradient(135deg, rgba(45, 74, 53, 0.9), rgba(61, 90, 69, 0.85));
+  color: #ffffff;
   border-radius: 0.8rem;
   font-size: 1.4rem;
   font-weight: 600;
@@ -320,7 +320,7 @@
 }
 
 .press-card__cta:hover {
-  background: linear-gradient(135deg, rgba(217, 160, 102, 0.95), rgba(180, 99, 45, 0.95));
+  background: linear-gradient(135deg, rgba(61, 90, 69, 0.95), rgba(45, 74, 53, 0.95));
   transform: translateX(4px);
 }
 
@@ -448,7 +448,7 @@
   background: linear-gradient(
     90deg,
     var(--theme-chip-bg) 25%,
-    rgba(217, 160, 102, 0.2) 50%,
+    rgba(61, 90, 69, 0.2) 50%,
     var(--theme-chip-bg) 75%
   );
   background-size: 200% 100%;
@@ -472,11 +472,11 @@
 }
 
 :root[data-theme="dark"] .press-card__logo {
-  background: rgba(24, 14, 9, 0.5);
+  background: rgba(18, 18, 18, 0.6);
 }
 
 :root[data-theme="dark"] .press-card__quote {
-  background: linear-gradient(135deg, rgba(240, 179, 108, 0.1), rgba(210, 138, 60, 0.05));
+  background: linear-gradient(135deg, rgba(61, 90, 69, 0.1), rgba(45, 74, 53, 0.05));
 }
 
 :root[data-theme="dark"] .github-widget {
