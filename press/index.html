@@ -4,31 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tony Siu featured in International Business Times - Learn how research, projects, and community work shape his approach to building impactful AI systems.">
-    <meta name="keywords" content="Tony Siu, International Business Times, IBT, AI, Coding Coffee, Philadelphia tech, AI Engineer">
+    <meta name="description" content="Tony Siu featured in Tech Times and International Business Times - Media coverage highlighting AI development, community building, and long-term approaches to meaningful technology.">
+    <meta name="keywords" content="Tony Siu, Tech Times, International Business Times, IBT, AI, Code Coffee, Philadelphia tech, AI Engineer, press coverage">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tonysiu.dev/press">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Press - Tony Siu Featured in International Business Times">
-    <meta property="og:description" content="How research, projects, and community work shape Tony Siu's approach to building impactful AI systems.">
-    <meta property="og:type" content="article">
+    <meta property="og:title" content="Press Coverage | Tony Siu - Featured in Tech Times & IBT">
+    <meta property="og:description" content="Media coverage highlighting AI development, community building, and long-term approaches to meaningful technology.">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://tonysiu.dev/press">
-    <meta property="og:image" content="https://tonysiu.dev/assets/images/press/ibt-article-screenshot.png">
+    <meta property="og:image" content="https://tonysiu.dev/assets/images/press/techtimes-article-screenshot.png">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@pysolver33">
-    <meta name="twitter:title" content="Tony Siu Featured in International Business Times">
-    <meta name="twitter:description" content="How research, projects, and community work shape Tony Siu's approach to building impactful AI systems.">
-    <meta name="twitter:image" content="https://tonysiu.dev/assets/images/press/ibt-article-screenshot.png">
+    <meta name="twitter:title" content="Press Coverage | Tony Siu - Featured in Tech Times & IBT">
+    <meta name="twitter:description" content="Media coverage highlighting AI development, community building, and long-term approaches to meaningful technology.">
+    <meta name="twitter:image" content="https://tonysiu.dev/assets/images/press/techtimes-article-screenshot.png">
 
     <!-- Structured Data (JSON-LD) - NewsArticle + Person Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "NewsArticle",
+          "@id": "https://www.techtimes.com/articles/314602/20260212/code-coffee-philadelphias-mission-revive-community-driven-learning-strengthen-citys-tech.htm",
+          "headline": "Code & Coffee Philadelphia's Mission: Revive Community-Driven Learning and Strengthen the City's Tech Culture",
+          "description": "Tech Times explores how Code & Coffee Philadelphia is reviving community-driven learning and strengthening the city's tech culture.",
+          "datePublished": "2026-02-12",
+          "author": {
+            "@type": "Person",
+            "name": "Carl Williams"
+          },
+          "publisher": {
+            "@type": "NewsMediaOrganization",
+            "name": "Tech Times",
+            "url": "https://www.techtimes.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://tonysiu.dev/assets/images/press/techtimes-logo.svg"
+            }
+          },
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://tonysiu.dev/assets/images/press/techtimes-article-screenshot.png",
+            "caption": "Code & Coffee Philadelphia featured in Tech Times"
+          },
+          "about": {
+            "@id": "https://tonysiu.dev/#person"
+          },
+          "mentions": {
+            "@id": "https://tonysiu.dev/#person"
+          }
+        },
         {
           "@type": "NewsArticle",
           "@id": "https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429",
@@ -54,10 +85,6 @@
           },
           "mentions": {
             "@id": "https://tonysiu.dev/#person"
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://tonysiu.dev/press"
           }
         },
         {
@@ -95,6 +122,7 @@
             }
           ],
           "award": [
+            "Featured in Tech Times (2026)",
             "Featured in International Business Times (2026)",
             "Google University Research Program Lead",
             "Code&Coffee Philadelphia - Scaled to 3,200+ members"
@@ -115,6 +143,7 @@
             "https://www.linkedin.com/in/pysolver/",
             "https://github.com/Tony363",
             "https://x.com/pysolver33",
+            "https://www.techtimes.com/articles/314602/20260212/code-coffee-philadelphias-mission-revive-community-driven-learning-strengthen-citys-tech.htm",
             "https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429"
           ],
           "address": {
@@ -126,10 +155,10 @@
           "email": "pysolver33@gmail.com"
         },
         {
-          "@type": "WebPage",
+          "@type": "CollectionPage",
           "@id": "https://tonysiu.dev/press",
-          "name": "Press - Tony Siu Featured in International Business Times",
-          "description": "Media coverage of Tony Siu, AI Engineer and Technical Expert featured in International Business Times.",
+          "name": "Press Coverage | Tony Siu - Featured in Tech Times & IBT",
+          "description": "Media coverage of Tony Siu, AI Engineer and Technical Expert featured in Tech Times and International Business Times.",
           "url": "https://tonysiu.dev/press",
           "isPartOf": {
             "@type": "WebSite",
@@ -139,9 +168,10 @@
           "about": {
             "@id": "https://tonysiu.dev/#person"
           },
-          "mainEntity": {
-            "@id": "https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429"
-          }
+          "mainEntity": [
+            { "@id": "https://www.techtimes.com/articles/314602/20260212/code-coffee-philadelphias-mission-revive-community-driven-learning-strengthen-citys-tech.htm" },
+            { "@id": "https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429" }
+          ]
         }
       ]
     }
@@ -154,7 +184,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
 
-    <title>Press | Tony Siu - Featured in International Business Times</title>
+    <title>Press Coverage | Tony Siu - Featured in Tech Times & IBT</title>
     <link rel="preload" href="/assets/css/style.css" as="style">
     <link rel="preload" href="/assets/js/script.js" as="script">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
@@ -179,16 +209,28 @@
             <li><a href="/#contact">Contact</a></li>
         </ul>
     </nav>
-    <a href="/press/" class="ibt-badge" aria-label="Featured in International Business Times">
-        <span class="ibt-badge__icon">
-            <img src="/assets/images/press/ibt-logo.svg" alt="" width="20" height="20">
-        </span>
-        <span class="ibt-badge__text">
-            <span class="ibt-badge__label">Global AI Recognition</span>
-            <span class="ibt-badge__source">As Seen in IBT</span>
-        </span>
-        <i class="fas fa-external-link-alt ibt-badge__arrow" aria-hidden="true"></i>
-    </a>
+    <div class="press-badges">
+        <a href="/press/#article-techtimes-2026" class="press-badge" aria-label="Press Coverage in Tech Times">
+            <span class="press-badge__icon">
+                <img src="/assets/images/press/techtimes-logo.svg" alt="" width="20" height="20">
+            </span>
+            <span class="press-badge__text">
+                <span class="press-badge__label">Press Coverage</span>
+                <span class="press-badge__source">Tech Times</span>
+            </span>
+            <i class="fas fa-external-link-alt press-badge__arrow" aria-hidden="true"></i>
+        </a>
+        <a href="/press/#article-ibt-2026" class="press-badge" aria-label="Featured in International Business Times">
+            <span class="press-badge__icon">
+                <img src="/assets/images/press/ibt-logo.svg" alt="" width="20" height="20">
+            </span>
+            <span class="press-badge__text">
+                <span class="press-badge__label">Global AI Recognition</span>
+                <span class="press-badge__source">As Seen in IBT</span>
+            </span>
+            <i class="fas fa-external-link-alt press-badge__arrow" aria-hidden="true"></i>
+        </a>
+    </div>
     <div class="header-actions">
         <button class="schedule-cta" type="button" onclick="loadCalendly()" aria-label="Schedule a call">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
@@ -208,131 +250,18 @@
 
 <!-- Press Hero Section -->
 <section class="press-hero" aria-labelledby="press-heading">
-    <div class="press-hero__badge">
-        <img src="/assets/images/press/ibt-logo.svg" alt="International Business Times logo" width="32" height="32">
-        <span class="press-hero__badge-text">International Business Times</span>
-    </div>
+    <div id="press-hero-badges"><!-- Rendered by press-page.js --></div>
     <h1 id="press-heading" class="press-hero__title">
         Featured in <span>Global Media</span>
     </h1>
     <p class="press-hero__subtitle">
-        International Business Times highlights how research, community building, and a long-term perspective shape meaningful AI development.
+        Media coverage highlighting AI development, community building, and long-term approaches to meaningful technology.
     </p>
 </section>
 <!-- Press Hero Section ends -->
 
-<!-- Article Screenshot Section -->
-<section class="article-section" aria-labelledby="article-heading">
-    <div class="article-section__header">
-        <h2 id="article-heading" class="article-section__title">
-            <i class="fas fa-newspaper" aria-hidden="true"></i>
-            The Article
-        </h2>
-    </div>
-
-    <figure class="article-screenshot" role="group" aria-labelledby="screenshot-caption">
-        <img src="/assets/images/press/ibt-article-screenshot.png"
-             alt="International Business Times article screenshot featuring Tony Siu's approach to building AI systems"
-             loading="lazy">
-        <figcaption id="screenshot-caption" class="sr-only">
-            Screenshot of the International Business Times article about Tony Siu's approach to AI development
-        </figcaption>
-        <div class="article-screenshot__share" role="group" aria-label="Share article">
-            <button type="button" class="share-btn share-btn--twitter" data-share="twitter" aria-label="Share on Twitter">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-                <span>Tweet</span>
-            </button>
-            <button type="button" class="share-btn share-btn--linkedin" data-share="linkedin" aria-label="Share on LinkedIn">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                <span>Share</span>
-            </button>
-            <button type="button" class="share-btn share-btn--copy" data-share="copy" aria-label="Copy link to clipboard">
-                <i class="fas fa-link" aria-hidden="true"></i>
-                <span>Copy Link</span>
-            </button>
-        </div>
-        <div class="article-screenshot__caption">
-            Click to read the full article on International Business Times
-        </div>
-    </figure>
-</section>
-<!-- Article Screenshot Section ends -->
-
-<!-- Context Cards Section -->
-<section class="context-section" aria-labelledby="context-heading">
-    <div class="context-section__header">
-        <h2 id="context-heading" class="context-section__title">
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-            Why IBT Highlighted Coding Coffee
-        </h2>
-        <p class="context-section__subtitle">Key themes from the article</p>
-    </div>
-
-    <div class="context-grid">
-        <article class="context-card">
-            <div class="context-card__icon">
-                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-            </div>
-            <h3 class="context-card__title">East Coast Tech Ecosystem Gap</h3>
-            <p class="context-card__text">
-                While Silicon Valley dominates tech narratives, Philadelphia has untapped potential. Grassroots communities like Coding Coffee fill this gap, creating spaces for builders to connect and collaborate.
-            </p>
-        </article>
-
-        <article class="context-card">
-            <div class="context-card__icon">
-                <i class="fas fa-users" aria-hidden="true"></i>
-            </div>
-            <h3 class="context-card__title">Community-Driven Innovation</h3>
-            <p class="context-card__text">
-                The shift from isolated development to collaborative knowledge-sharing defines modern tech communities. Regular meetups enable real-time peer feedback and accelerate learning for all participants.
-            </p>
-        </article>
-
-        <article class="context-card">
-            <div class="context-card__icon">
-                <i class="fas fa-seedling" aria-hidden="true"></i>
-            </div>
-            <h3 class="context-card__title">Long-Term Impact Philosophy</h3>
-            <p class="context-card__text">
-                "Small, deliberate steps" rather than chasing quick wins. A sustainable approach to building AI systems prioritizes lasting impact over short-term metrics.
-            </p>
-        </article>
-    </div>
-</section>
-<!-- Context Cards Section ends -->
-
-<!-- Pull Quote Section -->
-<section class="press-quote-section" aria-labelledby="quote-heading">
-    <div class="press-quote">
-        <i class="fas fa-quote-left press-quote__icon" aria-hidden="true"></i>
-        <blockquote>
-            <p id="quote-heading" class="press-quote__text">
-                "Many meaningful movements come from accumulating small, deliberate steps. You don't need to solve everything at once to move somewhere worthwhile."
-            </p>
-        </blockquote>
-        <div class="press-quote__author">
-            <img src="/assets/images/resume_photo.jpeg" alt="Tony Siu" loading="lazy">
-            <div class="press-quote__author-info">
-                <div class="press-quote__author-name">Tony Siu</div>
-                <div class="press-quote__author-title">Founding AI Engineer & Community Builder</div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Pull Quote Section ends -->
-
-<!-- CTA Section -->
-<div class="press-cta">
-    <a href="https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="press-cta__btn">
-        <span>Read Full Article on IBT</span>
-        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-    </a>
-</div>
-<!-- CTA Section ends -->
+<!-- Articles rendered by press-page.js -->
+<div id="press-articles-container" aria-live="polite"><!-- Rendered by press-page.js --></div>
 
 </main>
 <!-- main content ends -->
@@ -391,18 +320,7 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer src="https://unpkg.com/scrollreveal" async></script>
 <script defer src="/assets/js/script.js"></script>
+<script defer src="/press/press-page.js"></script>
 <script defer src="/press/share.js"></script>
-
-<script>
-// Make screenshot clickable to open article
-document.addEventListener('DOMContentLoaded', function() {
-    const screenshot = document.querySelector('.article-screenshot img');
-    if (screenshot) {
-        screenshot.addEventListener('click', function() {
-            window.open('https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429', '_blank', 'noopener,noreferrer');
-        });
-    }
-});
-</script>
 </body>
 </html>

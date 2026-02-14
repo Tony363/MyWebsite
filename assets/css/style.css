@@ -446,8 +446,14 @@ header .navbar ul li a:hover {
 }
 /* navbar ends */
 
-/* IBT Press Badge */
-.ibt-badge {
+/* Press Badges */
+.press-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.press-badge {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -460,14 +466,14 @@ header .navbar ul li a:hover {
   white-space: nowrap;
 }
 
-.ibt-badge:hover {
+.press-badge:hover {
   background: linear-gradient(135deg, rgba(45, 74, 53, 0.25), rgba(61, 90, 69, 0.18));
   border-color: rgba(61, 90, 69, 0.5);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(45, 74, 53, 0.2);
 }
 
-.ibt-badge__icon {
+.press-badge__icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -476,19 +482,19 @@ header .navbar ul li a:hover {
   flex-shrink: 0;
 }
 
-.ibt-badge__icon img {
+.press-badge__icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.ibt-badge__text {
+.press-badge__text {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
-.ibt-badge__label {
+.press-badge__label {
   font-size: 1rem;
   font-weight: 600;
   color: var(--theme-accent);
@@ -496,62 +502,62 @@ header .navbar ul li a:hover {
   letter-spacing: 0.05em;
 }
 
-.ibt-badge__source {
+.press-badge__source {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--theme-text);
 }
 
-.ibt-badge__arrow {
+.press-badge__arrow {
   font-size: 1rem;
   color: var(--theme-accent);
   transition: transform 0.3s ease;
 }
 
-.ibt-badge:hover .ibt-badge__arrow {
+.press-badge:hover .press-badge__arrow {
   transform: translateX(2px);
 }
 
-/* IBT Badge - Tablet: Icon only */
+/* Press Badge - Tablet: Icon only */
 @media (max-width: 1024px) {
-  .ibt-badge__text {
+  .press-badge__text {
     display: none;
   }
-  .ibt-badge__arrow {
+  .press-badge__arrow {
     display: none;
   }
-  .ibt-badge {
+  .press-badge {
     padding: 0.7rem;
   }
 }
 
-/* IBT Badge - Mobile: Hidden */
+/* Press Badge - Mobile: Hidden */
 @media (max-width: 768px) {
-  .ibt-badge {
+  .press-badges {
     display: none;
   }
 }
 
-/* IBT Badge Dark Mode */
-:root[data-theme="dark"] .ibt-badge {
+/* Press Badge Dark Mode */
+:root[data-theme="dark"] .press-badge {
   background: linear-gradient(135deg, rgba(61, 90, 69, 0.12), rgba(45, 74, 53, 0.08));
   border-color: rgba(61, 90, 69, 0.25);
 }
 
-:root[data-theme="dark"] .ibt-badge:hover {
+:root[data-theme="dark"] .press-badge:hover {
   background: linear-gradient(135deg, rgba(61, 90, 69, 0.2), rgba(45, 74, 53, 0.15));
   border-color: rgba(61, 90, 69, 0.4);
   box-shadow: 0 4px 12px rgba(61, 90, 69, 0.15);
 }
 
-:root[data-theme="dark"] .ibt-badge__label {
+:root[data-theme="dark"] .press-badge__label {
   color: var(--theme-accent);
 }
 
-:root[data-theme="dark"] .ibt-badge__source {
+:root[data-theme="dark"] .press-badge__source {
   color: var(--theme-text);
 }
-/* IBT Press Badge ends */
+/* Press Badges ends */
 
 /* hamburger icon starts*/
 #menu {

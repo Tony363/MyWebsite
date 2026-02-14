@@ -2,17 +2,25 @@
 (function() {
   'use strict';
 
-  const ARTICLE_URL = 'https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429';
-  const SHARE_TEXT = 'Great read: Tony Siu\'s approach to building AI systems through research, community, and long-term thinking. Featured in @IBTimes';
-  const SHARE_TITLE = 'Tony Siu Featured in International Business Times';
+  /**
+   * Get share data from the closest article container's data attributes
+   */
+  function getShareData(button) {
+    const container = button.closest('[data-article-url]');
+    return {
+      url: container ? container.dataset.articleUrl : window.location.href,
+      text: container ? container.dataset.shareText : '',
+      title: container ? container.dataset.articleTitle : document.title
+    };
+  }
 
   /**
    * Share to Twitter/X
    */
-  function shareTwitter() {
+  function shareTwitter(shareData) {
     const twitterUrl = new URL('https://twitter.com/intent/tweet');
-    twitterUrl.searchParams.set('text', SHARE_TEXT);
-    twitterUrl.searchParams.set('url', ARTICLE_URL);
+    twitterUrl.searchParams.set('text', shareData.text);
+    twitterUrl.searchParams.set('url', shareData.url);
 
     window.open(twitterUrl.toString(), '_blank', 'noopener,noreferrer,width=550,height=420');
   }
@@ -20,9 +28,9 @@
   /**
    * Share to LinkedIn
    */
-  function shareLinkedIn() {
+  function shareLinkedIn(shareData) {
     const linkedInUrl = new URL('https://www.linkedin.com/sharing/share-offsite/');
-    linkedInUrl.searchParams.set('url', ARTICLE_URL);
+    linkedInUrl.searchParams.set('url', shareData.url);
 
     window.open(linkedInUrl.toString(), '_blank', 'noopener,noreferrer,width=550,height=420');
   }
@@ -30,9 +38,9 @@
   /**
    * Copy link to clipboard with visual feedback
    */
-  async function copyLink(button) {
+  async function copyLink(button, shareData) {
     try {
-      await navigator.clipboard.writeText(ARTICLE_URL);
+      await navigator.clipboard.writeText(shareData.url);
 
       // Visual feedback
       const originalHTML = button.innerHTML;
@@ -51,16 +59,16 @@
       console.error('Failed to copy:', err);
 
       // Fallback for older browsers
-      fallbackCopy(button);
+      fallbackCopy(button, shareData);
     }
   }
 
   /**
    * Fallback copy method for browsers without Clipboard API
    */
-  function fallbackCopy(button) {
+  function fallbackCopy(button, shareData) {
     const textArea = document.createElement('textarea');
-    textArea.value = ARTICLE_URL;
+    textArea.value = shareData.url;
     textArea.style.position = 'fixed';
     textArea.style.left = '-9999px';
     textArea.style.top = '-9999px';
@@ -83,7 +91,7 @@
 
     } catch (err) {
       console.error('Fallback copy failed:', err);
-      alert('Unable to copy. Please copy this URL manually: ' + ARTICLE_URL);
+      alert('Unable to copy. Please copy this URL manually: ' + shareData.url);
     }
 
     document.body.removeChild(textArea);
@@ -92,13 +100,13 @@
   /**
    * Native share using Web Share API (mobile)
    */
-  async function nativeShare() {
+  async function nativeShare(shareData) {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: SHARE_TITLE,
-          text: SHARE_TEXT,
-          url: ARTICLE_URL
+          title: shareData.title,
+          text: shareData.text,
+          url: shareData.url
         });
       } catch (err) {
         // User cancelled or share failed - this is normal
@@ -123,20 +131,21 @@
     const button = event.target.closest('[data-share]');
     if (!button) return;
 
+    const shareData = getShareData(button);
     const shareType = button.dataset.share;
 
     switch (shareType) {
       case 'twitter':
-        shareTwitter();
+        shareTwitter(shareData);
         break;
       case 'linkedin':
-        shareLinkedIn();
+        shareLinkedIn(shareData);
         break;
       case 'copy':
-        copyLink(button);
+        copyLink(button, shareData);
         break;
       case 'native':
-        nativeShare();
+        nativeShare(shareData);
         break;
     }
   }
@@ -147,11 +156,11 @@
   function addNativeShareButton() {
     if (!canNativeShare()) return;
 
-    const shareContainer = document.querySelector('.article-screenshot__share');
-    if (!shareContainer) return;
-
     // Only add on mobile
-    if (window.matchMedia('(max-width: 768px)').matches) {
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
+
+    const shareContainers = document.querySelectorAll('.article-screenshot__share');
+    shareContainers.forEach(shareContainer => {
       const nativeBtn = document.createElement('button');
       nativeBtn.type = 'button';
       nativeBtn.className = 'share-btn share-btn--copy';
@@ -161,7 +170,7 @@
 
       // Insert at beginning
       shareContainer.insertBefore(nativeBtn, shareContainer.firstChild);
-    }
+    });
   }
 
   /**
@@ -171,8 +180,30 @@
     // Event delegation for share buttons
     document.addEventListener('click', handleShareClick);
 
-    // Add native share button on mobile
+    // Add native share buttons on mobile
     addNativeShareButton();
+
+    // Re-check for native share buttons when new articles are rendered
+    const observer = new MutationObserver(() => {
+      if (canNativeShare() && window.matchMedia('(max-width: 768px)').matches) {
+        document.querySelectorAll('.article-screenshot__share').forEach(container => {
+          if (!container.querySelector('[data-share="native"]')) {
+            const nativeBtn = document.createElement('button');
+            nativeBtn.type = 'button';
+            nativeBtn.className = 'share-btn share-btn--copy';
+            nativeBtn.dataset.share = 'native';
+            nativeBtn.setAttribute('aria-label', 'Share via system share sheet');
+            nativeBtn.innerHTML = '<i class="fas fa-share-alt" aria-hidden="true"></i><span>Share</span>';
+            container.insertBefore(nativeBtn, container.firstChild);
+          }
+        });
+      }
+    });
+
+    const articlesContainer = document.getElementById('press-articles-container');
+    if (articlesContainer) {
+      observer.observe(articlesContainer, { childList: true, subtree: true });
+    }
 
     // Handle keyboard navigation
     document.addEventListener('keydown', function(event) {

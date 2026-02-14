@@ -1,13 +1,40 @@
 [
   {
+    "id": "techtimes-2026",
+    "publication": "Tech Times",
+    "publicationHandle": "@TechTimes_News",
+    "logo": "/assets/images/press/techtimes-logo.svg",
+    "image": "/assets/images/press/techtimes-article-screenshot.png",
+    "title": "Code & Coffee Philadelphia's Mission: Revive Community-Driven Learning and Strengthen the City's Tech Culture",
+    "author": "Carl Williams",
+    "quote": "If a community helps people grow while building something larger than any individual effort, that community tends to sustain itself over time.",
+    "date": "2026-02-12",
+    "url": "https://www.techtimes.com/articles/314602/20260212/code-coffee-philadelphias-mission-revive-community-driven-learning-strengthen-citys-tech.htm",
+    "featured": true,
+    "shareText": "How Code & Coffee Philadelphia is reviving community-driven learning. Featured in @TechTimes_News",
+    "contextCards": [
+      { "icon": "fas fa-coffee", "title": "Third Places for Learning", "text": "Informal learning environments outside work and home where builders connect, collaborate, and grow together in a relaxed setting." },
+      { "icon": "fas fa-city", "title": "Post-COVID Community Revival", "text": "Rebuilding grassroots tech meetups in Philadelphia after the pandemic, restoring the in-person connections that drive innovation." },
+      { "icon": "fas fa-hand-holding-heart", "title": "Growth to Nonprofit", "text": "Formalizing Code & Coffee Philadelphia as a structured tech nonprofit, scaling from casual meetups to an organization serving 3,200+ members." }
+    ]
+  },
+  {
     "id": "ibt-2026",
     "publication": "International Business Times",
+    "publicationHandle": "@IBTimes",
     "logo": "/assets/images/press/ibt-logo.svg",
     "image": "/assets/images/press/ibt-article-screenshot.png",
     "title": "Tony Siu's Long-Term Path: How Research, Projects, and Community Work Shape His Approach to Building Impactful AI Systems",
+    "author": "",
     "quote": "Many meaningful movements come from accumulating small, deliberate steps. You don't need to solve everything at once to move somewhere worthwhile.",
     "date": "2026-01-28",
     "url": "https://www.ibtimes.com/tony-sius-longterm-path-how-research-projects-community-work-shape-his-approach-building-3796429",
-    "featured": true
+    "featured": true,
+    "shareText": "Tony Siu's approach to building AI systems through research, community, and long-term thinking. Featured in @IBTimes",
+    "contextCards": [
+      { "icon": "fas fa-map-marker-alt", "title": "East Coast Tech Ecosystem Gap", "text": "While Silicon Valley dominates tech narratives, Philadelphia has untapped potential. Grassroots communities like Coding Coffee fill this gap." },
+      { "icon": "fas fa-users", "title": "Community-Driven Innovation", "text": "The shift from isolated development to collaborative knowledge-sharing defines modern tech communities." },
+      { "icon": "fas fa-seedling", "title": "Long-Term Impact Philosophy", "text": "\"Small, deliberate steps\" rather than chasing quick wins. A sustainable approach prioritizes lasting impact over short-term metrics." }
+    ]
   }
 ]
