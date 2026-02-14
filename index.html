@@ -156,9 +156,18 @@
       <h2 class="hero-featured__title"><i class="fas fa-newspaper" aria-hidden="true"></i> Featured <span>In</span></h2>
       <p class="hero-featured__subtitle">Media coverage & publications</p>
     </div>
-    <div class="press-grid" id="press-container" aria-live="polite" aria-busy="true">
-      <!-- Rendered from JSON by press.js -->
+    <div class="press-carousel">
+      <button class="carousel-nav carousel-nav--prev press-carousel__prev" aria-label="Previous article" disabled>
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="press-carousel__track" id="press-container" aria-live="polite" aria-busy="true">
+        <!-- Rendered from JSON by press.js -->
+      </div>
+      <button class="carousel-nav carousel-nav--next press-carousel__next" aria-label="Next article">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
+    <div class="carousel-dots press-carousel__dots" role="tablist" aria-label="Press article navigation"></div>
 </div>
 <div class="scroll-indicator">
     <span></span>

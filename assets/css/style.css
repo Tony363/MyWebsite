@@ -911,7 +911,7 @@ header .navbar ul li a:hover {
   font-family: "Nunito", sans-serif;
 }
 
-.hero-featured .press-grid {
+.hero-featured .press-carousel__track {
   max-width: 100%;
 }
 
@@ -928,11 +928,11 @@ header .navbar ul li a:hover {
 }
 
 .hero-featured .press-card.featured {
-  grid-template-columns: 1fr;
+  flex-direction: column;
 }
 
 .hero-featured .press-card.featured.has-image {
-  grid-template-columns: 1fr;
+  flex-direction: column;
 }
 
 .hero-featured .press-card__image {
