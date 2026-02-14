@@ -31,20 +31,6 @@
     card.style.minWidth = '100%';
     card.style.flex = '0 0 100%';
 
-    const contextHTML = item.contextCards && item.contextCards.length ? `
-      <div class="press-card__context">
-        ${item.contextCards.map(c => `
-          <div class="press-card__context-item">
-            <i class="${c.icon}" aria-hidden="true"></i>
-            <div>
-              <div class="press-card__context-title">${c.title}</div>
-              <div class="press-card__context-text">${c.text}</div>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    ` : '';
-
     card.innerHTML = `
       ${item.image ? `
         <div class="press-card__image">
@@ -74,7 +60,6 @@
           <span>Read Full Article</span>
           <i class="fas fa-external-link-alt" aria-hidden="true"></i>
         </a>
-        ${contextHTML}
       </div>
     `;
 

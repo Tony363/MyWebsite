@@ -340,76 +340,6 @@
   transform: translateX(4px);
 }
 
-/* Context Cards */
-.press-card__context {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--theme-border);
-}
-
-.press-card__context-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.2rem;
-  background: rgba(45, 74, 53, 0.06);
-  border-radius: 1rem;
-  transition: background 0.2s ease;
-}
-
-.press-card__context-item:hover {
-  background: rgba(45, 74, 53, 0.1);
-}
-
-.press-card__context-item i {
-  color: var(--theme-accent);
-  font-size: 1.6rem;
-  margin-top: 0.2rem;
-  flex-shrink: 0;
-}
-
-.press-card__context-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--theme-text);
-  margin-bottom: 0.3rem;
-}
-
-.press-card__context-text {
-  font-size: 1.25rem;
-  color: var(--theme-text-muted);
-  line-height: 1.5;
-  font-family: "Nunito", sans-serif;
-}
-
-/* Hero-featured context card overrides */
-.hero-featured .press-card__context {
-  border-top-color: rgba(61, 90, 69, 0.2);
-}
-
-.hero-featured .press-card__context-item {
-  background: rgba(255, 235, 214, 0.06);
-}
-
-.hero-featured .press-card__context-item:hover {
-  background: rgba(255, 235, 214, 0.1);
-}
-
-.hero-featured .press-card__context-item i {
-  color: var(--earth-ember-soft);
-}
-
-.hero-featured .press-card__context-title {
-  color: rgba(255, 235, 214, 0.95);
-}
-
-.hero-featured .press-card__context-text {
-  color: rgba(255, 235, 214, 0.65);
-}
-
 /* Press carousel responsive nav */
 @media (max-width: 600px) {
   .press-carousel .carousel-nav {
@@ -564,14 +494,6 @@
 
 :root[data-theme="dark"] .press-card__quote {
   background: linear-gradient(135deg, rgba(61, 90, 69, 0.1), rgba(45, 74, 53, 0.05));
-}
-
-:root[data-theme="dark"] .press-card__context-item {
-  background: rgba(61, 90, 69, 0.1);
-}
-
-:root[data-theme="dark"] .press-card__context-item:hover {
-  background: rgba(61, 90, 69, 0.18);
 }
 
 :root[data-theme="dark"] .github-widget {
