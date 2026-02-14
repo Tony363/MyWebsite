@@ -36,5 +36,24 @@
       { "icon": "fas fa-users", "title": "Community-Driven Innovation", "text": "The shift from isolated development to collaborative knowledge-sharing defines modern tech communities." },
       { "icon": "fas fa-seedling", "title": "Long-Term Impact Philosophy", "text": "\"Small, deliberate steps\" rather than chasing quick wins. A sustainable approach prioritizes lasting impact over short-term metrics." }
     ]
+  },
+  {
+    "id": "technically-2026",
+    "publication": "Technical.ly",
+    "publicationHandle": "@technicallymedia",
+    "logo": "/assets/images/press/technically-logo.svg",
+    "image": "/assets/images/press/technically-article-screenshot.png",
+    "title": "Tony Siu shares how he built Code and Coffee Philadelphia into a 3,500-member tech meetup",
+    "author": "Sarah Huffman",
+    "quote": "It's not just my meetup. It's made up of other people's expectations, hopes and what they want out of it.",
+    "date": "2026-02-12",
+    "url": "https://technical.ly/workforce/tony-siu-code-and-coffee-how-i-got-here/",
+    "featured": true,
+    "shareText": "How Tony Siu built Code & Coffee Philadelphia into a 3,500-member tech meetup. Featured in @technicallymedia",
+    "contextCards": [
+      { "icon": "fas fa-globe-americas", "title": "Cross-Ecosystem Journey", "text": "From Taiwan to San Francisco to Philadelphia — navigating different tech cultures and finding where community-driven growth thrives." },
+      { "icon": "fas fa-people-carry", "title": "Community Ownership", "text": "Building a meetup that belongs to its members, shaped by their expectations and aspirations rather than a single organizer's vision." },
+      { "icon": "fas fa-chart-line", "title": "Scaling to 3,500 Members", "text": "Growing Code & Coffee Philadelphia from casual gatherings into a thriving 3,500-member tech community through consistency and genuine connection." }
+    ]
   }
 ]
