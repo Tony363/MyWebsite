@@ -46,7 +46,8 @@ body {
   pointer-events: none;
 }
 .calendly-overlay.calendly-popup-open,
-.calendly-popup {
+.calendly-popup,
+.calendly-popup-close {
   pointer-events: auto;
 }
 
