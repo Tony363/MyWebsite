@@ -70,7 +70,8 @@
 /* Apply chessboard to specific sections - unified sizing */
 .about,
 .education,
-.contact {
+.contact,
+.experience {
   --chess-size: 50px;
   background-image:
     linear-gradient(45deg, var(--chess-subtle-dark) 25%, transparent 25%),
@@ -85,7 +86,8 @@
 /* Keep container backgrounds slightly transparent to show pattern */
 .about .row,
 .education .box-container,
-.contact .container {
+.contact .container,
+.experience .timeline-carousel {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
   border-radius: 1rem;
@@ -95,13 +97,15 @@
 /* Dark theme adjustments - unified approach */
 :root[data-theme="dark"] .about,
 :root[data-theme="dark"] .education,
-:root[data-theme="dark"] .contact {
+:root[data-theme="dark"] .contact,
+:root[data-theme="dark"] .experience {
   background-color: var(--chess-subtle-light);
 }
 
 :root[data-theme="dark"] .about .row,
 :root[data-theme="dark"] .education .box-container,
-:root[data-theme="dark"] .contact .container {
+:root[data-theme="dark"] .contact .container,
+:root[data-theme="dark"] .experience .timeline-carousel {
   background: rgba(18, 18, 18, 0.9);
   backdrop-filter: blur(8px);
 }
@@ -110,7 +114,8 @@
 @media (max-width: 768px) {
   .about,
   .education,
-  .contact {
+  .contact,
+  .experience {
     --chess-size: 35px;
   }
 }
