@@ -503,6 +503,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Minimal animations for reduced motion
     new LazyImageLoader();
     new NavbarScroll();
+    // Immediately reveal animation-hidden elements
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+      el.classList.add('visible');
+    });
   }
   
   // Performance optimization

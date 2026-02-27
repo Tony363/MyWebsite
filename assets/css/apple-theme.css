@@ -503,4 +503,12 @@ section {
   .interactive-card:hover {
     transform: none;
   }
+
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
