@@ -362,9 +362,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Responsive items per view
             const getItemsPerView = () => {
-                if (window.innerWidth <= 600) return 1;
-                if (window.innerWidth <= 900) return 2;
-                return 3;
+                const firstItem = items[0];
+                if (!firstItem) return 1;
+                const containerWidth = container.parentElement.clientWidth;
+                const itemWidth = firstItem.offsetWidth;
+                const gap = parseFloat(getComputedStyle(container).gap) || 0;
+                return Math.max(1, Math.floor((containerWidth + gap) / (itemWidth + gap)));
             };
 
             let itemsPerView = getItemsPerView();
@@ -773,8 +776,8 @@ srtop.reveal('.skills .container .bar', { delay: 400 });
 srtop.reveal('.education .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
+// ScrollReveal removed from .experience .timeline to avoid conflicting
+// with the carousel's translateX transform.
 
 /* SCROLL PRESS */
 srtop.reveal('.press .section-header', { delay: 200 });
