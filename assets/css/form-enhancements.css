@@ -382,7 +382,6 @@
 
 /* Experience Timeline Refinements */
 .experience {
-  background: var(--color-white);
   padding: var(--space-4xl) 5%;
 }
 
