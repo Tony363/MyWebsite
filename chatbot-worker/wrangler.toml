@@ -1,0 +1,16 @@
+name = "tonysiu-chatbot"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://tonysiu.dev"
+MAX_REQUESTS_PER_MINUTE = "10"
+GITHUB_USERNAME = "Tony363"
+
+[[kv_namespaces]]
+binding = "CHATBOT_KV"
+id = "77ed0312dd074a28b375e71a8d1da00f"
+
+# Secrets (set via `wrangler secret put`):
+# ANTHROPIC_API_KEY
+# GITHUB_TOKEN (optional)

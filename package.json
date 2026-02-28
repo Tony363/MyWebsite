@@ -6,7 +6,8 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
-    "test:contact": "playwright test tests/contact-form-e2e.test.js"
+    "test:contact": "playwright test tests/contact-form-e2e.test.js",
+    "test:chatbot": "playwright test tests/chatbot-widget.test.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0"

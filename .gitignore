@@ -6,3 +6,7 @@
 test-results/
 playwright-report/
 playwright/.cache/
+
+# Chatbot Worker
+chatbot-worker/node_modules/
+chatbot-worker/.wrangler/
