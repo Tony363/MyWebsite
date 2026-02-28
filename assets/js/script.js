@@ -318,8 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             const container = document.getElementById('experience-timeline');
             const dotsContainer = document.getElementById('carousel-dots');
-            const prevBtn = document.querySelector('.carousel-nav--prev');
-            const nextBtn = document.querySelector('.carousel-nav--next');
+            const carouselWrapper = container?.closest('.timeline-carousel');
+            const prevBtn = carouselWrapper?.querySelector('.carousel-nav--prev');
+            const nextBtn = carouselWrapper?.querySelector('.carousel-nav--next');
             if (!container) return;
 
             container.setAttribute('role', 'list');
