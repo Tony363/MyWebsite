@@ -1,5 +1,25 @@
 [
   {
+    "name": "DreamServer",
+    "desc": "Local AI anywhere, for everyone — LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
+    "image": "dreamserver",
+    "category": "github",
+    "links": {
+      "view": "https://github.com/Light-Heart-Labs/DreamServer",
+      "code": "https://github.com/Light-Heart-Labs/DreamServer"
+    }
+  },
+  {
+    "name": "sondera-coding-agent-hooks",
+    "desc": "Hooking implementations and supporting tools for various coding agents (Claude, Cursor, Gemini, etc)",
+    "image": "sondera-coding-agent-hooks",
+    "category": "github",
+    "links": {
+      "view": "https://github.com/sondera-ai/sondera-coding-agent-hooks",
+      "code": "https://github.com/sondera-ai/sondera-coding-agent-hooks"
+    }
+  },
+  {
     "name": "SuperClaude",
     "desc": "A configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies.",
     "image": "superclaude",
@@ -11,52 +31,32 @@
   },
   {
     "name": "testing-cv",
-    "desc": "CV quality detection and flicker detection for display testing and quality assurance.",
+    "desc": "CV quality detection and flicker detection",
     "image": "testing-cv",
     "category": "github",
     "links": {
-      "view": "https://github.com/Tony363/testing-cv",
-      "code": "https://github.com/Tony363/testing-cv"
+      "view": "https://github.com/hc07180011/testing-cv",
+      "code": "https://github.com/hc07180011/testing-cv"
     }
   },
   {
     "name": "sec_filings",
-    "desc": "Collecting BDC Schedule of investments data from sec.gov for financial analysis.",
+    "desc": "Collecting BDC Schedule of investments data from sec.gov",
     "image": "sec_filings",
     "category": "github",
     "links": {
-      "view": "https://github.com/Tony363/sec_filings",
-      "code": "https://github.com/Tony363/sec_filings"
+      "view": "https://github.com/Coffee-Code-Philly-Accelerator/sec_filings",
+      "code": "https://github.com/Coffee-Code-Philly-Accelerator/sec_filings"
     }
   },
   {
-    "name": "Chartmetric_Analysis",
-    "desc": "Music industry analytics and data visualization using Chartmetric API.",
-    "image": "chartmetric_analysis",
+    "name": "pal-mcp-server",
+    "desc": "The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one.",
+    "image": "pal-mcp-server",
     "category": "github",
     "links": {
-      "view": "https://github.com/Tony363/Chartmetric_Analysis",
-      "code": "https://github.com/Tony363/Chartmetric_Analysis"
-    }
-  },
-  {
-    "name": "opencvStitch",
-    "desc": "estimateTransform once, ComposePanorama CUDA optimization for real-time video stitching.",
-    "image": "opencvstitch",
-    "category": "github",
-    "links": {
-      "view": "https://github.com/Tony363/opencvStitch",
-      "code": "https://github.com/Tony363/opencvStitch"
-    }
-  },
-  {
-    "name": "DocAutomate",
-    "desc": "Claude Code as a personal army of Computer Use Agents for automating operations work.",
-    "image": "docautomate",
-    "category": "github",
-    "links": {
-      "view": "https://github.com/Tony363/DocAutomate",
-      "code": "https://github.com/Tony363/DocAutomate"
+      "view": "https://github.com/BeehiveInnovations/pal-mcp-server",
+      "code": "https://github.com/BeehiveInnovations/pal-mcp-server"
     }
   }
 ]
