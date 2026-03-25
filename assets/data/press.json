@@ -1,5 +1,24 @@
 [
   {
+    "id": "tnw-2026",
+    "publication": "The Next Web",
+    "publicationHandle": "@TheNextWeb",
+    "logo": "/assets/images/press/tnw-logo.svg",
+    "image": "/assets/images/press/tnw-article-screenshot.png",
+    "title": "Tony Siu on building AI-enabled developer communities through servitude leadership and human connection",
+    "author": "Callum Turner",
+    "quote": "What struck me most innovative is definitely not the pitches, the startups, or even the heavyweight panel. It's the creativity and resourcefulness of the tech startups resembling the grit, innovation and entrepreneurship of the founding fathers",
+    "date": "2026-03-24",
+    "url": "https://thenextweb.com/news/developer-communities-ai-tech-leadership",
+    "featured": true,
+    "shareText": "How developer communities and servant leadership shape AI innovation. Featured in @TheNextWeb",
+    "contextCards": [
+      { "icon": "fas fa-users-cog", "title": "Community-Driven Developer Growth", "text": "Building authentic developer communities like Code & Coffee Philadelphia where organic collaboration and shared building drive innovation." },
+      { "icon": "fas fa-hands-helping", "title": "Servant Leadership in Tech", "text": "A bottom-up approach to tech leadership — building alongside others and fostering conversations that wouldn't happen in isolation." },
+      { "icon": "fas fa-robot", "title": "AI as a Force Multiplier", "text": "Using AI for operational coordination while preserving human interactions as the primary source of community value." }
+    ]
+  },
+  {
     "id": "techtimes-2026",
     "publication": "Tech Times",
     "publicationHandle": "@TechTimes_News",
