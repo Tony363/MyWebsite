@@ -243,9 +243,11 @@ function validateEmailConfiguration() {
     const emailDisplays = document.querySelectorAll('p:not(#contact-form p), .box p');
     let staticEmailsValid = true;
     
+    const emailPattern = /[\w.-]+@[\w.-]+\.\w+/;
     emailDisplays.forEach(element => {
-        if (element.textContent.includes('@') && !element.textContent.includes(EXPECTED_EMAIL)) {
-            console.warn('⚠️ Inconsistent email found:', element.textContent);
+        const text = element.textContent;
+        if (emailPattern.test(text) && !text.includes(EXPECTED_EMAIL)) {
+            console.warn('⚠️ Inconsistent email found:', text);
             staticEmailsValid = false;
         }
     });
@@ -703,6 +705,7 @@ async function fetchSkills() {
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
+    if (!skillsContainer) return;
     let skillHTML = "";
     skills.forEach(skill => {
         skillHTML += `
