@@ -2718,7 +2718,9 @@ form .button-area {
   object-fit: contain;  /* Maintains aspect ratio */
   vertical-align: middle;
   margin-right: 10px;
-  border-radius: 50%;  /* Optional: makes icons circular */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px;
 }
 
 /* Optional: Add hover effect */
