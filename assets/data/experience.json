@@ -1,5 +1,12 @@
 [
   {
+    "company": "ZoomInfo",
+    "companyIcon": "./assets/images/companies/zoominfo-logo.png",
+    "alt": "ZoomInfo",
+    "title": "Software Engineer III",
+    "period": "Apr 2026 - Present"
+  },
+  {
     "company": "A16z Speedrun SR005",
     "companyIcon": "./assets/images/companies/a16z-logo.png",
     "alt": "A16z Speedrun",

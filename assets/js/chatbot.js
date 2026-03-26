@@ -192,10 +192,10 @@ class ChatbotWidget {
     chips.className = 'chatbot-suggestions';
 
     const suggestions = [
-      "What's Tony's AI experience?",
-      'What projects has he built?',
-      'Tell me about his education',
-      'What tech stack does he use?'
+      "What projects has Tony built?",
+      "Tell me about Tony's Python skills",
+      "What does SuperClaude do?",
+      "Describe Tony's AI experience"
     ];
 
     suggestions.forEach((text) => {
@@ -636,7 +636,7 @@ window.addEventListener('load', function () {
     const root = document.getElementById('chatbot-root');
     if (root) {
       window.chatbotWidget = new ChatbotWidget({
-        apiUrl: 'https://tonysiu-chatbot.tony363.workers.dev'
+        apiUrl: root.dataset.apiUrl || 'https://tonysiu-chatbot.tony363.workers.dev'
       });
     }
   }, 2000);
