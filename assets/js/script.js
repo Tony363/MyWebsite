@@ -240,7 +240,7 @@ function validateEmailConfiguration() {
     const EXPECTED_EMAIL = 'pysolver33@gmail.com';
     
     // Check all static email displays
-    const emailDisplays = document.querySelectorAll('p:not(#contact-form p), .box p');
+    const emailDisplays = document.querySelectorAll('p:not(#contact-form p):not(.hero-subtitle), .box p');
     let staticEmailsValid = true;
     
     const emailPattern = /[\w.-]+@[\w.-]+\.\w+/;
@@ -721,7 +721,7 @@ function showSkills(skills) {
 
 fetchSkills().then(data => {
     showSkills(data);
-});
+}).catch(() => {});
 
 // AI Chatbot is loaded via chatbot.js (replaced Tawk.to)
 

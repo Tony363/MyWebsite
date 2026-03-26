@@ -14,6 +14,7 @@ function getCorsHeaders(request, env) {
   const origin = request.headers.get('Origin') || '';
   const allowed = [
     env.ALLOWED_ORIGIN || 'https://tonysiu.dev',
+    'https://tonysiu-dev.onrender.com',
     'http://localhost:8080',
     'http://127.0.0.1:8080',
   ];
