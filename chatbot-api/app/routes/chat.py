@@ -7,7 +7,6 @@ from app.models.schemas import ChatRequest
 from app.services.llm import stream_chat_response
 from app.services.prompt_builder import build_system_prompt
 from app.services.rate_limiter import check_rate_limit
-from app.services.retriever import retrieve_chunks
 
 logger = logging.getLogger(__name__)
 
@@ -28,9 +27,8 @@ async def chat(body: ChatRequest, request: Request):
   """Streamed chat endpoint using Server-Sent Events.
 
   1. Rate-limit by client IP
-  2. Retrieve relevant chunks via vector search
-  3. Build system prompt with static + retrieved context
-  4. Stream Claude response as SSE
+  2. Build system prompt from bundled portfolio context
+  3. Stream Claude response as SSE
   """
   # 1. Rate limit check
   client_ip = _get_client_ip(request)
@@ -41,26 +39,13 @@ async def chat(body: ChatRequest, request: Request):
     )
 
   try:
-    # 2. Extract latest user message for retrieval query
-    latest_user_message = ""
-    for msg in reversed(body.messages):
-      if msg.role == "user":
-        latest_user_message = msg.content
-        break
+    system_prompt = build_system_prompt([])
 
-    # 3. Retrieve relevant chunks
-    chunks = await retrieve_chunks(latest_user_message)
-
-    # 4. Build system prompt
-    system_prompt = build_system_prompt(chunks)
-
-    # 5. Convert messages to Anthropic format
     anthropic_messages = [
       {"role": m.role, "content": m.content}
       for m in body.messages
     ]
 
-    # 6. Stream response
     return StreamingResponse(
       stream_chat_response(system_prompt, anthropic_messages),
       media_type="text/event-stream",
