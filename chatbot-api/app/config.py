@@ -5,9 +5,13 @@ class Settings(BaseSettings):
   """Application configuration loaded from environment variables."""
 
   # API keys
-  anthropic_api_key: str
-  voyageai_api_key: str
+  anthropic_api_key: str = ""
+  openai_api_key: str = ""
+  voyageai_api_key: str = ""
   github_token: str = ""
+
+  # AI provider
+  openai_model: str = "gpt-4o-mini"
 
   # GitHub
   github_username: str = "Tony363"
