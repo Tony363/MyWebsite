@@ -1,0 +1,8 @@
+agent_name: tonysiu-github-chat
+entrypoint: agent.py
+log_level: INFO
+llm_instrument: true
+
+env:
+  GITHUB_USERNAME: "Tony363"
+  LOG_LEVEL: "INFO"
