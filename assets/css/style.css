@@ -51,6 +51,20 @@ body {
   pointer-events: auto;
 }
 
+/* Keep the scheduling CTA clear of the fixed chat control. */
+body .calendly-badge-widget {
+  bottom: 24px;
+  left: auto;
+  right: 92px;
+}
+
+@media (max-width: 768px) {
+  body .calendly-badge-widget {
+    bottom: 84px;
+    right: 16px;
+  }
+}
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;

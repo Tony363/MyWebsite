@@ -201,7 +201,7 @@ function loadCalendly() {
   if (calendlyLoaded) {
     // If already loaded, just show the widget
     if (typeof Calendly !== 'undefined') {
-      Calendly.showPopupWidget('https://calendly.com/tony-tryvariant/30min');
+      Calendly.showPopupWidget('https://calendly.com/pysolver33/quick-meet');
     }
     return;
   }
@@ -223,9 +223,9 @@ function loadCalendly() {
       calendlyLoaded = true;
       if (typeof Calendly !== 'undefined') {
         Calendly.initPopupWidget({
-          url: 'https://calendly.com/tony-tryvariant/30min'
+          url: 'https://calendly.com/pysolver33/quick-meet'
         });
-        Calendly.showPopupWidget('https://calendly.com/tony-tryvariant/30min');
+        Calendly.showPopupWidget('https://calendly.com/pysolver33/quick-meet');
       }
     };
     document.body.appendChild(script);
